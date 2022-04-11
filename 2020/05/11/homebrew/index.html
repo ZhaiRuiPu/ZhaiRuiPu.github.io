@@ -9,7 +9,7 @@
     
     <title>
         
-            Mac根目录创建文件 |
+            homebrew |
         
         jerry2
     </title>
@@ -154,7 +154,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Mac根目录创建文件</span>
+            <span class="title-hover-animation">homebrew</span>
         </div>
 
         
@@ -173,8 +173,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2020-06-11 14:10:16</span>
-        <span class="mobile">2020-06-11 14:10</span>
+        <span class="pc">2020-05-11 15:12:35</span>
+        <span class="mobile">2020-05-11 15:12</span>
     </span>
     
     
@@ -193,7 +193,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>320 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>187 字</span>
         </span>
     
     
@@ -214,34 +214,14 @@
         
 
         <div class="article-content markdown-body">
-            <p>方式1:</p>
-<ul>
-<li>重启mac</li>
-<li>按住command+r进入恢复模式</li>
-<li>点击用户登录</li>
-<li>在顶部导航栏选择Utilities-&gt;Terminal.app</li>
-<li>输入csrutil disable关闭SIP</li>
-<li>点击左上角苹果的logo重启</li>
-<li>重启完成后在Terminal中输入sudo mount -uw &#x2F;重新挂载根目录</li>
-<li>在根目录正常创建文件夹</li>
-<li>将其他目录的文件夹软连接到根目录文件夹ln -s &#x2F;Users&#x2F;xxxx&#x2F;test &#x2F;test&#x2F;</li>
-<li>设置777或者其他读写权限</li>
-<li>重启并按command+r进入恢复模式</li>
-<li>在恢复模式的Terminal输入csrutil enable重新开启SIP</li>
-<li>重启</li>
-</ul>
-<p>方式2:</p>
-<blockquote>
-<p>因为mac os引入了系统完整性保护(SIP)机制，无法在&#x2F;目录下新建文件，此处采用官方推荐做法来挂载。</p>
-<p>命令如下：</p>
-<p>sudo vim &#x2F;etc&#x2F;synthetic.conf</p>
-<p>之后进入编辑模式编辑此文件</p>
-<p>比如你要将家目录下www文件夹挂载到根目录，那么此文件内容应为：</p>
-<p>www　　&#x2F;Users&#x2F;xxx&#x2F;www</p>
-<p>&#x2F;Users&#x2F;diruipu&#x2F;jerry2&#x2F;zrp&#x2F;ewell&#x2F;var&#x2F;log&#x2F;ewell</p>
-<p>这样重启Mac即可。</p>
-<p>注意：“www”与 “&#x2F;Users&#x2F;xxx&#x2F;www”中间的不是空格键，而是一个table的空格(也就是按一下table键就可以了)。否则不生效！</p>
+            <blockquote>
+<p>Homebrew是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能。简单的一条指令，就可以实现包管理，而不用你关心各种依赖和文件路径的情况，十分方便快捷。</p>
 </blockquote>
+<h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><p>参考<a class="link"   target="_blank" rel="noopener" href="https://brew.sh/index_zh-cn" >官网<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询软件</span></span><br><span class="line">brew search 软件名</span><br><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line">brew install 软件名</span><br><span class="line"><span class="comment"># 后台运行的软件（重启之后可以自动启动）</span></span><br><span class="line">brew services start|stop|restart 软件名</span><br><span class="line"><span class="comment"># 卸载软件</span></span><br><span class="line">brew uninstall 软件名</span><br><span class="line"><span class="comment"># 查看软件的信息</span></span><br><span class="line">brew info 软件名</span><br><span class="line"><span class="comment"># 查看安装了哪些软件</span></span><br><span class="line">brew list 软件名</span><br><span class="line"><span class="comment"># 帮助</span></span><br><span class="line">brew <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -263,13 +243,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/03/23/mysql8-linux-yum/"
+                           href="/2020/06/11/Mac%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">mysql8-linux-yum</span>
+                                <span class="post-nav-title-item">Mac根目录创建文件</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -279,10 +259,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/05/11/homebrew/"
+                           href="/2020/04/15/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">homebrew</span>
+                                <span class="post-nav-title-item">git常用命令</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -462,7 +442,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="nav-text">安装过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">常用命令</span></a></li></ol>
     </div>
 </div>
         </aside>
