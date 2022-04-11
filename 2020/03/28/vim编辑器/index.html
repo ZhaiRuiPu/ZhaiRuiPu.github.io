@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="jerry2">
+    
+    <title>
+        
+            vim编辑器 |
+        
+        jerry2
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"git.diruipu.top","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#66CC33","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"望望山山水水，人去去，隐隐迢迢"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                jerry2
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">vim编辑器</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">jerry2</span>
+                        
+                            <span class="author-label">Trainee</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2020-03-28 22:20:33</span>
+        <span class="mobile">2020-03-28 22:20</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/linux/">linux</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/vim/">vim</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>4.3k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>16 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>使用 Vim 编辑文件:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi [文件名]</span><br><span class="line">vim [文件名]</span><br></pre></td></tr></table></figure>
+
+<p>教学模式:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vimtutor [语言]</span><br></pre></td></tr></table></figure>
+
+<p>vim 教程，相当于使用Vim编辑器以只读模式打开教程文件。您无论对这个文件作了什么，都会在退出后恢复原来的样貌。与只读模式的区别在于，它不会没有眼色的提醒您，现在的状态为只读模式。您可以使用它作一些练习</p>
+<p>您可以指定教程文件的语言，如果使用本地语言(<strong>ZH_cn</strong>)出现乱码，您可以尝试使用英语</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vimtutor en</span><br></pre></td></tr></table></figure>
+
+<p>使用 Vim 比较文件区别</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vimdiff [文件1] [文件2] [其它文件]……  </span><br></pre></td></tr></table></figure>
+
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>Vim 的全局配置文件为 <code>/etc/vim/vimrc</code> ，用户配置文件为<code> ~/.vimrc</code> ， <strong><code>&quot;</code></strong> 起始的行为注释行。我们提供的配置项，直接加入配置文件就可以了</p>
+<p>例如：可以先对 Vim 进行一些简单的配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&quot;运行在非兼容(VI)模式下(命令模式下 TAB 补全)</span><br><span class="line">set nocompatible</span><br><span class="line"></span><br><span class="line">&quot;设定文件编码</span><br><span class="line">set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936</span><br><span class="line"></span><br><span class="line">&quot;开启语法加亮</span><br><span class="line">syntax on</span><br><span class="line">&quot;配色风格</span><br><span class="line">colorscheme pablo</span><br><span class="line"></span><br><span class="line">&quot;简洁启动模式</span><br><span class="line">set shortmess=atI</span><br><span class="line">&quot;设定 GUI 选项</span><br><span class="line">&quot;set guioptions=gmrLtT  m:菜单 T:工具栏</span><br><span class="line">set guioptions=gmrLt</span><br><span class="line">&quot;命令行高度</span><br><span class="line">set cmdheight=1</span><br><span class="line">&quot;设定行距 ( GUI 界面中生效 )</span><br><span class="line">set linespace=4</span><br><span class="line">&quot;显示标尺</span><br><span class="line">set ruler</span><br><span class="line"></span><br><span class="line">&quot;自动折行</span><br><span class="line">&quot;set nowrap</span><br><span class="line">set wrap</span><br><span class="line">&quot;按完整单词折行</span><br><span class="line">set nolinebreak</span><br><span class="line">&quot;set linebreak</span><br><span class="line">&quot;行宽（输入时自动插入换行符）</span><br><span class="line">&quot;set textwidth=80</span><br><span class="line">set textwidth=0</span><br><span class="line"></span><br><span class="line">&quot;允许在 虚空间 内操作 （虚空间:不包含任何文本的空间。如换行符之后）</span><br><span class="line">&quot;set virtualedit=all</span><br><span class="line">&quot;禁止在 虚空间 内操作</span><br><span class="line">set virtualedit=</span><br><span class="line"></span><br><span class="line">&quot;设定 Tab 键缩进的空格数</span><br><span class="line">set tabstop=4</span><br><span class="line">&quot;设定编辑器将多少空格视为一个缩进</span><br><span class="line">set shiftwidth=4</span><br><span class="line">&quot;将缩进转换为空格</span><br><span class="line">&quot;set expandtab</span><br><span class="line">&quot;设定自动缩进(新行与前一行缩进相同)</span><br><span class="line">set autoindent</span><br><span class="line">&quot;set noautoindent</span><br><span class="line">&quot;插入模式下，“←”如何删除光标前的字符：行首空白、换行符、插入点之前的字符</span><br><span class="line">set backspace=indent,eol,start</span><br><span class="line"></span><br><span class="line">&quot;命令行历史纪录</span><br><span class="line">set history=500</span><br><span class="line"></span><br><span class="line">&quot;禁用增量搜索</span><br><span class="line">set incsearch</span><br><span class="line">&quot;set noincsearch</span><br><span class="line">&quot;搜索时忽略大小写</span><br><span class="line">set ignorecase</span><br><span class="line">&quot;set noignorecase</span><br><span class="line">&quot;高亮显示搜索结果</span><br><span class="line">set hlsearch</span><br><span class="line"></span><br><span class="line">&quot;设定折叠方式</span><br><span class="line">&quot;set foldmethod=manual</span><br><span class="line"></span><br><span class="line">&quot;以下字符将被视为单词的一部分 (ASCII)：</span><br><span class="line">&quot;set iskeyword+=33-47,58-64,91-96,123-128</span><br></pre></td></tr></table></figure>
+
+<h4 id="模式行"><a href="#模式行" class="headerlink" title="模式行"></a>模式行</h4><p>也可以通过“模式行”将配置选项嵌入在普通文件中。打开此文件时，优先使用模式行中的配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim: filetype=sh foldmethod=marker autoindent expandtab shiftwidth=4</span></span><br><span class="line">模式行可以写在任意位置</span><br><span class="line">但为了不影响文件功能，模式行通常写在注释中</span><br><span class="line">模式行以 vim: 起始，前面至少要有一个空白字符（空格、换行符等）</span><br><span class="line">模式行中的设置项以空格分隔</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>这种形式的缺点在于，不能在设置项后添加其它文本。如果有相关需要，可以使用另一种模式行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- vim:set filetype=html: 这里可以任意添加文本 --&gt;    </span><br></pre></td></tr></table></figure>
+
+<h3 id="模式介绍"><a href="#模式介绍" class="headerlink" title="模式介绍"></a>模式介绍</h3><p>Vim 常见的模式有： <strong>普通模式</strong> 、 <strong>插入模式</strong> 、 <strong>命令模式</strong> ，另外我们也会经常用到 <strong>可视模式</strong> 。</p>
+<blockquote>
+<p>Vim 启动时进入 *<strong>普通模式*</strong> ；或者在其它模式下，按下 <strong><code>Esc</code></strong> 键，便可以回到普通模式。</p>
+<p>使用 <strong>vimtutor en</strong> 命令进入教程，现在是普通模式。随便按几下 <strong><code>j</code></strong> 、 <strong><code>k</code></strong> 、 <strong><code>l</code></strong> 、 <strong><code>h</code></strong> 键，您会发现光标的位置发生改变。</p>
+<p>按下 <strong><code>i</code></strong> 键，编辑器底部出现了 – 插入 – 或者 – insert – ，您进入了插入模式。随便按几下 <strong><code>j</code></strong> 、 <strong><code>k</code></strong> 、 <strong><code>l</code></strong> 、 <strong><code>h</code></strong> ，您会发现相应的字符出现在编辑区，现在还可以通过方向键来移动光标。可能您觉得使用方向键移动光标不是什么问题，但是习惯了 Vim 后，您反而会认为方向键太麻烦了，简直不能容忍！好了，现在按下 <strong><code>Esc</code></strong> 键回到普通模式，我们又可以使用 <strong><code>j</code></strong> 、 <strong><code>k</code></strong> 、 <strong><code>l</code></strong> 、 <strong><code>h</code></strong> 来移动光标了。</p>
+<p>在普通模式下，按下 <strong><code>:</code></strong> 键（也就是 Shift+; ），在编辑器底部出现了一个 : ，您进入了命令模式。在 <strong><code>:</code></strong> 后输入一个命令 <strong><code>new</code></strong> ，回车后，编辑器被分割为上下两栏。为了方便起见，我们在命令前加一个 <strong>:</strong> 来表示命令模式下输入的命令，像这样</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:vnew</span><br></pre></td></tr></table></figure>
+
+<p>命令能够以一些规则简化，上面的命令也可以写为这种形式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:vne</span><br></pre></td></tr></table></figure>
+
+<p>现在您的编辑区一定弄的四分五裂，您可以使用命令“**:quit**”来关闭当前栏，直接用简写就可以了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:q</span><br></pre></td></tr></table></figure>
+
+<p>这个命令是退出编辑器，如果编辑区被分成多栏，则是退出当前栏。</p>
+<p>执行完一个命令（按下回车后），编辑器会自动回到普通模式。如果想不执行当前命令，直接回到普通模式，您可以按下 Esc键。</p>
+<p>按下 <strong><code>v</code></strong> 键，您进入了可视模式，可以使用 <strong><code>j</code></strong> 、 <strong><code>k</code></strong> 、 <strong><code>l</code></strong> 、 <strong><code>h</code></strong> 移动光标，高亮选取文本 。</p>
+<p>事实上，可视模式相当于高亮选取文本后的普通模式。</p>
+<p>可视模式具有多种模式，以行为单位进行选取的可视行模式，使用 <strong><code>V</code></strong> 键进入（也就是 Shift+v ）；和以块为单位进行选取的可视块模式，使用 <strong><code>Ctrl+v</code></strong> 键进入。</p>
+</blockquote>
+<h3 id="模式切换"><a href="#模式切换" class="headerlink" title="模式切换"></a>模式切换</h3><p>|当前模式|目标模式|操作|</p>
+<table>
+<thead>
+<tr>
+<th>其它模式</th>
+<th>普通模式</th>
+<th>Esc</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通模式</td>
+<td>插入模式</td>
+<td>i</td>
+<td>在光标前插入</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>I</td>
+<td>在行首插入</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>a</td>
+<td>在光标后插入</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>A</td>
+<td>在行末插入</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>o</td>
+<td>在当前行之下新建行</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>O</td>
+<td>在当前行之上新建行</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>r</td>
+<td>替换当前字符</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>R</td>
+<td>从当前字符开始替换</td>
+</tr>
+<tr>
+<td>普通模式</td>
+<td>命令模式</td>
+<td>:</td>
+<td></td>
+</tr>
+<tr>
+<td>普通模式</td>
+<td>可视模式</td>
+<td>v</td>
+<td>可视模式</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>V</td>
+<td>可视行模式</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Ctrl+v</td>
+<td>可视块模式</td>
+</tr>
+</tbody></table>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><p>在普通模式中，您可以使用以下方式移动光标</p>
+<pre><code>    k(上)
+</code></pre>
+<p>  h(左)    l(右)</p>
+<pre><code>      j(下) 
+</code></pre>
+<p>您可以使用其它更有效率的方式移动光标</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">向前</th>
+<th>向后</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单词</td>
+<td align="left">w</td>
+<td>b</td>
+</tr>
+<tr>
+<td align="left">单词，包括特殊符号</td>
+<td align="left">W</td>
+<td>B</td>
+</tr>
+<tr>
+<td align="left">单词词尾</td>
+<td align="left">e</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">单词词尾，包括特殊符号</td>
+<td align="left">E</td>
+<td></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">行</td>
+<td align="left">0</td>
+<td>$</td>
+</tr>
+<tr>
+<td align="left">行首文字（不包括空格）</td>
+<td align="left">^</td>
+<td></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">页</td>
+<td align="left">H</td>
+<td>L</td>
+</tr>
+<tr>
+<td align="left">页面中部</td>
+<td align="left">M</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>在其它模式中，您可以使用方向键移动光标，不过那样比较麻烦，您可以在配置文件中绑定插入模式下的功能键</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">noremap! &lt;M-j&gt; &lt;Down&gt;</span><br><span class="line">noremap! &lt;M-k&gt; &lt;Up&gt;</span><br><span class="line">noremap! &lt;M-h&gt; &lt;left&gt;</span><br><span class="line">noremap! &lt;M-l&gt; &lt;Right&gt;</span><br><span class="line">………………</span><br><span class="line">作用范围 键位 功能  </span><br></pre></td></tr></table></figure>
+
+<p>其中，**map!<strong>绑定的键盘映射，作用于所有模式；</strong>inoremap!**绑定的映射，仅作用于插入模式。</p>
+<h3 id="数字参数"><a href="#数字参数" class="headerlink" title="数字参数"></a>数字参数</h3><p>您也可以使用数字参数(普通模式)，来重复执行。例如</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">执行 100次j键，向下 100行</span></span><br><span class="line">100j</span><br></pre></td></tr></table></figure>
+
+<h3 id="浏览"><a href="#浏览" class="headerlink" title="浏览"></a>浏览</h3><p><strong><code>gg</code></strong> 定位到文件首行， <strong><code>V</code></strong> 进入可视行模式， <strong><code>G</code></strong> 定位到文件末行，实现类似“全选”的功能。依次按下 <strong><code>g</code></strong> <strong><code>g</code></strong> <strong><code>V</code></strong>(Shift+v) <strong><code>G</code></strong>(Shift+g)</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">向前</th>
+<th align="left">向后</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">整页</td>
+<td align="left">Ctrl+f</td>
+<td align="left">Ctrl+b</td>
+</tr>
+<tr>
+<td align="left">半页</td>
+<td align="left">Ctrl+d</td>
+<td align="left">Ctrl+u</td>
+</tr>
+<tr>
+<td align="left">文件</td>
+<td align="left">G</td>
+<td align="left">gg</td>
+</tr>
+<tr>
+<td align="left">按行号转到相应行</td>
+<td align="left">行号 G</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">按百分比转到相应的行</td>
+<td align="left">1~100%</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">按行卷动</td>
+<td align="left">Ctrl+e</td>
+<td align="left">Ctrl+y</td>
+</tr>
+<tr>
+<td align="left">将光标所在行调整至页面中间</td>
+<td align="left">zz</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">统计字数</td>
+<td align="left">g Ctrl+g</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">显示位置信息</td>
+<td align="left">Ctrl+g</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">刷新屏幕</td>
+<td align="left">Ctrl+l</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><p>您可以在当前光标处作一个标记，以便快速返回</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">m标记名称    定义标记。标记名称为一个字符</span><br><span class="line">`标记名称    返回标记</span><br><span class="line"></span><br><span class="line">mx           将当前光标处定义为标记 x</span><br><span class="line">`x           返回标记 x</span><br><span class="line"></span><br><span class="line">:marks       查看标记列表  </span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">复制</th>
+<th align="left">剪切</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">字符</td>
+<td align="left">y</td>
+<td align="left">x</td>
+</tr>
+<tr>
+<td align="left">行</td>
+<td align="left">yy</td>
+<td align="left">dd</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>p</td>
+<td>在光标后粘贴</td>
+</tr>
+<tr>
+<td>P</td>
+<td>在光标前粘贴</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤消</td>
+</tr>
+<tr>
+<td>Ctrl+r</td>
+<td>重做</td>
+</tr>
+<tr>
+<td>Ctrl+y</td>
+<td>逐字克隆上一行内容</td>
+</tr>
+<tr>
+<td>Ctrl+e</td>
+<td>逐字克隆下一行内容</td>
+</tr>
+</tbody></table>
+<h3 id="搜索和替换"><a href="#搜索和替换" class="headerlink" title="搜索和替换"></a>搜索和替换</h3><p>按下 <strong><code>/</code></strong> 键，编辑器底部会出现 <strong><code>/</code></strong> 符号，接着输入字符串，便可以进行搜索</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;</td>
+<td>向下搜索</td>
+<td>?</td>
+<td>向上搜索</td>
+</tr>
+<tr>
+<td>n</td>
+<td>搜索下一个</td>
+<td>N</td>
+<td>搜索上一个</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:s&#x2F;源字符串&#x2F;目标字符串</td>
+<td>将源字符串替换为目标字符串</td>
+</tr>
+<tr>
+<td>:s&#x2F;源字符串&#x2F;目标字符串&#x2F;g</td>
+<td>替换当前行中所有符合条件的字符串</td>
+</tr>
+<tr>
+<td>:行号1,行号2s&#x2F;源字符串&#x2F;目标字符串&#x2F;g</td>
+<td>在指定行中进行替换</td>
+</tr>
+<tr>
+<td>:%s&#x2F;源字符串&#x2F;目标字符串&#x2F;g</td>
+<td>全文替换</td>
+</tr>
+</tbody></table>
+<h3 id="寄存器操作"><a href="#寄存器操作" class="headerlink" title="寄存器操作"></a>寄存器操作</h3><p>Vim 可以将不同字段剪切或复制到不同寄存器中，您可以从不同寄存器中取出内容后粘贴</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;寄存器名称</span><br></pre></td></tr></table></figure>
+
+<p>按下**<code>&quot;</code>**键和另一个字符键，便可以定义一个寄存器。例如：<code>&quot;a &quot;1</code></p>
+<p>定义寄存器后直接进行操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;ayy    将当前行复制到寄存器 a 中</span><br><span class="line">&quot;ap     将寄存器 a 中的内容粘贴到光标之后</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>:registers</strong> 查看所有寄存器的内容</li>
+<li>通常情况下，寄存器 <strong>+</strong> (先按”，再按 Shift+&#x3D; )对应 X 下的剪贴板。您在其它程序中复制的内容，可以使用 <strong><code>&quot;+p</code></strong> 粘贴到 Vim中；您在 Vim 中，可以使用 <strong><code>&quot;+y</code></strong> 将内容复制到剪贴板，再粘贴到其它程序中</li>
+<li>没有指定寄存器时，Vim 使用“无名寄存器”存储内容</li>
+</ul>
+<h3 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h3><p>您可以将一系列的操作录制为一个宏，然后执行它</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">q宏名称    开始录制宏。宏名称为一个字符</span><br><span class="line">q         录制中按下“q”键，结束录制</span><br><span class="line"></span><br><span class="line">@宏名称    执行宏</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以使用 <strong>:registers</strong>（寄存器列表） 命令查看已记录的宏</li>
+</ul>
+<h3 id="插入模式下的快捷键"><a href="#插入模式下的快捷键" class="headerlink" title="插入模式下的快捷键"></a>插入模式下的快捷键</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl+r寄存器名称</td>
+<td>插入指定寄存器内容</td>
+</tr>
+<tr>
+<td>Ctrl+k(2个字符)</td>
+<td>输入二合字符</td>
+</tr>
+<tr>
+<td>Ctrl+v数字</td>
+<td>通过数字编码输入字符</td>
+</tr>
+<tr>
+<td>Ctrl+v键位</td>
+<td>输入键位的名称</td>
+</tr>
+</tbody></table>
+<h3 id="键绑定、缩写"><a href="#键绑定、缩写" class="headerlink" title="键绑定、缩写"></a>键绑定、缩写</h3><p>前面我们已经向您介绍了键绑定</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map! &lt;M-j&gt; &lt;Down&gt;</span><br></pre></td></tr></table></figure>
+
+<p>尖括号及其中的内容，为 Vim 配置文件的约定，分别描述了按键和功能，表示将功能编写到按键上。如果绑定的只是普通字符，例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map! xxx XXXXX</span><br></pre></td></tr></table></figure>
+
+<p>表示将 XXXXX 绑定到 xxx 上。当您键入 xxx 时，编辑器会自动替换为 XXXXX</p>
+<p>如果您只是想将字符串绑定为缩写，方便输入，我们建议您使用 <strong>iabbrev</strong> 来绑定。例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iabbrev g google</span><br></pre></td></tr></table></figure>
+
+<p>在插入模式下键入 <strong><code>g</code></strong> ，编辑器会自动替换为 google 。您可以将 <strong>iabbrev</strong> 命令缩写为 <strong>iab</strong> ，例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iab g google</span><br></pre></td></tr></table></figure>
+
+<p>以上命令，您可以直接在命令模式下输入，临时启用。也可以写入配置文件，永久启用。</p>
+<h3 id="单词补全"><a href="#单词补全" class="headerlink" title="单词补全"></a>单词补全</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Ctrl+n&gt; 下一个匹配项</span><br><span class="line">&lt;Ctrl+p&gt; 上一个匹配项</span><br></pre></td></tr></table></figure>
+
+<p>您可以在配置文件中定义补全的方式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;自动补全方式：(使用逗号分隔)</span><br><span class="line">set complete=k,.</span><br><span class="line"></span><br><span class="line">&quot;   .    当前文件</span><br><span class="line">&quot;   b    已被装缓冲区,但是没有在窗口内的文件</span><br><span class="line">&quot;   d    在当前的文件中定义和由 #include 包含进来的文件</span><br><span class="line">&quot;   i    由 #include 包含进来的文件</span><br><span class="line">&quot;   k    由 dictionary 选项定义的文件</span><br><span class="line">&quot;   kfile    名为&#123;file&#125;的文件</span><br><span class="line">&quot;   t    标记(tags)文件</span><br><span class="line">&quot;   u    没有载入的缓冲区</span><br><span class="line">&quot;   w    在其他窗口中的文件</span><br><span class="line"></span><br><span class="line">&quot;设定自动补全字典 ：</span><br><span class="line">set dictionary=path</span><br></pre></td></tr></table></figure>
+
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>前面介绍了普通模式和插入模式。我们发现，普通模式主要用来浏览和修改文本内容，而插入模式则用来向文本中添加内容。</p>
+<p>而命令模式则多用于操作文本文件（而不是操作文本文件的内容），例如保存文件；或者用来更改编辑器本身的状态，例如设定多栏窗口、标签或者退出编辑器……</p>
+<p>w(rote) 将更改写入文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:w</span><br></pre></td></tr></table></figure>
+
+<p>q(uit) 退出编辑器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:q</span><br></pre></td></tr></table></figure>
+
+<p>某些情况下，编辑器会阻止命令的执行。例如您修改了文件，而没有保存，那么您使用 :q 命令退出时，编辑器就不会执行这条命令，而是提醒您保存文件。</p>
+<p>这个时候，您可以在命令末尾追加 ! 来强制执行命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:命令!</span><br></pre></td></tr></table></figure>
+
+<p>例如 <strong><code>:q!</code></strong> ，即便您没有保存已修改的文件，使用此命令，编辑器也会放弃修改而强行退出</p>
+<p>以 <strong><code>!</code></strong> 引导一个 Shell 命令，则可以从 Vim 临时切换到 Shell 中，执行一个 Shell</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:!命令</span><br></pre></td></tr></table></figure>
+
+<p>例如 <strong><code>:!ls</code></strong></p>
+<p>命令模式还可以用来调节一些选项，例如</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:set linespace=6</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用 Tab 键补全命令</li>
+<li>命令可以直接写入配置文件</li>
+<li>在选项后加上一个 <strong><code>&amp;</code></strong> 使用默认值，例如： <strong><code>:set linespace&amp;</code></strong></li>
+</ul>
+<h3 id="折叠"><a href="#折叠" class="headerlink" title="折叠"></a>折叠</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>zf数字</td>
+<td>创建折叠，数字参数为折叠行数</td>
+</tr>
+<tr>
+<td>zo</td>
+<td>打开折叠</td>
+</tr>
+<tr>
+<td>zc</td>
+<td>关闭折叠</td>
+</tr>
+<tr>
+<td>zd</td>
+<td>删除折叠</td>
+</tr>
+<tr>
+<td>:set foldcolumn&#x3D;4</td>
+<td>显示折叠树</td>
+</tr>
+<tr>
+<td>:mkview</td>
+<td>保存折叠</td>
+</tr>
+<tr>
+<td>:loadview</td>
+<td>读取折叠</td>
+</tr>
+<tr>
+<td>zr</td>
+<td>打开同一层级所有折叠</td>
+</tr>
+<tr>
+<td>zm</td>
+<td>关闭同一层级所有折叠</td>
+</tr>
+<tr>
+<td>zO</td>
+<td>打开某一行的所有层级折叠</td>
+</tr>
+<tr>
+<td>zC</td>
+<td>关闭某一行的所有层级折叠</td>
+</tr>
+<tr>
+<td>zR</td>
+<td>打开所有折叠</td>
+</tr>
+<tr>
+<td>zM</td>
+<td>关闭所有折叠</td>
+</tr>
+<tr>
+<td>:set foldclose&#x3D;all</td>
+<td>光标离开折叠自动关闭</td>
+</tr>
+<tr>
+<td>:set foldopen&#x3D;all</td>
+<td>光标遇到折叠自动打开</td>
+</tr>
+</tbody></table>
+<p>您可以在配置文件中定义折叠的方式</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;设定折叠方式</span></span><br><span class="line"><span class="string">set foldmethod=manual</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;</span> manual 手动折叠</span><br><span class="line"><span class="string">&quot; indent 按缩进折叠</span></span><br><span class="line"><span class="string">&quot;</span> marker 按标记折叠</span><br><span class="line"><span class="string">&quot; syntax 按语法折叠</span></span><br><span class="line"><span class="string">&quot;</span> <span class="built_in">expr</span>   按表达式折叠</span><br></pre></td></tr></table></figure>
+
+<p>按标记折叠的例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">起始标记 &#123;&#123;&#123; 将标记放到注释里，不会影响文件的功能</span> </span><br><span class="line"></span><br><span class="line">起始标记和结束标记之间的内容折叠</span><br><span class="line">显示为起始标记所在行</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">结束标记 &#125;&#125;&#125;</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##### 将折叠方式写到模式行里 #####</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vim: foldmethod=marker</span> </span><br></pre></td></tr></table></figure>
+
+<h3 id="多栏窗口"><a href="#多栏窗口" class="headerlink" title="多栏窗口"></a>多栏窗口</h3><p>您可以使用以下命令，将当前窗口水平分为两栏</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:new</span><br></pre></td></tr></table></figure>
+
+<p>新建一栏空白窗口，将当前文件分两栏显示</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">split</span></span><br></pre></td></tr></table></figure>
+
+<p>同理，您可以使用下列命令，将当前窗口垂直分为两栏</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:vnew</span><br><span class="line">:vsplit</span><br></pre></td></tr></table></figure>
+
+<p>先按下 <strong><code>ctrl+w</code></strong> 键，再按下方向键 <strong><code>j</code></strong> 、 <strong><code>k</code></strong> 、 <strong><code>l</code></strong> 、 <strong><code>h</code></strong> ，您可以切换到其它栏；在当前栏中使用 <strong><code>:q</code></strong> 命令，可以退出当前栏，也可以使用其它命令，对当前栏作出修改</p>
+<p>如果您希望当前命令在所有栏中生效，您可以在命令的末尾追加 <strong>all</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:命令all</span><br></pre></td></tr></table></figure>
+
+<p>例如：**<code>:qall</code>**</p>
+<p>如果您希望这条命令强制执行，那么 <strong><code>!</code></strong> 位于命令的最末，例如：**<code>:qall!</code>** 强行退出所有栏窗口</p>
+<h3 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h3><p>Vim 在7以后的版本，开始支持标签页的功能</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:tabnew    新建一个标签</span><br><span class="line">:tabnext   转到下一个标签</span><br><span class="line">:tabprevious  转到上一个标签</span><br></pre></td></tr></table></figure>
+
+<p>您也可以使用鼠标点击标签进行切换</p>
+<h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><p>使用 Vim 编辑目录时，会进入文件管理模式：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .</span><br></pre></td></tr></table></figure>
+
+<p>文件管理模式中可以实现一些简单的文件管理功能：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>enter</td>
+<td>打开文件或文件夹</td>
+</tr>
+<tr>
+<td>Ctrl+o</td>
+<td>后退</td>
+</tr>
+<tr>
+<td>o</td>
+<td>新开一栏进行编辑</td>
+</tr>
+<tr>
+<td>O</td>
+<td>在前一次打开的栏中编辑</td>
+</tr>
+<tr>
+<td>p</td>
+<td>预览</td>
+</tr>
+<tr>
+<td>i</td>
+<td>显示&#x2F;隐藏文件大小、日期</td>
+</tr>
+<tr>
+<td>s</td>
+<td>切换文件排序方式</td>
+</tr>
+<tr>
+<td>r</td>
+<td>切换顺序、逆序</td>
+</tr>
+<tr>
+<td>-</td>
+<td>回到上一级目录</td>
+</tr>
+<tr>
+<td>c</td>
+<td>将 Vim 执行目录设定为当前目录</td>
+</tr>
+<tr>
+<td>R</td>
+<td>重命名</td>
+</tr>
+<tr>
+<td>D</td>
+<td>删除</td>
+</tr>
+<tr>
+<td>x</td>
+<td>运行</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>:cd</strong> 设定所有窗口执行目录 ； <strong>:lcd</strong> 设定当前栏窗口执行目录</li>
+</ul>
+<h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><p>使用 <strong>:X</strong> 命令为文件设定一个密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:X</span><br><span class="line">Enter encryption key: ******</span><br><span class="line">Enter same key again: ******</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果要取消加密，可以设置密码为空</li>
+</ul>
+<p>可以禁用交换文件，以免泄密</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim -x -n file.txt</span><br></pre></td></tr></table></figure>
+
+<p>如果你已在经编辑这个文件了，那么交换文件 <code>swapfile</code> 可以用下面的命令禁止:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:setlocal noswapfile</span><br></pre></td></tr></table></figure>
+
+<p>由于没了交换文件，文件复原就不可能了。为了避免失去编辑的成果，要比平时更勤快地存盘你的文件</p>
+<p>现在你可以像平时一样编辑这个文件并把你所有的秘密放进去。当你编完文件要退出 Vim 时，这个文件就被加密存盘了</p>
+<p>当你下次用 Vim 编辑这个文件时，它就会询问你密码</p>
+<p>如果你试图用另一个程序来阅读这个文件，你将读到一堆垃圾。如果你用 Vim 来编辑这个文件，但输入了错误的密码，你也只能得到垃圾。Vim 并不具备检验密码正确性的机制 (这一点使得破译密码更为困难)</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/linux/">#linux</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/vim/">#vim</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/03/23/mysql8-linux-yum/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">mysql8-linux-yum</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2019/12/22/test-sit/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">md语法练习</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c05ce7f7288367fc3232',
+                    clientSecret: '94bbd22b269a721e1b98c1efa1750de2de64fdab',
+                    repo: 'gitalk',
+                    owner: 'ZhaiRuiPu',
+                    admin: ['ZhaiRuiPu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">jerry2</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">晋ICP备20005379号-1</a></div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E8%A1%8C"><span class="nav-text">模式行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E4%BB%8B%E7%BB%8D"><span class="nav-text">模式介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2"><span class="nav-text">模式切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8"><span class="nav-text">移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E5%8F%82%E6%95%B0"><span class="nav-text">数字参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88"><span class="nav-text">浏览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AE%B0"><span class="nav-text">标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%BE%91"><span class="nav-text">编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%92%8C%E6%9B%BF%E6%8D%A2"><span class="nav-text">搜索和替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E6%93%8D%E4%BD%9C"><span class="nav-text">寄存器操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8F"><span class="nav-text">宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">插入模式下的快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%AE%E7%BB%91%E5%AE%9A%E3%80%81%E7%BC%A9%E5%86%99"><span class="nav-text">键绑定、缩写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E8%AF%8D%E8%A1%A5%E5%85%A8"><span class="nav-text">单词补全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-text">命令模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%98%E5%8F%A0"><span class="nav-text">折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%A0%8F%E7%AA%97%E5%8F%A3"><span class="nav-text">多栏窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="nav-text">标签页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">文件管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86"><span class="nav-text">加密</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
