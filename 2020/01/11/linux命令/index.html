@@ -1,0 +1,3067 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="jerry2">
+    
+    <title>
+        
+            linux命令 |
+        
+        jerry2
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"git.diruipu.top","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"望望山山水水，人去去，隐隐迢迢"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                jerry2
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">linux命令</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">jerry2</span>
+                        
+                            <span class="author-label">Trainee</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2020-01-11 11:47:14</span>
+        <span class="mobile">2020-01-11 11:47</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/linux/">linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>8k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>30 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="linux命令"><a href="#linux命令" class="headerlink" title="linux命令"></a>linux命令</h2><h3 id="系统信息"><a href="#系统信息" class="headerlink" title="系统信息"></a>系统信息</h3><h4 id="uptime-联机信息-时间"><a href="#uptime-联机信息-时间" class="headerlink" title="uptime   联机信息-时间"></a>uptime   联机信息-时间</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">uptime</span></span></span><br><span class="line">16:11  up 5 days,  2:32, 2 users, load averages: 2.16 2.23 2.26</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">依次代表为：</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">当前系统时间,系统运行时间,当前在线用户数,系统负荷:1分钟前、5分钟前、15分钟前</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="w-联机信息-已登录用户"><a href="#w-联机信息-已登录用户" class="headerlink" title="w   联机信息-已登录用户"></a>w   联机信息-已登录用户</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">w</span></span><br><span class="line">16:13  up 5 days,  2:34, 2 users, load averages: 2.40 2.37 2.31 #联机时间</span><br><span class="line">USER     TTY      FROM              LOGIN@  IDLE WHAT</span><br><span class="line">diruipu  console  -                四13   5days -</span><br><span class="line">diruipu  s002     -                13:51       - w</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">USER 用户名</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">TTY 登录方式</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">FROM 来源地址</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">LOGIN@ 登录时间</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">IDLE 发呆时间</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">WHAT 当前任务</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="who-联机信息"><a href="#who-联机信息" class="headerlink" title="who 联机信息"></a>who 联机信息</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">who</span></span></span><br><span class="line">root  console  Nov 19 13:39</span><br><span class="line">xxxx  ttys002  Nov 24 13:51</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-r</td>
+<td align="left">运行级别</td>
+</tr>
+</tbody></table>
+<h4 id="whoami-显示当前用户名"><a href="#whoami-显示当前用户名" class="headerlink" title="whoami  显示当前用户名"></a>whoami  显示当前用户名</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">whoami</span></span></span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+
+<h4 id="last-最近用户登录信息"><a href="#last-最近用户登录信息" class="headerlink" title="last 最近用户登录信息"></a>last 最近用户登录信息</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">last</span></span><br><span class="line">diruipu   ttys002                   Tue Nov 24 13:51   still logged in</span><br><span class="line">root   ttys002                   Sat Nov 21 16:19 - 16:19  (00:00)</span><br><span class="line">root   ttys000                   Sat Nov 21 14:38 - 14:38  (00:00)</span><br><span class="line">diruipu   ttys000                   Sat Nov 21 13:50 - 13:50  (00:00)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-数字</td>
+<td>使用数字作为选项，控制显示条目</td>
+</tr>
+</tbody></table>
+<h4 id="uname-系统信息"><a href="#uname-系统信息" class="headerlink" title="uname 系统信息"></a>uname 系统信息</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">uname</span></span></span><br><span class="line">Darwin</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-s</td>
+<td>内核名称（默认选项）</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>全部</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>CPU 信息</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>主机名</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>内核发行信息（版本号）</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>内核版本信息</td>
+</tr>
+</tbody></table>
+<h4 id="date-时间"><a href="#date-时间" class="headerlink" title="date 时间"></a>date 时间</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">date</span></span></span><br><span class="line">2020年11月24日 星期二 16时28分35秒 CST</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-u</td>
+<td>显示格林尼洛时间（UTC）</td>
+<td></td>
+</tr>
+<tr>
+<td>MMDDhhmm[[CC]YY][.ss]</td>
+<td>设定时间，需要管理员权限。</td>
+<td>date 12292359</td>
+</tr>
+<tr>
+<td></td>
+<td>MM</td>
+<td>月份</td>
+</tr>
+<tr>
+<td></td>
+<td>DD</td>
+<td>天数</td>
+</tr>
+<tr>
+<td></td>
+<td>hh</td>
+<td>小时</td>
+</tr>
+<tr>
+<td></td>
+<td>mm</td>
+<td>分钟</td>
+</tr>
+<tr>
+<td></td>
+<td>CC</td>
+<td>年份前两位</td>
+</tr>
+<tr>
+<td></td>
+<td>YY</td>
+<td>年份后两位</td>
+</tr>
+<tr>
+<td></td>
+<td>ss</td>
+<td>秒钟</td>
+</tr>
+<tr>
+<td></td>
+<td>秒钟、年份为可选</td>
+<td>date 122923592006.59</td>
+</tr>
+<tr>
+<td>+[%X]</td>
+<td>设定显示格式，默认输出格式：</td>
+<td>date +%Y年%m月%d日%A%H:%M:%S%Z</td>
+</tr>
+<tr>
+<td>格式控制</td>
+<td>%n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>格式控制</td>
+<td>%t</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>小时</td>
+<td>%H</td>
+<td>00~23</td>
+</tr>
+<tr>
+<td></td>
+<td>%I</td>
+<td>01~12</td>
+</tr>
+<tr>
+<td></td>
+<td>%k</td>
+<td>0~23</td>
+</tr>
+<tr>
+<td></td>
+<td>%l</td>
+<td>1~12</td>
+</tr>
+<tr>
+<td></td>
+<td>%p</td>
+<td>AM</td>
+</tr>
+<tr>
+<td>分、秒</td>
+<td>%M</td>
+<td>分钟(00~59)</td>
+</tr>
+<tr>
+<td></td>
+<td>%S</td>
+<td>秒(00..61)</td>
+</tr>
+<tr>
+<td></td>
+<td>%T</td>
+<td>hh:mm:ss</td>
+</tr>
+<tr>
+<td></td>
+<td>%r</td>
+<td>hh:mm:ss AM|PM</td>
+</tr>
+<tr>
+<td></td>
+<td>%s</td>
+<td>从 1970年1月1日00:00:00 UTC 到目前为止的秒数</td>
+</tr>
+<tr>
+<td></td>
+<td>%X</td>
+<td>%H:%M:%S</td>
+</tr>
+<tr>
+<td></td>
+<td>%Z</td>
+<td>时区</td>
+</tr>
+<tr>
+<td>星期</td>
+<td>%a</td>
+<td>Sun~Sat</td>
+</tr>
+<tr>
+<td></td>
+<td>%A</td>
+<td>Sunday~Saturday</td>
+</tr>
+<tr>
+<td></td>
+<td>%w</td>
+<td>一周中的第几天 (0~6)</td>
+</tr>
+<tr>
+<td>年份</td>
+<td>%Y</td>
+<td>0000~9999</td>
+</tr>
+<tr>
+<td></td>
+<td>%y</td>
+<td>00~99</td>
+</tr>
+<tr>
+<td>月份</td>
+<td>%m</td>
+<td>01~12</td>
+</tr>
+<tr>
+<td></td>
+<td>%b</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>%h</td>
+<td>Jan~Dec</td>
+</tr>
+<tr>
+<td></td>
+<td>%B</td>
+<td>January~December</td>
+</tr>
+<tr>
+<td>日期</td>
+<td>%c</td>
+<td>完整日期时间</td>
+</tr>
+<tr>
+<td></td>
+<td>%d</td>
+<td>01~31</td>
+</tr>
+<tr>
+<td></td>
+<td>%j</td>
+<td>001~366</td>
+</tr>
+<tr>
+<td></td>
+<td>%x</td>
+<td>本地格式日期</td>
+</tr>
+<tr>
+<td></td>
+<td>%D</td>
+<td>mm&#x2F;dd&#x2F;yy</td>
+</tr>
+<tr>
+<td>一年中的第几周</td>
+<td>%U</td>
+<td>以 Sunday 为一周的第一天</td>
+</tr>
+<tr>
+<td></td>
+<td>%W</td>
+<td>以 Monday 为一周的第一天</td>
+</tr>
+</tbody></table>
+<h4 id="cal-显示日历"><a href="#cal-显示日历" class="headerlink" title="cal  显示日历"></a>cal  显示日历</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">cal</span></span><br><span class="line">      十一月 2020</span><br><span class="line">日 一 二 三 四 五 六</span><br><span class="line"> 1  2  3  4  5  6  7</span><br><span class="line"> 8  9 10 11 12 13 14</span><br><span class="line">15 16 17 18 19 20 21</span><br><span class="line">22 23 24 25 26 27 28</span><br><span class="line">29 30</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><h4 id="ls-路径-显示当前目录文件列表"><a href="#ls-路径-显示当前目录文件列表" class="headerlink" title="ls [路径]  显示当前目录文件列表"></a>ls [路径]  显示当前目录文件列表</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">ls</span></span></span><br><span class="line">Applications                        Library                             Postman                             logs</span><br><span class="line">Desktop                             Movies                              Public                              nacos</span><br><span class="line">Documents                           Music                                                            </span><br><span class="line">Downloads                           Pictures                            </span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>–color</td>
+<td>不同属性以不同颜色显示（默认选项）</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>全部显示</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>显示 inode值</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>详细信息</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>显示文件类型后缀 目录<code>/</code> 链接<code>@</code> 可执行文件<code>*</code> 端口文件<code>=</code> 管道文件&#96;</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>显示隐藏文件</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>递归显示子目录文件列表</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>按文件大小排序</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>按修改时间排序</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>按访问时间排序</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>只显示目录，不递归显示目录下的文件</td>
+</tr>
+</tbody></table>
+<h4 id="cd-目录路径-特殊路径-切换目录"><a href="#cd-目录路径-特殊路径-切换目录" class="headerlink" title="cd [目录路径] | [特殊路径] 切换目录"></a>cd [目录路径] | [特殊路径] 切换目录</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>~</td>
+<td>$HOME 目录（默认值）</td>
+</tr>
+<tr>
+<td>-</td>
+<td>上一次目录</td>
+</tr>
+<tr>
+<td>..</td>
+<td>上一级目录</td>
+</tr>
+<tr>
+<td>.</td>
+<td>当前目录</td>
+</tr>
+</tbody></table>
+<h4 id="pwd-显示当前路径"><a href="#pwd-显示当前路径" class="headerlink" title="pwd 显示当前路径"></a>pwd 显示当前路径</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">pwd</span></span></span><br><span class="line">/Users/diruipu</span><br></pre></td></tr></table></figure>
+
+<h4 id="file-文件名-显示文件类型"><a href="#file-文件名-显示文件类型" class="headerlink" title="file 文件名  显示文件类型"></a>file 文件名  显示文件类型</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">file Desktop</span></span><br><span class="line">Desktop: directory</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-i</td>
+<td>显示 mime类型</td>
+</tr>
+</tbody></table>
+<h4 id="du-路径-计算文件或目录空间占用"><a href="#du-路径-计算文件或目录空间占用" class="headerlink" title="du [路径]  计算文件或目录空间占用"></a>du [路径]  计算文件或目录空间占用</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">du</span> Desktop</span></span><br><span class="line">40    Desktop</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-h</td>
+<td>人性化显示。自动以 G、M、K 为单位显示占用空间大小</td>
+</tr>
+<tr>
+<td>–max-depth&#x3D;数字</td>
+<td>显示目录深度</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>重复计算硬链接文件大小</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>计算符号链接文件大小</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>显示当前目录子目录中的文件</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>显示文件数</td>
+</tr>
+</tbody></table>
+<h4 id="less-文件名-浏览文件"><a href="#less-文件名-浏览文件" class="headerlink" title="less 文件名 浏览文件"></a>less 文件名 浏览文件</h4><h4 id="touch-目标文件-触碰"><a href="#touch-目标文件-触碰" class="headerlink" title="touch 目标文件 触碰"></a>touch 目标文件 触碰</h4><p>触碰，在不修改文件的前提下，更改其时间属性。通常用来创建一个空文件</p>
+<h4 id="mkdir-文件夹-创建文件夹"><a href="#mkdir-文件夹-创建文件夹" class="headerlink" title="mkdir 文件夹 创建文件夹"></a>mkdir 文件夹 创建文件夹</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p 多级目录</td>
+<td>按路径创建多级目录</td>
+</tr>
+<tr>
+<td>-m 数字权限值</td>
+<td>设定权限</td>
+</tr>
+</tbody></table>
+<h4 id="cp-源文件-目标目录-文件"><a href="#cp-源文件-目标目录-文件" class="headerlink" title="cp 源文件 目标目录|文件"></a>cp 源文件 目标目录|文件</h4><p>将源文件复制为目录文件，或者将源文件复制到目标目录。多个源文件使用空格分隔</p>
+<h4 id="cp-源目录-目标目录"><a href="#cp-源目录-目标目录" class="headerlink" title="cp 源目录 目标目录"></a>cp 源目录 目标目录</h4><p>将源目录复制到目标目录中，如果复制多个源目录，需要使用 <strong>-R</strong> 选项</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>相当于 -dpr 选项</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>保留链接</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>强制复制，覆盖目标文件</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>覆盖时询问用户</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>保留修改时间和访问权限</td>
+</tr>
+<tr>
+<td>-r -R</td>
+<td>递归复制（目录&#x3D;&gt;目录）</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>创建链接</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示过程</td>
+</tr>
+</tbody></table>
+<h4 id="rm-目标目录-文件-删除"><a href="#rm-目标目录-文件-删除" class="headerlink" title="rm 目标目录|文件 删除"></a>rm 目标目录|文件 删除</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-r -R</td>
+<td>递归删除（用于删除目录）</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>强制删除（无需确认，直接删除。慎用！）</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>交互式删除（询问用户）</td>
+</tr>
+</tbody></table>
+<h4 id="rmdir-目标目录"><a href="#rmdir-目标目录" class="headerlink" title="rmdir 目标目录"></a>rmdir 目标目录</h4><p>删除目录时，建议您使用“<strong>rm -r</strong>”命令</p>
+<h4 id="mv-源文件-目标目录-文件"><a href="#mv-源文件-目标目录-文件" class="headerlink" title="mv 源文件 目标目录|文件"></a>mv 源文件 目标目录|文件</h4><p>相当于 cp 后删除源文件，也可以作为“重命名”使用。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>强制，覆盖目标文件</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>覆盖时询问用户</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示过程</td>
+</tr>
+</tbody></table>
+<h4 id="ln-源文件-链接"><a href="#ln-源文件-链接" class="headerlink" title="ln 源文件 链接"></a>ln 源文件 链接</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-s</td>
+<td>符号链接</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>强制链接，覆盖目标文件</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>覆盖时询问用户</td>
+</tr>
+</tbody></table>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><h4 id="split-源文件-目标文件名前缀"><a href="#split-源文件-目标文件名前缀" class="headerlink" title="split 源文件 [目标文件名前缀]"></a>split 源文件 [目标文件名前缀]</h4><p>将源文件按一定规则分割成若干个目标文件。默认文件名前缀为 <code>x</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-行数</td>
+<td>按行数分割文件</td>
+</tr>
+<tr>
+<td>-l 行数</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>-b 字节</td>
+<td>按大小分割文件。可以使用 b、k、m 作单位，不指定单位的情况下，默认单位为 b</td>
+</tr>
+<tr>
+<td>-C 字节</td>
+<td>按大小分割文件，并尽量保持每行的完整</td>
+</tr>
+</tbody></table>
+<h4 id="cat-文件名"><a href="#cat-文件名" class="headerlink" title="cat 文件名"></a>cat 文件名</h4><p>输出文件内容。用空格分隔多个文件名</p>
+<p>可以将多个文件内容连接到一起输出。使用重定向合并为一个文件 <strong>cat xaa xab xac &gt; file.split</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-n</td>
+<td>在输出中添加行号</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>在输出中添加行号，空行不编号</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>将两行或以上的空行，合并为一个空行</td>
+</tr>
+</tbody></table>
+<h4 id="sort-o-输出文件-t-分隔字符-起始字段-结束字段-文件"><a href="#sort-o-输出文件-t-分隔字符-起始字段-结束字段-文件" class="headerlink" title="sort [-o 输出文件] [-t 分隔字符] [+起始字段 -结束字段] [文件]"></a>sort [-o 输出文件] [-t 分隔字符] [+起始字段 -结束字段] [文件]</h4><p>对文本内容排序</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-m</td>
+<td>合并文件</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>检查文件是否已按规则排序</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>忽略行首空格字符</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>忽略内容重复行</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>忽略大小写</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>忽略非打印字符</td>
+</tr>
+<tr>
+<td>-M</td>
+<td>作为月份比较</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>按字典顺序排序，按照字母、数字、空格、制表符排序</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>逆序输出</td>
+</tr>
+</tbody></table>
+<h4 id="more-查看文件内容"><a href="#more-查看文件内容" class="headerlink" title="more 查看文件内容"></a>more 查看文件内容</h4><p>查看文件内容，建议使用 less</p>
+<h4 id="diff-文件1-文件2-比较文件"><a href="#diff-文件1-文件2-比较文件" class="headerlink" title="diff 文件1 文件2  比较文件"></a>diff 文件1 文件2  比较文件</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-u [数字]</td>
+<td>统一格式，数字为显示上下文行数</td>
+</tr>
+<tr>
+<td>–unified[&#x3D;数字]</td>
+<td>统一格式，数字为显示上下文行数</td>
+</tr>
+<tr>
+<td>-c [数字]</td>
+<td>上下文格式，数字为显示上下文行数</td>
+</tr>
+<tr>
+<td>–context[&#x3D;数字]</td>
+<td>上下文格式，数字为显示上下文行数</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>ed 命令格式</td>
+</tr>
+<tr>
+<td>–ed</td>
+<td>ed 命令格式</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>RCS 命令格式</td>
+</tr>
+</tbody></table>
+<h4 id="patch"><a href="#patch" class="headerlink" title="patch"></a>patch</h4><p>使用 <strong>diff -uN[r] 旧文件 新文件 &gt; 补丁文件</strong> 命令创建补丁文件。</p>
+<p>在待补丁文件的目录下使用 <strong>patch -p[数字] &lt;补丁文件</strong> 命令打补丁</p>
+<p><strong>-p [数字]</strong> 表示忽略补丁文件中记录的目录，数字为忽略的层数。</p>
+<p><strong>patch -R 已打补丁文件 补丁文件</strong> 将已打补丁文件恢复到原来的状态</p>
+<h4 id="cksum-文件名"><a href="#cksum-文件名" class="headerlink" title="cksum [文件名]"></a>cksum [文件名]</h4><p>计算文件的 CRC值。不指定文件名则从标准输入设备读入数据</p>
+<h4 id="md5sum-文件名"><a href="#md5sum-文件名" class="headerlink" title="md5sum [文件名]"></a>md5sum [文件名]</h4><p>计算文件的 md5值。不指定文件名则从标准输入设备读入数据</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-t</td>
+<td>以文本模式读取</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>以二进制模式读取</td>
+</tr>
+<tr>
+<td>-c md5纪录</td>
+<td>校验 md5纪录 中的文件(使用 md5sum 配合重定向生成纪录文件)</td>
+</tr>
+</tbody></table>
+<h3 id="压缩解压"><a href="#压缩解压" class="headerlink" title="压缩解压"></a>压缩解压</h3><h4 id="tar-c-x-u-r-t-z-j-v-f-归档文件-待打包文件"><a href="#tar-c-x-u-r-t-z-j-v-f-归档文件-待打包文件" class="headerlink" title="tar [-]c|x|u|r|t[z|j][v] -f 归档文件 [待打包文件]"></a>tar [-]c|x|u|r|t[z|j][v] -f 归档文件 [待打包文件]</h4><p>将多个文件打包为一个归档文件，可以在打包的同时进行压缩。支持的格式为 tar（归档）、gz（压缩）、bz2（压缩率更高，比较耗时）</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>操作选项</td>
+<td>-c</td>
+<td>创建</td>
+</tr>
+<tr>
+<td></td>
+<td>-x</td>
+<td>解包</td>
+</tr>
+<tr>
+<td></td>
+<td>-u</td>
+<td>更新</td>
+</tr>
+<tr>
+<td></td>
+<td>-r</td>
+<td>添加</td>
+</tr>
+<tr>
+<td></td>
+<td>-t</td>
+<td>查看</td>
+</tr>
+<tr>
+<td></td>
+<td>-d</td>
+<td>比较压缩包内文件和文件</td>
+</tr>
+<tr>
+<td></td>
+<td>-A</td>
+<td>将 tar 文件添加到归档文件中</td>
+</tr>
+<tr>
+<td>格式选项</td>
+<td>-z</td>
+<td>使用 gz 压缩格式</td>
+</tr>
+<tr>
+<td></td>
+<td>-j</td>
+<td>使用 bz2 压缩格式</td>
+</tr>
+<tr>
+<td>其它</td>
+<td>-v</td>
+<td>显示过程</td>
+</tr>
+<tr>
+<td></td>
+<td>-f 文件名</td>
+<td>归档文件的文件名，使用 <strong><code>-</code></strong> 代表标准输入&#x2F;输出</td>
+</tr>
+<tr>
+<td></td>
+<td>-C 解压路径</td>
+<td>将压缩包中的文件解压到指定目录</td>
+</tr>
+<tr>
+<td></td>
+<td>–exclude&#x3D;文件</td>
+<td>排除文件</td>
+</tr>
+<tr>
+<td></td>
+<td>-P</td>
+<td>使用绝对路径压缩时，保留根目录“&#x2F;”</td>
+</tr>
+<tr>
+<td></td>
+<td>-W</td>
+<td>校验</td>
+</tr>
+<tr>
+<td></td>
+<td>-p</td>
+<td>还原文件权限</td>
+</tr>
+<tr>
+<td></td>
+<td>-w</td>
+<td>询问用户</td>
+</tr>
+<tr>
+<td></td>
+<td>–totals</td>
+<td>统计</td>
+</tr>
+<tr>
+<td></td>
+<td>-T 文件列表</td>
+<td>处理文件列表中的文件</td>
+</tr>
+<tr>
+<td></td>
+<td>-X 文件列表</td>
+<td>排除文件列表中的文件</td>
+</tr>
+</tbody></table>
+<h4 id="7z-7za-子命令-选项-压缩包-文件"><a href="#7z-7za-子命令-选项-压缩包-文件" class="headerlink" title="7z|7za 子命令 [选项] 压缩包 [文件]"></a>7z|7za 子命令 [选项] 压缩包 [文件]</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>子命令</td>
+<td>a</td>
+<td>添加</td>
+</tr>
+<tr>
+<td></td>
+<td>d</td>
+<td>删除</td>
+</tr>
+<tr>
+<td></td>
+<td>e</td>
+<td>解压</td>
+</tr>
+<tr>
+<td></td>
+<td>x</td>
+<td>带路径解压</td>
+</tr>
+<tr>
+<td></td>
+<td>l</td>
+<td>列表查看</td>
+</tr>
+<tr>
+<td></td>
+<td>t</td>
+<td>测试</td>
+</tr>
+<tr>
+<td></td>
+<td>u</td>
+<td>更新</td>
+</tr>
+<tr>
+<td>选项</td>
+<td>-m 压缩方式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>-m0&#x3D;压缩算法</td>
+<td>默认使用 lzma</td>
+</tr>
+<tr>
+<td></td>
+<td>-mx&#x3D;数字</td>
+<td>1~9 压缩级别</td>
+</tr>
+<tr>
+<td></td>
+<td>-mfb&#x3D;64</td>
+<td>number of fast bytes for LZMA &#x3D; 64</td>
+</tr>
+<tr>
+<td></td>
+<td>-md&#x3D;字典大小</td>
+<td>设置字典大小，例如 -md&#x3D;32m</td>
+</tr>
+<tr>
+<td></td>
+<td>-ms&#x3D;on|off</td>
+<td>是否固实压缩</td>
+</tr>
+<tr>
+<td></td>
+<td>-o输出目录</td>
+<td>设置输出目录</td>
+</tr>
+<tr>
+<td></td>
+<td>-p密码</td>
+<td>使用密码</td>
+</tr>
+<tr>
+<td></td>
+<td>-r数字</td>
+<td>递归，使用数字定义递归子目录的深度</td>
+</tr>
+<tr>
+<td></td>
+<td>-sfx[模块名称]</td>
+<td>使用自解压模块</td>
+</tr>
+<tr>
+<td></td>
+<td>-si</td>
+<td>从标准输入设备读入数据</td>
+</tr>
+<tr>
+<td></td>
+<td>-so</td>
+<td>将数据写入标准输出设备</td>
+</tr>
+<tr>
+<td></td>
+<td>-y</td>
+<td>所有询问均回答 Yes</td>
+</tr>
+<tr>
+<td></td>
+<td>-w路径</td>
+<td>设置工作目录</td>
+</tr>
+</tbody></table>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><h4 id="whereis-程序名称"><a href="#whereis-程序名称" class="headerlink" title="whereis 程序名称"></a>whereis 程序名称</h4><p>查找软件的安装路径</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>只查找二进制文件</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>只查找帮助文件</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>只查找源代码</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>排除指定类型文件</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>只显示文件名</td>
+</tr>
+<tr>
+<td>-B 目录</td>
+<td>在指定目录下查找二进制文件</td>
+</tr>
+<tr>
+<td>-M 目录</td>
+<td>在指定目录下查找帮助文件</td>
+</tr>
+<tr>
+<td>-S 目录</td>
+<td>在指定目录下查找源代码</td>
+</tr>
+</tbody></table>
+<h4 id="locate-文件名称"><a href="#locate-文件名称" class="headerlink" title="locate 文件名称"></a>locate 文件名称</h4><p>在文件索引数据库中搜索文件</p>
+<p><strong><code>updatedb</code></strong> 更新文件索引数据库</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d 数据库路径</td>
+<td>搜索指定数据库</td>
+</tr>
+</tbody></table>
+<h4 id="find-路径-表达式"><a href="#find-路径-表达式" class="headerlink" title="find [路径] 表达式"></a>find [路径] 表达式</h4><p>查找文件</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-name 表达式</td>
+<td>根据文件名查找文件</td>
+</tr>
+<tr>
+<td>-iname 表达式</td>
+<td>根据文件名查找文件，忽略大小写</td>
+</tr>
+<tr>
+<td>-path 表达式</td>
+<td>根据路径查找文件</td>
+</tr>
+<tr>
+<td>-ipath 表达式</td>
+<td>根据路径查找文件，忽略大小写</td>
+</tr>
+<tr>
+<td>-amin 分钟</td>
+<td>过去N分钟内访问过的文件</td>
+</tr>
+<tr>
+<td>-atime 天数</td>
+<td>过去N天内访问过的文件</td>
+</tr>
+<tr>
+<td>-cmin 分钟</td>
+<td>过去N分钟内修改过的文件</td>
+</tr>
+<tr>
+<td>-ctime 天数</td>
+<td>过去N天内修改过的文件</td>
+</tr>
+<tr>
+<td>-anewer 参照文件</td>
+<td>比参照文件更晚被读取过的文件</td>
+</tr>
+<tr>
+<td>-cnewer 参照文件</td>
+<td>比参照文件更晚被修改过的文件</td>
+</tr>
+<tr>
+<td>-size 大小</td>
+<td>根据文件大小查找文件，单位 b c w k M G</td>
+</tr>
+<tr>
+<td>-type 文件类型</td>
+<td>根据文件类型查找文件。b 块设备 c 字符设备 d 目录 p 管道文件 f 普通文件 l 链接 s 端口文件</td>
+</tr>
+<tr>
+<td>-user 用户名</td>
+<td>按归属用户查找文件</td>
+</tr>
+<tr>
+<td>-uid 用户编号</td>
+<td>按用户编号查找文件</td>
+</tr>
+<tr>
+<td>-group 群组名</td>
+<td>按归属群组查找文件</td>
+</tr>
+<tr>
+<td>-gid 群组编号</td>
+<td>按群组编号查找文件</td>
+</tr>
+<tr>
+<td>-empty</td>
+<td>查找空文件</td>
+</tr>
+</tbody></table>
+<h4 id="grep-字符串-正则表达式-文件名-标准输入"><a href="#grep-字符串-正则表达式-文件名-标准输入" class="headerlink" title="grep 字符串|正则表达式 文件名|标准输入"></a>grep 字符串|正则表达式 文件名|标准输入</h4><p>在文件中搜索内容</p>
+<h3 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h3><h4 id="chmod-权限表达式-文件-目录"><a href="#chmod-权限表达式-文件-目录" class="headerlink" title="chmod 权限表达式 文件|目录"></a>chmod 权限表达式 文件|目录</h4><p>更改文件的权限。权限的表达式可以使用 3位8进制数字 表示，或者使用 augo +-&#x3D; rxw-s 来表示</p>
+<p>a 所有用户 u 归属用户 g 归属群组 o 其它用户<br>&#x3D; 具有权限 + 增加权限 - 去除权限<br>r 可读权限 w 可写权限 x 可执行权限 </p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-R</td>
+<td>递归</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示过程</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>类似“-v”，仅显示更改部分</td>
+</tr>
+<tr>
+<td>–reference&#x3D;参照文件或目录</td>
+<td>以指定文件为参照更改权限</td>
+</tr>
+</tbody></table>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod -R a+x path</span><br><span class="line">chmod -Rv 755 path    </span><br></pre></td></tr></table></figure>
+
+<h4 id="chown-归属用户-归属群组-文件-目录"><a href="#chown-归属用户-归属群组-文件-目录" class="headerlink" title="chown 归属用户[:归属群组] 文件|目录"></a>chown 归属用户[:归属群组] 文件|目录</h4><p>更改文件的归属用户。可以使用用户名或者用户编号</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-R</td>
+<td>递归</td>
+</tr>
+<tr>
+<td align="left">-v</td>
+<td>显示过程</td>
+</tr>
+<tr>
+<td align="left">-c</td>
+<td>类似“-v”，仅显示更改部分</td>
+</tr>
+<tr>
+<td align="left">–reference&#x3D;参照文件或目录</td>
+<td>以指定文件为参照更改权限</td>
+</tr>
+</tbody></table>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chown user:admin path</span><br><span class="line">chown -R user.admin path</span><br><span class="line">chown user path    </span><br></pre></td></tr></table></figure>
+
+<h4 id="chgrp-归属群组-文件-目录"><a href="#chgrp-归属群组-文件-目录" class="headerlink" title="chgrp 归属群组 文件|目录"></a>chgrp 归属群组 文件|目录</h4><p>更改文件的归属群组。可以使用群组名或者群组编号,选项同上</p>
+<h4 id="SUID、SGID、Sticky-bit"><a href="#SUID、SGID、Sticky-bit" class="headerlink" title="SUID、SGID、Sticky bit"></a>SUID、SGID、Sticky bit</h4><p>例如：用户自行设定密码。出于安全方面的考虑， <code>/etc/shadow</code> 只能由 root用户 直接修改。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw------- root root /etc/shadow    </span><br></pre></td></tr></table></figure>
+
+<p>这个时候，可以为程序 &#x2F;usr&#x2F;bin&#x2F;passwd 设置 SUID，当普通用户执行“<strong>passwd</strong>”命令时，便能够以该程序归属用户 root 的身份修改 &#x2F;etc&#x2F;shadow 文件。而“passwd”程序自身带有身份验证机制，不能通过验证时拒绝执行，从而保证了安全。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -l /usr/bin/passwd</span><br><span class="line">-r-s--x--x root root /usr/bin/passwd    </span><br></pre></td></tr></table></figure>
+
+<p>我们发现，归属用户的可执行权限位使用 <strong>s</strong> ，表示 SUID。同样，归属群组的可执行权限位使用 <strong>s</strong> ，表示 SGID。任何用户或群组都拥有 “其它用户” 的权限，所以不需要以 其它用户 身份执行文件，其它用户的可执行权限位便不会出现 <strong>s</strong> 。该权限位可能出现的属性为 <strong>t</strong> ，也就是粘着位 Sticky bit。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -ld /tmp</span><br><span class="line">drwxrwxrwt root root /tmp    </span><br></pre></td></tr></table></figure>
+
+<p>粘着位表示任何用户都可能具有写权限，但只有该归属用户或 root用户 才能够删除</p>
+<p>SUID、SGID、Sticky bit 也可以像权限一样，使用一个八进制数表示，如下：</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>SUID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>SGID</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sticky bit</td>
+</tr>
+</tbody></table>
+<h4 id="lsattr-路径"><a href="#lsattr-路径" class="headerlink" title="lsattr [路径]"></a>lsattr [路径]</h4><p>查看文件的特殊属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>全部显示</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>只显示目录</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>递归</td>
+</tr>
+</tbody></table>
+<p>特殊属性包括：</p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>仅供附加用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>b</td>
+<td>不更新最后存取时间</td>
+</tr>
+<tr>
+<td>c</td>
+<td>压缩后存放</td>
+</tr>
+<tr>
+<td>d</td>
+<td>排除在转储操作之外</td>
+</tr>
+<tr>
+<td>i</td>
+<td>不得任意更动文件或目录</td>
+</tr>
+<tr>
+<td>s</td>
+<td>保密性删除文件或目录</td>
+</tr>
+<tr>
+<td>S</td>
+<td>即时更新文件或目录</td>
+</tr>
+<tr>
+<td>u</td>
+<td>预防意外删除</td>
+</tr>
+</tbody></table>
+<h4 id="chattr-x3D-属性-路径"><a href="#chattr-x3D-属性-路径" class="headerlink" title="chattr +|-|&#x3D;属性 路径"></a>chattr +|-|&#x3D;属性 路径</h4><p>更改文件特殊属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-R</td>
+<td>递归</td>
+</tr>
+<tr>
+<td>-V</td>
+<td>显示过程</td>
+</tr>
+</tbody></table>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><p>root 用户为根用户,也就是系统管理员,拥有全部权限</p>
+<p>一个用户只能拥有一个 群组编号 ，但是还可以归属于其它附加群组</p>
+<p>用户管理的重要配置文件：</p>
+<table>
+<thead>
+<tr>
+<th>&#x2F;etc&#x2F;passwd</th>
+<th>用户名 密码位 用户编号 归属群组编号 姓名 $HOME目录 登录Shell</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;etc&#x2F;shadow</td>
+<td>用户名 已加密密码 密码改动信息 密码策略</td>
+</tr>
+<tr>
+<td>&#x2F;etc&#x2F;group</td>
+<td>群组名 密码位 群组编号 组内用户</td>
+</tr>
+<tr>
+<td>&#x2F;etc&#x2F;gshadow</td>
+<td>群组密码相关文件</td>
+</tr>
+<tr>
+<td>&#x2F;etc&#x2F;sudoers</td>
+<td>用户名 权限定义 权限</td>
+</tr>
+</tbody></table>
+<ul>
+<li>请使用“<strong>visudo</strong>”命令修改<code>/etc/sudoers</code>，而不要直接编辑</li>
+<li>可以使用 <strong>pwconv</strong> 命令创建影子密码，将 <code>/etc/passwd</code> 文件中的密码转换到 <code>/etc/shadow</code> 文件</li>
+</ul>
+<h4 id="su-用户名"><a href="#su-用户名" class="headerlink" title="su [用户名]"></a>su [用户名]</h4><p>切换到其它用户，默认切换到 root用户。提示密码为目标用户密码</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>快速切换，忽略配置文件</td>
+</tr>
+<tr>
+<td>- | -l</td>
+<td>重新登录</td>
+</tr>
+<tr>
+<td>-m |-p</td>
+<td>不更改环境变量</td>
+</tr>
+<tr>
+<td>-c 命令</td>
+<td>切换后执行命令，并退出切换</td>
+</tr>
+</tbody></table>
+<h4 id="sudo-命令"><a href="#sudo-命令" class="headerlink" title="sudo 命令"></a>sudo 命令</h4><p>以其它用户的身份执行命令，默认以 root 的身份执行。提示密码为当前用户密码</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-s</td>
+<td>切换为 root shell</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>切换为 root shell，并初始化</td>
+</tr>
+<tr>
+<td>-u 用户名|用户编号</td>
+<td>执行命令的身份</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>显示自己的权限</td>
+</tr>
+</tbody></table>
+<h4 id="passwd-用户名"><a href="#passwd-用户名" class="headerlink" title="passwd [用户名]"></a>passwd [用户名]</h4><p>设定用户密码</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d</td>
+<td>清除密码</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>锁定账户</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>使密码过期，在下次登录时更改密码</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>显示密码认证信息</td>
+</tr>
+<tr>
+<td>-x 天数</td>
+<td>密码过期，最大使用时间</td>
+</tr>
+<tr>
+<td>-n 天数</td>
+<td>冻结密码，最小使用时间</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>更改 登录Shell</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>更改用户信息</td>
+</tr>
+</tbody></table>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">passwd</span></span><br><span class="line">Changing password for user</span><br><span class="line">(current) UNIX password:      #原密码</span><br><span class="line">Enter new UNIX password:      #新密码</span><br><span class="line">Retype new UNIX password:     #确认新密码    </span><br></pre></td></tr></table></figure>
+
+<h4 id="gpasswd-群组名"><a href="#gpasswd-群组名" class="headerlink" title="gpasswd 群组名"></a>gpasswd 群组名</h4><p>更改群组</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d 用户名</td>
+<td>将用户从群组中删除</td>
+</tr>
+<tr>
+<td>-a 用户名</td>
+<td>将用户加入群组</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>删除密码</td>
+</tr>
+<tr>
+<td>-A 用户名</td>
+<td>将用户设置为群组管理员(群组管理员或 root 才可以使用 gpasswd 命令）</td>
+</tr>
+<tr>
+<td>-M 用户1,用户2……</td>
+<td>设置群组成员</td>
+</tr>
+</tbody></table>
+<h4 id="chsh-s-Shell-用户名"><a href="#chsh-s-Shell-用户名" class="headerlink" title="chsh -s Shell [用户名]"></a>chsh -s Shell [用户名]</h4><p>更改登录 Shell</p>
+<h4 id="usermod-用户名"><a href="#usermod-用户名" class="headerlink" title="usermod 用户名"></a>usermod 用户名</h4><p>修改用户账号</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d 目录</td>
+<td>设定 $HOME 目录</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>设定 $HOME 目录时自动建立该目录</td>
+</tr>
+<tr>
+<td>-s Shell</td>
+<td>修改用户 登录Shell</td>
+</tr>
+<tr>
+<td>-l 新登录名</td>
+<td>修改为新登录名</td>
+</tr>
+<tr>
+<td>-u 用户编号</td>
+<td>修改用户编号</td>
+</tr>
+<tr>
+<td>g 群组名</td>
+<td>修改用户归属群组</td>
+</tr>
+<tr>
+<td>-G 群组名</td>
+<td>修改用户归属辅组</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>锁定帐户</td>
+</tr>
+<tr>
+<td>-U</td>
+<td>解除锁定</td>
+</tr>
+<tr>
+<td>-e 过期时间</td>
+<td>设定用户账号过期时间</td>
+</tr>
+<tr>
+<td>-f 缓冲天数</td>
+<td>设定密码过期后多长时间关闭账号</td>
+</tr>
+<tr>
+<td>-c 字符串</td>
+<td>修改用户备注</td>
+</tr>
+</tbody></table>
+<h4 id="useradd-用户名"><a href="#useradd-用户名" class="headerlink" title="useradd 用户名"></a>useradd 用户名</h4><p>新建用户</p>
+<ul>
+<li>新建用户规则保存于 <code>/etc/login.defs</code> 文件中</li>
+<li>新建用户默认文件保存于 <code>/etc/skel/</code> 目录中。新建用户时，系统自动拷贝此目录下的文件至新建用户的 <code>$HOME</code> 目录</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d 目录</td>
+<td>设定 $HOME 目录</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>自动建立 $HOME 目录</td>
+</tr>
+<tr>
+<td>-M</td>
+<td>不自动建立 $HOME 目录</td>
+</tr>
+<tr>
+<td>-s Shell</td>
+<td>设定用户 登录Shell</td>
+</tr>
+<tr>
+<td>-u 用户编号</td>
+<td>设定用户编号</td>
+</tr>
+<tr>
+<td>-g 群组名</td>
+<td>设定用户归属群组</td>
+</tr>
+<tr>
+<td>-G 群组名</td>
+<td>设定用户归属附加群组</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>不建立以用户名为名称的群组</td>
+</tr>
+<tr>
+<td>-e 过期时间</td>
+<td>设定用户账号过期时间</td>
+</tr>
+<tr>
+<td>-f 缓冲天数</td>
+<td>设定密码过期后多长时间关闭账号</td>
+</tr>
+<tr>
+<td>-c 字符串</td>
+<td>设定用户备注</td>
+</tr>
+<tr>
+<td>-D [表达式]</td>
+<td>更改预设值 （预设值保存于 &#x2F;etc&#x2F;default&#x2F;useradd 文件中）</td>
+</tr>
+</tbody></table>
+<h4 id="userdel-用户名"><a href="#userdel-用户名" class="headerlink" title="userdel 用户名"></a>userdel 用户名</h4><p>删除用户</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-r</td>
+<td>删除用户相关文件和目录</td>
+</tr>
+</tbody></table>
+<h4 id="id-用户名"><a href="#id-用户名" class="headerlink" title="id [用户名]"></a>id [用户名]</h4><p>显示用户 用户编号 群组编号 归属附加群组</p>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><p>进程一般分为批处理进程、交互进程和守护进程三类。</p>
+<p>守护进程总是活跃，在系统启动时通过脚本自动启动，或由 root 启动，通常在后台运行。</p>
+<p>一个进程可以拥有子进程。当父进程终止时，它的子进程也随之终止；而子进程终止时，父进程通常可以继续运行。</p>
+<p>init 进程为根进程，所有进程都是它的子进程</p>
+<h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h4><p>显示进程信息，选项可省略 “**<code>-</code>**”</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>aux</td>
+<td>以 BSD风格 显示进程 <strong>常用</strong></td>
+</tr>
+<tr>
+<td>-efH</td>
+<td>以 SystemV风格 显示进程</td>
+</tr>
+<tr>
+<td>-e | -A</td>
+<td>显示所有进程</td>
+</tr>
+<tr>
+<td>a</td>
+<td>显示终端上所有用户的进程</td>
+</tr>
+<tr>
+<td>x</td>
+<td>显示无终端进程</td>
+</tr>
+<tr>
+<td>u</td>
+<td>显示详细信息</td>
+</tr>
+<tr>
+<td>f</td>
+<td>树状显示</td>
+</tr>
+<tr>
+<td>w</td>
+<td>完整显示信息</td>
+</tr>
+<tr>
+<td>l</td>
+<td>显示长列表</td>
+</tr>
+</tbody></table>
+<p>输出字段</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>USER</td>
+<td>进程所有者</td>
+<td></td>
+</tr>
+<tr>
+<td>PID</td>
+<td>进程编号</td>
+<td></td>
+</tr>
+<tr>
+<td>PPID</td>
+<td>父进程编号</td>
+<td></td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>CPU 占用率</td>
+<td></td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>内存占用率</td>
+<td></td>
+</tr>
+<tr>
+<td>NI</td>
+<td>进程优先级。数值越大，占用 CPU 时间越少</td>
+<td></td>
+</tr>
+<tr>
+<td>VSZ</td>
+<td>进程虚拟大小</td>
+<td></td>
+</tr>
+<tr>
+<td>RSS</td>
+<td>页面文件占用</td>
+<td></td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>终端编号</td>
+<td></td>
+</tr>
+<tr>
+<td>STAT</td>
+<td>进程状态</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>D</td>
+<td>不可中断</td>
+</tr>
+<tr>
+<td></td>
+<td>R</td>
+<td>正在运行，或在队列中的进程</td>
+</tr>
+<tr>
+<td></td>
+<td>S</td>
+<td>处于休眠状态</td>
+</tr>
+<tr>
+<td></td>
+<td>T</td>
+<td>停止或被追踪</td>
+</tr>
+<tr>
+<td></td>
+<td>Z</td>
+<td>僵尸进程</td>
+</tr>
+<tr>
+<td></td>
+<td>X</td>
+<td>死掉的进程</td>
+</tr>
+<tr>
+<td></td>
+<td>&lt;</td>
+<td>高优先级</td>
+</tr>
+<tr>
+<td></td>
+<td>N</td>
+<td>低优先级</td>
+</tr>
+<tr>
+<td></td>
+<td>L</td>
+<td>有些页被锁进内存</td>
+</tr>
+<tr>
+<td></td>
+<td>s</td>
+<td>包含子进程</td>
+</tr>
+<tr>
+<td></td>
+<td>+</td>
+<td>位于后台的进程组</td>
+</tr>
+<tr>
+<td></td>
+<td>l</td>
+<td>多线程，克隆线程</td>
+</tr>
+</tbody></table>
+<h4 id="pstree-进程编号-用户"><a href="#pstree-进程编号-用户" class="headerlink" title="pstree [ 进程编号 | 用户 ]"></a>pstree [ 进程编号 | 用户 ]</h4><p>树状显示进程信息。可选择显示某用户的进程或从某进程编号开始的进程</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示完整命令及选项</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>完全显示重复进程</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>显示进程编号，隐含-c</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>按进程编号排列进程</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>显示进程所有者</td>
+</tr>
+<tr>
+<td>-h</td>
+<td></td>
+</tr>
+<tr>
+<td>-H 进程编号</td>
+<td>高亮显示进程编号指定的进程及其祖先</td>
+</tr>
+</tbody></table>
+<h4 id="pgrep-进程名"><a href="#pgrep-进程名" class="headerlink" title="pgrep 进程名"></a>pgrep 进程名</h4><p>显示进程编号</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-l</td>
+<td>显示进程名和进程编号</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>进程起始编号</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>进程终止编号</td>
+</tr>
+</tbody></table>
+<h4 id="kill-信号代码-进程编号"><a href="#kill-信号代码-进程编号" class="headerlink" title="kill [信号代码] 进程编号"></a>kill [信号代码] 进程编号</h4><p>根据进程编号向进程发送信号，常用来结束进程，默认信号为 -9</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-l [信号代码]</td>
+<td>显示、翻译信号代码</td>
+</tr>
+<tr>
+<td>-9 | -KILL</td>
+<td>发送 kill 信号,退出</td>
+</tr>
+<tr>
+<td>-6 | -ABRT</td>
+<td>发送 abort 信号,退出</td>
+</tr>
+<tr>
+<td>-15 | -TERM</td>
+<td>发送 Termination 信号</td>
+</tr>
+<tr>
+<td>-1 | -HUP</td>
+<td>挂起</td>
+</tr>
+<tr>
+<td>-2 | -INT</td>
+<td>从键盘中断，相当于 Ctrl+c</td>
+</tr>
+<tr>
+<td>-3 | -QUIT</td>
+<td>从键盘退出，相当于 Ctrl+d</td>
+</tr>
+<tr>
+<td>-4 | -ILL</td>
+<td>非法指令</td>
+</tr>
+<tr>
+<td>-11 | -SEGV</td>
+<td>内存错误</td>
+</tr>
+<tr>
+<td>-13 | -PIPE</td>
+<td>破坏管道</td>
+</tr>
+<tr>
+<td>-14 | -ALRM</td>
+<td></td>
+</tr>
+<tr>
+<td>-STOP</td>
+<td>停止进程，但不结束</td>
+</tr>
+<tr>
+<td>-CONT</td>
+<td>继续运行已停止的进程</td>
+</tr>
+<tr>
+<td>-9 | -1</td>
+<td>结束当前用户的所有进程</td>
+</tr>
+</tbody></table>
+<h4 id="pkill-信号代码-进程名称"><a href="#pkill-信号代码-进程名称" class="headerlink" title="pkill [信号代码] 进程名称"></a>pkill [信号代码] 进程名称</h4><p>结束进程族。如果结束单个进程，请用 kill</p>
+<h4 id="xkill"><a href="#xkill" class="headerlink" title="xkill"></a>xkill</h4><p>在图形界面中点杀进程。执行此命令后，鼠标指针变为骷髅图案（一定看过《加勒比海盗》吧）。在窗口中点击左键杀死进程，右键取消</p>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p>动态、交互式进程管理器</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>参数</th>
+<th>具体作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动选项</td>
+<td>-b</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>-c</td>
+<td>显示进程启动状态，包括选项、参数、操作对象等；而不只是进程名</td>
+</tr>
+<tr>
+<td></td>
+<td>-d 秒</td>
+<td>刷新频率。 -d 5，表示5秒刷新一次</td>
+</tr>
+<tr>
+<td></td>
+<td>-n 次</td>
+<td>刷新次数，然后退出。 -n 5，表示刷新5次后退出</td>
+</tr>
+<tr>
+<td></td>
+<td>-i</td>
+<td>禁止显示空闲进程或僵尸进程</td>
+</tr>
+<tr>
+<td></td>
+<td>-p 进程编号</td>
+<td>仅监视指定进程的编号</td>
+</tr>
+<tr>
+<td></td>
+<td>-s</td>
+<td>安全模式运行，禁用一些交互指令</td>
+</tr>
+<tr>
+<td></td>
+<td>-S</td>
+<td>累积模式，输出每个进程的总的 CPU 时间，包括已死的子进程</td>
+</tr>
+<tr>
+<td>交互命令</td>
+<td>space</td>
+<td>立即刷新</td>
+</tr>
+<tr>
+<td></td>
+<td>k</td>
+<td>交互式杀死进程，提示输入进程编号 （默认发送信号15）</td>
+</tr>
+<tr>
+<td></td>
+<td>r</td>
+<td>设定 renice，提示输入进程编号和 renice值</td>
+</tr>
+<tr>
+<td></td>
+<td>s</td>
+<td>改变两次刷新时间间隔，以秒为单位</td>
+</tr>
+<tr>
+<td></td>
+<td>n</td>
+<td>设定显示进程数， 0 为不作限制</td>
+</tr>
+<tr>
+<td></td>
+<td>i</td>
+<td>隐藏空闲进程和僵尸进程</td>
+</tr>
+<tr>
+<td></td>
+<td>S</td>
+<td>切换到累积时间模式</td>
+</tr>
+<tr>
+<td></td>
+<td>l</td>
+<td>开关，在顶部显示 uptime 信息</td>
+</tr>
+<tr>
+<td></td>
+<td>t</td>
+<td>开关，在顶部显示 进程和 CPU 状态</td>
+</tr>
+<tr>
+<td></td>
+<td>m</td>
+<td>开关，在顶部显示 free 信息</td>
+</tr>
+<tr>
+<td></td>
+<td>c</td>
+<td>显示方式切换： 进程名&#x2F;进程启动状态</td>
+</tr>
+<tr>
+<td></td>
+<td>A</td>
+<td>按进程启动顺序进行排序。由新到旧</td>
+</tr>
+<tr>
+<td></td>
+<td>M</td>
+<td>按内存占用排序。由大到小</td>
+</tr>
+<tr>
+<td></td>
+<td>N</td>
+<td>以进程编号排序。由大到小</td>
+</tr>
+<tr>
+<td></td>
+<td>P</td>
+<td>按 CPU 占用排序。由大到小</td>
+</tr>
+<tr>
+<td></td>
+<td>T</td>
+<td>按时间／累积时间排序</td>
+</tr>
+<tr>
+<td></td>
+<td>f|F</td>
+<td>设定显示字段。设定完成后空格退出</td>
+</tr>
+<tr>
+<td></td>
+<td>o|O</td>
+<td>设定显示字段的排序。大写向前移动，小写向后移动，空格退出</td>
+</tr>
+<tr>
+<td></td>
+<td>h|?</td>
+<td>显示有关安全模式和累积模式的帮助信息</td>
+</tr>
+<tr>
+<td></td>
+<td>W</td>
+<td>把当前的配置写到 ~&#x2F;.toprc 中</td>
+</tr>
+</tbody></table>
+<h4 id="renice-优先级-进程"><a href="#renice-优先级-进程" class="headerlink" title="renice 优先级 进程"></a>renice 优先级 进程</h4><p>重新设定进程优先级（通常无此必要）</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>优先级表达式</td>
+<td>+|-|&#x3D; nice值</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>nice 取值范围</td>
+<td>-20~19</td>
+</tr>
+<tr>
+<td>进程表达式</td>
+<td>-p 进程编号</td>
+<td>通过进程编号进行设定</td>
+</tr>
+<tr>
+<td></td>
+<td>-g 进程群组编号</td>
+<td>通过进程群组编号</td>
+</tr>
+<tr>
+<td></td>
+<td>-u 用户编号</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="nohup-命令-选项"><a href="#nohup-命令-选项" class="headerlink" title="nohup 命令 [选项]"></a>nohup 命令 [选项]</h4><p>将任务提交到后台，输出附加到 <code>~/nohup.out</code> 文件。即便用户退出登录，提交的命令仍继续执行。</p>
+<h5 id="命令-amp"><a href="#命令-amp" class="headerlink" title="命令 &amp;"></a>命令 &amp;</h5><p>背景执行此命令，如果用户退出登录，则命令停止执行</p>
+<h5 id="命令1-命令2-……"><a href="#命令1-命令2-……" class="headerlink" title="命令1 ; 命令2 ; ……"></a>命令1 ; 命令2 ; ……</h5><p>命令队列，从左向右，依次执行以 <strong><code>;</code></strong> 分隔的命令</p>
+<h5 id="命令1-amp-amp-命令2-amp-amp-……"><a href="#命令1-amp-amp-命令2-amp-amp-……" class="headerlink" title="命令1 &amp;&amp; 命令2 &amp;&amp; ……"></a>命令1 &amp;&amp; 命令2 &amp;&amp; ……</h5><p>命令队列，从左向右，依次执行以 <strong><code>&amp;&amp;</code></strong> 分隔的命令。前一个命令执行成功，后一个命令才能执行</p>
+<h4 id="Ctrl-z"><a href="#Ctrl-z" class="headerlink" title="Ctrl+z"></a>Ctrl+z</h4><p>挂起当前任务</p>
+<h4 id="jobs"><a href="#jobs" class="headerlink" title="jobs"></a>jobs</h4><p>显示背景任务</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-l</td>
+<td>显示完整信息</td>
+</tr>
+</tbody></table>
+<h4 id="bg-任务编号"><a href="#bg-任务编号" class="headerlink" title="bg [任务编号]"></a>bg [任务编号]</h4><p>将挂起的任务背景执行</p>
+<h4 id="fg-任务编号"><a href="#fg-任务编号" class="headerlink" title="fg [任务编号]"></a>fg [任务编号]</h4><p>将背景任务调到前台执行</p>
+<h3 id="磁盘和内存管理"><a href="#磁盘和内存管理" class="headerlink" title="磁盘和内存管理"></a>磁盘和内存管理</h3><p>Linux 中，设备用<code>/dev/</code>目录下的文件表示。例如</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/dev/hda1 第一块硬盘的第一主分区</span><br><span class="line">/dev/hdb5 第二块硬盘的第一逻辑分区</span><br><span class="line">/dev/sda4 第一块 SATA 硬盘的第四主分区，或者扩展分区</span><br><span class="line">/dev/null 黑洞设备    </span><br></pre></td></tr></table></figure>
+
+<h4 id="mount-设备文件-挂载路径"><a href="#mount-设备文件-挂载路径" class="headerlink" title="mount 设备文件 [挂载路径]"></a>mount 设备文件 [挂载路径]</h4><p>挂载文件系统</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-t</td>
+<td>指定文件系统的类型</td>
+<td>通常不必指定，mount 自动检测</td>
+</tr>
+<tr>
+<td>常见类型</td>
+<td>reiserfs</td>
+<td>ReiserFS 3.6版</td>
+</tr>
+<tr>
+<td></td>
+<td>xfs</td>
+<td>SGI 技术</td>
+</tr>
+<tr>
+<td></td>
+<td>jfs</td>
+<td>IBM 技术</td>
+</tr>
+<tr>
+<td></td>
+<td>ext3</td>
+<td>Linux 传统文件系统</td>
+</tr>
+<tr>
+<td></td>
+<td>vfat</td>
+<td>fat fat32</td>
+</tr>
+<tr>
+<td></td>
+<td>ext2</td>
+<td>Linux 传统文件系统，不带日志</td>
+</tr>
+<tr>
+<td></td>
+<td>ntfs</td>
+<td>WINNT</td>
+</tr>
+<tr>
+<td></td>
+<td>iso9660</td>
+<td>光盘</td>
+</tr>
+<tr>
+<td></td>
+<td>smbfs</td>
+<td>Windows 文件共享</td>
+</tr>
+<tr>
+<td>-o [选项1] [选项2] …..</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>选项</td>
+<td>loop</td>
+<td>环设备。光盘、ISO 映像文件等，通常用于挂载映像文件（而不是设备文件）</td>
+</tr>
+<tr>
+<td></td>
+<td>bind</td>
+<td>绑定。将一个目录（而不是设备文件）挂载到另一个目录</td>
+</tr>
+<tr>
+<td></td>
+<td>ro | rw</td>
+<td>只读 readonly；可读写 read-write</td>
+</tr>
+<tr>
+<td></td>
+<td>sync | async</td>
+<td>同步模式|异步模式。决定修改是否立即写入文件系统</td>
+</tr>
+<tr>
+<td></td>
+<td>atime | noattime</td>
+<td>读取时是否修改访问时间。对于写入敏感设备，例如闪存、软盘，建议使用 noatime</td>
+</tr>
+<tr>
+<td></td>
+<td>auto | noauto</td>
+<td>自动挂载模式</td>
+</tr>
+<tr>
+<td></td>
+<td>exec | noexec</td>
+<td>是否允许执行</td>
+</tr>
+<tr>
+<td></td>
+<td>defaults</td>
+<td>使用预设的选项 rw, suid, dev, exec, auto, nouser, async</td>
+</tr>
+<tr>
+<td></td>
+<td>iocharset&#x3D;UTF-8</td>
+<td>指定字符集，可简写为 utf8</td>
+</tr>
+<tr>
+<td></td>
+<td>codepage&#x3D;936</td>
+<td>指定代码页，可简写为 cp936 西文系统代码页为 437</td>
+</tr>
+<tr>
+<td></td>
+<td>umask&#x3D;权限掩码</td>
+<td>设定权限掩码</td>
+</tr>
+<tr>
+<td></td>
+<td>uid&#x3D;用户编号</td>
+<td>设定归属用户</td>
+</tr>
+<tr>
+<td></td>
+<td>gid&#x3D;群组编号</td>
+<td>设定归属群组</td>
+</tr>
+<tr>
+<td></td>
+<td>remount</td>
+<td>以不同选项重新挂载</td>
+</tr>
+<tr>
+<td></td>
+<td>-L 卷标</td>
+<td>挂载带有特殊卷标的分区</td>
+</tr>
+</tbody></table>
+<p>权限掩码&#x3D;777-目标权限（三位） | 7777-目标权限（四位）</p>
+<p>假如权限掩码为 022 ，则目标权限为 755 rwxr-xr-x</p>
+<p>可以使用 <strong>umask</strong> 命令设置权限掩码</p>
+<blockquote>
+<p>挂载 NTFS 分区时请使用 <strong>utf8</strong> 选项；挂载 FAT 分区时请使用 <strong>iocharset&#x3D;utf8,codepage&#x3D;936</strong> 选项，以避免乱码</p>
+</blockquote>
+<p><strong>mount -a</strong></p>
+<p>挂载 <code>/etc/fstab</code> 文件中定义的所有设备。示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t iso9660 -o loop /dev/cdrom0 /media/cdrom</span><br><span class="line">sudo mount -t vfat -o remount iocharset=utf8,codepage=936  /dev/hda5 /media/hda5  </span><br></pre></td></tr></table></figure>
+
+<h4 id="umount-设备文件-挂载路径"><a href="#umount-设备文件-挂载路径" class="headerlink" title="umount 设备文件 | 挂载路径"></a>umount 设备文件 | 挂载路径</h4><p>卸载已挂载文件系统</p>
+<h4 id="df"><a href="#df" class="headerlink" title="df"></a>df</h4><p>查看已挂载文件系统的磁盘空间占用</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示所有文件系统的磁盘使用情况，包括0块（block）的文件系统，如<code>/proc 文件系统</code></td>
+</tr>
+<tr>
+<td>-T</td>
+<td>显示文件系统类型</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>以 k 字节为单位显示</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>显示 i节点 信息，而不是磁盘块</td>
+</tr>
+<tr>
+<td>-t 文件系统类型</td>
+<td>显示指定类型的文件系统的磁盘空间使用情况</td>
+</tr>
+<tr>
+<td>-x 文件系统类型</td>
+<td>列出排除指定类型文件系统的磁盘空间使用情况（与 t 选项相反）</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>只显示本地文件系统</td>
+</tr>
+</tbody></table>
+<h4 id="free"><a href="#free" class="headerlink" title="free"></a>free</h4><p>查看内存、缓冲区、交换空间的占用</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>以字节为单位显示数值</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>以千字节为单位显示数值</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>以兆字节为单位显示数值</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>以吉字节为单位显示数值</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>显示内存占用峰值</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>不显示缓冲区占用</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>统计结果</td>
+</tr>
+<tr>
+<td>-s 秒</td>
+<td>刷新频率</td>
+</tr>
+</tbody></table>
+<h4 id="sync"><a href="#sync" class="headerlink" title="sync"></a>sync</h4><p>同步文件系统。将缓冲区中的数据写入文件系统</p>
+<h4 id="fdisk-磁盘设备文件"><a href="#fdisk-磁盘设备文件" class="headerlink" title="fdisk 磁盘设备文件"></a>fdisk 磁盘设备文件</h4><p>分区表修改工具(磁盘设备文件应为整块磁盘，而不是磁盘中的分区。例如 <code>/dev/sda</code> ，而不是 <code>/dev/sda1</code>)</p>
+<p><strong>fdisk -l</strong> 查看所有磁盘分区信息</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>m</td>
+<td>使用帮助</td>
+</tr>
+<tr>
+<td>l</td>
+<td>查看已知文件系统类型</td>
+</tr>
+<tr>
+<td>p</td>
+<td>显示分区信息</td>
+</tr>
+<tr>
+<td>n</td>
+<td>新建分区 （p:主分区 l:扩展分区 参见 <a class="link"   target="_blank" rel="noopener" href="https://i.linuxtoy.org/docs/guide/ch08.html#partition" >“分区概念”一节<i class="fas fa-external-link-alt"></i></a> )</td>
+</tr>
+<tr>
+<td>d</td>
+<td>删除分区</td>
+</tr>
+<tr>
+<td>t</td>
+<td>改变分区类型</td>
+</tr>
+<tr>
+<td>w</td>
+<td>将改动写入分区表</td>
+</tr>
+<tr>
+<td>q</td>
+<td>放弃改动并退出</td>
+</tr>
+</tbody></table>
+<h4 id="cfdisk"><a href="#cfdisk" class="headerlink" title="cfdisk"></a>cfdisk</h4><p>更加友善的分区表修改工具</p>
+<h4 id="mkfs-文件系统类型-分区设备文件"><a href="#mkfs-文件系统类型-分区设备文件" class="headerlink" title="mkfs.文件系统类型 分区设备文件"></a>mkfs.文件系统类型 分区设备文件</h4><p>将分区格式化为文件系统。示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkfs.reiserfs /dev/hda1</span><br><span class="line">sudo mkfs.xfs /dev/sda1    </span><br></pre></td></tr></table></figure>
+
+<h4 id="hdparm-磁盘设备文件"><a href="#hdparm-磁盘设备文件" class="headerlink" title="hdparm 磁盘设备文件"></a>hdparm 磁盘设备文件</h4><p>设置硬盘参数</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d 0|1</td>
+<td>DMA 模式开关</td>
+</tr>
+<tr>
+<td>-a 0|1</td>
+<td>预读模式开关</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>性能测试</td>
+</tr>
+<tr>
+<td>-T</td>
+<td>缓存性能测试</td>
+</tr>
+<tr>
+<td>-c 0|1|3</td>
+<td>32位传输模式开关</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>显示柱面，扇区等信息</td>
+</tr>
+<tr>
+<td>-i|-I</td>
+<td>显示磁盘信息</td>
+</tr>
+</tbody></table>
+<h3 id="硬件管理"><a href="#硬件管理" class="headerlink" title="硬件管理"></a>硬件管理</h3><h4 id="lspci"><a href="#lspci" class="headerlink" title="lspci"></a>lspci</h4><p>查看 PCI 总线连接的设备(实际上也可以查看 ISA、AGP、USB 等总线信息)</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>－v</td>
+<td>显示详细信息</td>
+</tr>
+<tr>
+<td>－vv</td>
+<td></td>
+</tr>
+<tr>
+<td>－vvv</td>
+<td></td>
+</tr>
+<tr>
+<td>－k</td>
+<td>同时显示使用的驱动和加载的模块</td>
+</tr>
+<tr>
+<td>－n</td>
+<td>显示设备 ID号</td>
+</tr>
+<tr>
+<td>－b</td>
+<td>显示 PCI、ISA 扩展槽地址和中断</td>
+</tr>
+<tr>
+<td>－t</td>
+<td>显示总线树结构</td>
+</tr>
+<tr>
+<td>-F 文件</td>
+<td>从指定文件读信息</td>
+</tr>
+<tr>
+<td>－m</td>
+<td>以便于机器处理的格式输出所有硬件信息</td>
+</tr>
+<tr>
+<td>-mm</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="lsusb"><a href="#lsusb" class="headerlink" title="lsusb"></a>lsusb</h4><p>查看 USB 接口连接的设备</p>
+<h4 id="lsmod"><a href="#lsmod" class="headerlink" title="lsmod"></a>lsmod</h4><p>查看已加载模块。<code>/lib/modules/</code><strong>uname -r</strong> 目录下为所有可用模块</p>
+<h4 id="modprobe-模块名称"><a href="#modprobe-模块名称" class="headerlink" title="modprobe 模块名称"></a>modprobe 模块名称</h4><p>启用模块</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>加载所有匹配模块</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>显示当前使用的配置</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>显示调试信息</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>将指定模块设置为”自动清除”模式</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>显示所有匹配模块</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>模拟执行</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>不显示错误信息</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>删除使用命令加载的模块;对非命令加载的模块设置”自动清除”模式</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>将结果记录到系统记录中</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>指定模块类型</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示详细信息</td>
+</tr>
+<tr>
+<td>-C</td>
+<td>指定配置文件.默认使用<code>/etc/modules.conf</code>文件为配置文件</td>
+</tr>
+</tbody></table>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><h4 id="echo-字符串"><a href="#echo-字符串" class="headerlink" title="echo 字符串"></a>echo 字符串</h4><p>回显。较复杂的字符串，可以使用 <strong><code>&quot;</code></strong> 括起来。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>选项</td>
+<td>-n</td>
+<td>输出内容不换行</td>
+</tr>
+<tr>
+<td></td>
+<td>-E</td>
+<td>不解析脱字符</td>
+</tr>
+<tr>
+<td></td>
+<td>-e</td>
+<td>解析脱字符</td>
+</tr>
+<tr>
+<td>控制字符</td>
+<td>\</td>
+<td>反斜线</td>
+</tr>
+<tr>
+<td></td>
+<td>\a</td>
+<td>警告</td>
+</tr>
+<tr>
+<td></td>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td></td>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td></td>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td></td>
+<td>\t</td>
+<td>水平制表符</td>
+</tr>
+</tbody></table>
+<h4 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h4><p>清空屏幕</p>
+<h4 id="alias-输入内容-x3D-实际内容"><a href="#alias-输入内容-x3D-实际内容" class="headerlink" title="alias 输入内容&#x3D;实际内容"></a>alias 输入内容&#x3D;实际内容</h4><p>别名，为命令指定一个别名，以简化输入。例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ls=&#x27;ls -AF --color=auto&#x27;    </span><br></pre></td></tr></table></figure>
+
+<p>可以将您的定义保存在 <code>~/.bashrc</code> 文件中</p>
+<h4 id="export-变量名"><a href="#export-变量名" class="headerlink" title="export 变量名"></a>export 变量名</h4><p>将变量导出为环境变量，常写变量赋值一同使用，例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;$PATH:xxx&quot;    </span><br></pre></td></tr></table></figure>
+
+<h4 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h4><p>关闭计算机，向根进程 init 发送信号，更改 runlevel 为 0 (halt)</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-h</td>
+<td>关闭电源</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>强行关机，不向 init进程 发送信号</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>模拟关机，向登录者发送关机警告</td>
+</tr>
+<tr>
+<td>-t 秒</td>
+<td>N秒后关机</td>
+</tr>
+<tr>
+<td>time 时间</td>
+<td>定时关机</td>
+</tr>
+<tr>
+<td>-c [说明信息]</td>
+<td>取消关机</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>重启时忽略检测文件系统</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>重启时强制检测文件系统</td>
+</tr>
+</tbody></table>
+<h4 id="halt"><a href="#halt" class="headerlink" title="halt"></a>halt</h4><p>关闭计算机。 调用 <strong>shutdown -h</strong> ，结束系统进程，同步文件系统，停止内核。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-n</td>
+<td>不同步文件系统</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>模拟关机，写 <code>/var/log/wtmp</code> 纪录</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>不调用 shutdown ,强行关机</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>默认选项，关机时调用 poweroff</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>关机前断开网络</td>
+</tr>
+</tbody></table>
+<h4 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h4><p>重新启动计算机。选项与 halt 相似</p>
+<h4 id="init-数字"><a href="#init-数字" class="headerlink" title="init 数字"></a>init 数字</h4><p>更改运行级别</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>关机</td>
+</tr>
+<tr>
+<td>1</td>
+<td>单用户模式</td>
+</tr>
+<tr>
+<td>6</td>
+<td>重启</td>
+</tr>
+</tbody></table>
+<h4 id="chroot-路径"><a href="#chroot-路径" class="headerlink" title="chroot 路径"></a>chroot 路径</h4><p>更改根目录，重新定义会话的运行环境。（通常用在多系统环境下使用）</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/linux/">#linux</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/03/28/vim%E7%BC%96%E8%BE%91%E5%99%A8/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">vim编辑器</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2019/02/22/test-sit/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">md语法练习</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c05ce7f7288367fc3232',
+                    clientSecret: '94bbd22b269a721e1b98c1efa1750de2de64fdab',
+                    repo: 'gitalk',
+                    owner: 'ZhaiRuiPu',
+                    admin: ['ZhaiRuiPu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">jerry2</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">晋ICP备20005379号-1</a></div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux%E5%91%BD%E4%BB%A4"><span class="nav-text">linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF"><span class="nav-text">系统信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime-%E8%81%94%E6%9C%BA%E4%BF%A1%E6%81%AF-%E6%97%B6%E9%97%B4"><span class="nav-text">uptime   联机信息-时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#w-%E8%81%94%E6%9C%BA%E4%BF%A1%E6%81%AF-%E5%B7%B2%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7"><span class="nav-text">w   联机信息-已登录用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#who-%E8%81%94%E6%9C%BA%E4%BF%A1%E6%81%AF"><span class="nav-text">who 联机信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#whoami-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">whoami  显示当前用户名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#last-%E6%9C%80%E8%BF%91%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF"><span class="nav-text">last 最近用户登录信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uname-%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF"><span class="nav-text">uname 系统信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date-%E6%97%B6%E9%97%B4"><span class="nav-text">date 时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cal-%E6%98%BE%E7%A4%BA%E6%97%A5%E5%8E%86"><span class="nav-text">cal  显示日历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ls-%E8%B7%AF%E5%BE%84-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8"><span class="nav-text">ls [路径]  显示当前目录文件列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd-%E7%9B%AE%E5%BD%95%E8%B7%AF%E5%BE%84-%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="nav-text">cd [目录路径] | [特殊路径] 切换目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84"><span class="nav-text">pwd 显示当前路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file-%E6%96%87%E4%BB%B6%E5%90%8D-%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-text">file 文件名  显示文件类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#du-%E8%B7%AF%E5%BE%84-%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95%E7%A9%BA%E9%97%B4%E5%8D%A0%E7%94%A8"><span class="nav-text">du [路径]  计算文件或目录空间占用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#less-%E6%96%87%E4%BB%B6%E5%90%8D-%E6%B5%8F%E8%A7%88%E6%96%87%E4%BB%B6"><span class="nav-text">less 文件名 浏览文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#touch-%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6-%E8%A7%A6%E7%A2%B0"><span class="nav-text">touch 目标文件 触碰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir-%E6%96%87%E4%BB%B6%E5%A4%B9-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">mkdir 文件夹 创建文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp-%E6%BA%90%E6%96%87%E4%BB%B6-%E7%9B%AE%E6%A0%87%E7%9B%AE%E5%BD%95-%E6%96%87%E4%BB%B6"><span class="nav-text">cp 源文件 目标目录|文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp-%E6%BA%90%E7%9B%AE%E5%BD%95-%E7%9B%AE%E6%A0%87%E7%9B%AE%E5%BD%95"><span class="nav-text">cp 源目录 目标目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm-%E7%9B%AE%E6%A0%87%E7%9B%AE%E5%BD%95-%E6%96%87%E4%BB%B6-%E5%88%A0%E9%99%A4"><span class="nav-text">rm 目标目录|文件 删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rmdir-%E7%9B%AE%E6%A0%87%E7%9B%AE%E5%BD%95"><span class="nav-text">rmdir 目标目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv-%E6%BA%90%E6%96%87%E4%BB%B6-%E7%9B%AE%E6%A0%87%E7%9B%AE%E5%BD%95-%E6%96%87%E4%BB%B6"><span class="nav-text">mv 源文件 目标目录|文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ln-%E6%BA%90%E6%96%87%E4%BB%B6-%E9%93%BE%E6%8E%A5"><span class="nav-text">ln 源文件 链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#split-%E6%BA%90%E6%96%87%E4%BB%B6-%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E5%90%8D%E5%89%8D%E7%BC%80"><span class="nav-text">split 源文件 [目标文件名前缀]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cat-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="nav-text">cat 文件名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sort-o-%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6-t-%E5%88%86%E9%9A%94%E5%AD%97%E7%AC%A6-%E8%B5%B7%E5%A7%8B%E5%AD%97%E6%AE%B5-%E7%BB%93%E6%9D%9F%E5%AD%97%E6%AE%B5-%E6%96%87%E4%BB%B6"><span class="nav-text">sort [-o 输出文件] [-t 分隔字符] [+起始字段 -结束字段] [文件]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more-%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-text">more 查看文件内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#diff-%E6%96%87%E4%BB%B61-%E6%96%87%E4%BB%B62-%E6%AF%94%E8%BE%83%E6%96%87%E4%BB%B6"><span class="nav-text">diff 文件1 文件2  比较文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#patch"><span class="nav-text">patch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cksum-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="nav-text">cksum [文件名]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#md5sum-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="nav-text">md5sum [文件名]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B"><span class="nav-text">压缩解压</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tar-c-x-u-r-t-z-j-v-f-%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6-%E5%BE%85%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6"><span class="nav-text">tar [-]c|x|u|r|t[z|j][v] -f 归档文件 [待打包文件]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7z-7za-%E5%AD%90%E5%91%BD%E4%BB%A4-%E9%80%89%E9%A1%B9-%E5%8E%8B%E7%BC%A9%E5%8C%85-%E6%96%87%E4%BB%B6"><span class="nav-text">7z|7za 子命令 [选项] 压缩包 [文件]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-text">搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#whereis-%E7%A8%8B%E5%BA%8F%E5%90%8D%E7%A7%B0"><span class="nav-text">whereis 程序名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#locate-%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="nav-text">locate 文件名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find-%E8%B7%AF%E5%BE%84-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-text">find [路径] 表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep-%E5%AD%97%E7%AC%A6%E4%B8%B2-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E6%96%87%E4%BB%B6%E5%90%8D-%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5"><span class="nav-text">grep 字符串|正则表达式 文件名|标准输入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="nav-text">权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chmod-%E6%9D%83%E9%99%90%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E6%96%87%E4%BB%B6-%E7%9B%AE%E5%BD%95"><span class="nav-text">chmod 权限表达式 文件|目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chown-%E5%BD%92%E5%B1%9E%E7%94%A8%E6%88%B7-%E5%BD%92%E5%B1%9E%E7%BE%A4%E7%BB%84-%E6%96%87%E4%BB%B6-%E7%9B%AE%E5%BD%95"><span class="nav-text">chown 归属用户[:归属群组] 文件|目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chgrp-%E5%BD%92%E5%B1%9E%E7%BE%A4%E7%BB%84-%E6%96%87%E4%BB%B6-%E7%9B%AE%E5%BD%95"><span class="nav-text">chgrp 归属群组 文件|目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SUID%E3%80%81SGID%E3%80%81Sticky-bit"><span class="nav-text">SUID、SGID、Sticky bit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lsattr-%E8%B7%AF%E5%BE%84"><span class="nav-text">lsattr [路径]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chattr-x3D-%E5%B1%9E%E6%80%A7-%E8%B7%AF%E5%BE%84"><span class="nav-text">chattr +|-|&#x3D;属性 路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-text">用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#su-%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">su [用户名]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sudo-%E5%91%BD%E4%BB%A4"><span class="nav-text">sudo 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#passwd-%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">passwd [用户名]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gpasswd-%E7%BE%A4%E7%BB%84%E5%90%8D"><span class="nav-text">gpasswd 群组名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chsh-s-Shell-%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">chsh -s Shell [用户名]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usermod-%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">usermod 用户名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#useradd-%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">useradd 用户名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#userdel-%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">userdel 用户名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#id-%E7%94%A8%E6%88%B7%E5%90%8D"><span class="nav-text">id [用户名]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ps"><span class="nav-text">ps</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pstree-%E8%BF%9B%E7%A8%8B%E7%BC%96%E5%8F%B7-%E7%94%A8%E6%88%B7"><span class="nav-text">pstree [ 进程编号 | 用户 ]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pgrep-%E8%BF%9B%E7%A8%8B%E5%90%8D"><span class="nav-text">pgrep 进程名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kill-%E4%BF%A1%E5%8F%B7%E4%BB%A3%E7%A0%81-%E8%BF%9B%E7%A8%8B%E7%BC%96%E5%8F%B7"><span class="nav-text">kill [信号代码] 进程编号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pkill-%E4%BF%A1%E5%8F%B7%E4%BB%A3%E7%A0%81-%E8%BF%9B%E7%A8%8B%E5%90%8D%E7%A7%B0"><span class="nav-text">pkill [信号代码] 进程名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#xkill"><span class="nav-text">xkill</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top"><span class="nav-text">top</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#renice-%E4%BC%98%E5%85%88%E7%BA%A7-%E8%BF%9B%E7%A8%8B"><span class="nav-text">renice 优先级 进程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nohup-%E5%91%BD%E4%BB%A4-%E9%80%89%E9%A1%B9"><span class="nav-text">nohup 命令 [选项]</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4-amp"><span class="nav-text">命令 &amp;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%91%BD%E4%BB%A41-%E5%91%BD%E4%BB%A42-%E2%80%A6%E2%80%A6"><span class="nav-text">命令1 ; 命令2 ; ……</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%91%BD%E4%BB%A41-amp-amp-%E5%91%BD%E4%BB%A42-amp-amp-%E2%80%A6%E2%80%A6"><span class="nav-text">命令1 &amp;&amp; 命令2 &amp;&amp; ……</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ctrl-z"><span class="nav-text">Ctrl+z</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jobs"><span class="nav-text">jobs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bg-%E4%BB%BB%E5%8A%A1%E7%BC%96%E5%8F%B7"><span class="nav-text">bg [任务编号]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fg-%E4%BB%BB%E5%8A%A1%E7%BC%96%E5%8F%B7"><span class="nav-text">fg [任务编号]</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E5%92%8C%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">磁盘和内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mount-%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6-%E6%8C%82%E8%BD%BD%E8%B7%AF%E5%BE%84"><span class="nav-text">mount 设备文件 [挂载路径]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#umount-%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6-%E6%8C%82%E8%BD%BD%E8%B7%AF%E5%BE%84"><span class="nav-text">umount 设备文件 | 挂载路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#df"><span class="nav-text">df</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free"><span class="nav-text">free</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sync"><span class="nav-text">sync</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fdisk-%E7%A3%81%E7%9B%98%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-text">fdisk 磁盘设备文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cfdisk"><span class="nav-text">cfdisk</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkfs-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9E%8B-%E5%88%86%E5%8C%BA%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-text">mkfs.文件系统类型 分区设备文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hdparm-%E7%A3%81%E7%9B%98%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-text">hdparm 磁盘设备文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-text">硬件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lspci"><span class="nav-text">lspci</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lsusb"><span class="nav-text">lsusb</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lsmod"><span class="nav-text">lsmod</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#modprobe-%E6%A8%A1%E5%9D%97%E5%90%8D%E7%A7%B0"><span class="nav-text">modprobe 模块名称</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">echo 字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clear"><span class="nav-text">clear</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#alias-%E8%BE%93%E5%85%A5%E5%86%85%E5%AE%B9-x3D-%E5%AE%9E%E9%99%85%E5%86%85%E5%AE%B9"><span class="nav-text">alias 输入内容&#x3D;实际内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#export-%E5%8F%98%E9%87%8F%E5%90%8D"><span class="nav-text">export 变量名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shutdown"><span class="nav-text">shutdown</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#halt"><span class="nav-text">halt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reboot"><span class="nav-text">reboot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#init-%E6%95%B0%E5%AD%97"><span class="nav-text">init 数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chroot-%E8%B7%AF%E5%BE%84"><span class="nav-text">chroot 路径</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
