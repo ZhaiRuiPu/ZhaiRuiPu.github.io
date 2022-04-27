@@ -173,8 +173,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-04-27 11:07:54</span>
-        <span class="mobile">2022-04-27 11:07</span>
+        <span class="pc">2021-04-07 11:07:54</span>
+        <span class="mobile">2021-04-07 11:07</span>
     </span>
     
     
@@ -222,8 +222,8 @@
 <p><img src="/images/openjdk-1.png" alt="截屏20210621 上午8.47.45.png"></p>
 <p>到该页面后可以选择用<code>zip</code>,<code>bz2</code>,<code>gz</code>这些按钮进行压缩文件下载。</p>
 <p>解压后便得到 <code>openJDK 12</code> 源码</p>
-<h3 id="2-构建编译环境"><a href="#2-构建编译环境" class="headerlink" title="2.构建编译环境"></a>2.构建编译环境</h3><h4 id="1-安装JDK11"><a href="#1-安装JDK11" class="headerlink" title="1 安装JDK11"></a>1 安装JDK11</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">因为OpenJDK内部包含（HotSpot、JDK类库、JAXWS……），其中一部分使用c、c++编写，而更多的部分则是使用java来编写，编译需要另外一个JDK支持，官方称为<span class="code">`Bootstrap JDK`</span>，所以想要编译一个N版本的JDK，需要另外准备一个大版本至少为N-1的JDK。</span><br><span class="line"></span><br><span class="line">安装JDK直接给个下载链接 [<span class="string">华为镜像</span>](<span class="link">https://mirrors.huaweicloud.com/java/jdk/</span>) 不进行过多描述。</span><br></pre></td></tr></table></figure>
-
+<h3 id="2-构建编译环境"><a href="#2-构建编译环境" class="headerlink" title="2.构建编译环境"></a>2.构建编译环境</h3><h4 id="1-安装JDK11"><a href="#1-安装JDK11" class="headerlink" title="1 安装JDK11"></a>1 安装JDK11</h4><p>因为OpenJDK内部包含（HotSpot、JDK类库、JAXWS……），其中一部分使用c、c++编写，而更多的部分则是使用java来编写，编译需要另外一个JDK支持，官方称为<code>Bootstrap JDK</code>，所以想要编译一个N版本的JDK，需要另外准备一个大版本至少为N-1的JDK。</p>
+<p>安装JDK直接给个下载链接 <a class="link" target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/java/jdk/">华为镜像<i class="fas fa-external-link-alt"></i></a> 不进行过多描述。</p>
 <h4 id="2-安装Xcode-和-Command-Line-Tools-for-Xcode"><a href="#2-安装Xcode-和-Command-Line-Tools-for-Xcode" class="headerlink" title="2 安装Xcode 和 Command Line Tools for Xcode"></a>2 安装Xcode 和 Command Line Tools for Xcode</h4><p>这两个都是apple官方配置的，可以到 <a class="link" target="_blank" rel="noopener" href="https://developer.apple.com/">Apple Developer<i class="fas fa-external-link-alt"></i></a> 上免费下载 。</p>
 <h4 id="3-安装依赖库"><a href="#3-安装依赖库" class="headerlink" title="3 安装依赖库"></a>3 安装依赖库</h4><p>这里用Homebrew安装(如果没有Homebrew，可以参考<a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/de6f1d2d37bf">Homebrew安装与使用<i class="fas fa-external-link-alt"></i></a>，或者自行百度)</p>
 <p>安装好了执行下列命令</p>
