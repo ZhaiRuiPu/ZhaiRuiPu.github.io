@@ -9,7 +9,7 @@
     
     <title>
         
-            git常用命令 |
+            RabbitMQ安装过程 |
         
         jerry2
     </title>
@@ -154,7 +154,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">git常用命令</span>
+            <span class="title-hover-animation">RabbitMQ安装过程</span>
         </div>
 
         
@@ -173,8 +173,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2020-04-15 14:13:54</span>
-        <span class="mobile">2020-04-15 14:13</span>
+        <span class="pc">2020-04-27 10:59:34</span>
+        <span class="mobile">2020-04-27 10:59</span>
     </span>
     
     
@@ -183,7 +183,15 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/git/">git</a>&nbsp;
+                        <a href="/tags/mac/">mac</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/RabbitMQ/">RabbitMQ</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/linux/">linux</a>&nbsp;
                     </li>
                 
             </ul>
@@ -193,12 +201,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>666 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>265 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
         </span>
     
     
@@ -214,27 +222,8 @@
         
 
         <div class="article-content markdown-body">
-            <blockquote>
-<p>整理本人日常用到的git命令，并非全部git命令</p>
-</blockquote>
-<h3 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="comment">#命令列出所有远程主机</span></span><br><span class="line">git remote -v <span class="comment">#列出所有远程主机并展示远程主机的网址</span></span><br><span class="line">git remote show &lt;主机名&gt; <span class="comment">#查看远程分支的详细状况</span></span><br><span class="line">git remote add &lt;主机名&gt; &lt;网址&gt; <span class="comment">#添加远程主机名</span></span><br><span class="line">git remote <span class="built_in">rm</span> &lt;主机名&gt; <span class="comment"># 删除远程主机</span></span><br><span class="line">git remote rename &lt;原主机名&gt; &lt;新主机名&gt; <span class="comment"># 修改远程主机名</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="comment">#查看本地分支 现在所在的分支会有 * 号标注</span></span><br><span class="line">git branch -r <span class="comment">#查看远程分支</span></span><br><span class="line">git branch -a <span class="comment">#查看所有分支（本地+远程）</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名 <span class="comment">#切换到指定分支</span></span><br><span class="line"><span class="comment">#指定本地分支切出新分支并切换。不指定分支时根据当前分支切新分支</span></span><br><span class="line">git checkout -b newBrach 远程分支/本地已有分支</span><br></pre></td></tr></table></figure>
-
-<h3 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git merge 本地分支名 <span class="comment">#合并本地分支</span></span><br><span class="line"><span class="comment">#合并本地分支，用于取 fetch 后的内容</span></span><br><span class="line">git merge 远程分支/本地分支</span><br></pre></td></tr></table></figure>
-
-<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#把指定远程主机名远程分支的内容拉取到指定的本地分支</span></span><br><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</span><br><span class="line"><span class="comment">#把指定分支内容拉取到当前本地分支，相当于先 fetch 再 merge</span></span><br><span class="line">git pull &lt;远程主机名&gt; &lt;远程分支名&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#把指定本地分支的 commit 推到指定的远程主机远程分支上</span></span><br><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br><span class="line"><span class="comment">#把本地分支推送与之存在&quot;追踪关系&quot;的远程分支（通常两者同名），如果该远程分支不存在，则会被新建。</span></span><br><span class="line">git push &lt;远程主机名&gt; &lt;远程分支名&gt; </span><br><span class="line"><span class="comment">#删除指定的远程分支，等同于推送一个空的本地分支到远程分支</span></span><br><span class="line">git push &lt;远程主机名&gt;:&lt;远程分支名&gt;</span><br><span class="line"><span class="comment">#指定默认主机，下次直接 git push 即可</span></span><br><span class="line">git push -u &lt;远程主机名&gt; &lt;本地分支名&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a>git reset</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD^：将最近一次提交节点的提交记录回退到暂存区</span><br><span class="line">git reset --mixed HEAD^：将最近一次提交节点的提交记录回退到工作区</span><br><span class="line">git reset --hard HEAD^：将最近一次提交节点的提交记录全部清除</span><br></pre></td></tr></table></figure>
-
-<h3 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a>git revert</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git revert HEAD ：撤销前一次 commit</span><br><span class="line">git revert HEAD^ ：撤销前前一次 commit</span><br><span class="line">git revert commit + (commit <span class="built_in">id</span>)： 撤销指定的版本，撤销也会作为一次提交进行保存。</span><br></pre></td></tr></table></figure>
-
-<h3 id="git清除缓存"><a href="#git清除缓存" class="headerlink" title="git清除缓存"></a>git清除缓存</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;update .gitignore&#x27;</span></span><br></pre></td></tr></table></figure>
-
+            <h3 id="Linux-下单机版"><a href="#Linux-下单机版" class="headerlink" title="Linux 下单机版"></a>Linux 下单机版</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在安装任何软件包之前，建议您使用以下命令更新软件包和存储库。</span></span><br><span class="line">yum -y update</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">RabbitMQ是用Erlang语言编写的，在本教程中我们将安装最新版本的Erlang到服务器中。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Erlang在默认的YUM存储库中不可用，因此您将需要安装EPEL存储库。</span> </span><br><span class="line">yum -y install epel-release</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">现在使用以下命令安装Erlang。</span></span><br><span class="line">yum -y install erlang socat</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">您现在可以使用以下命令检查Erlang版本。</span></span><br><span class="line">erl -version</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载RabbitMQ</span></span><br><span class="line">wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.10/rabbitmq-server-3.6.10-1.el7.noarch.rpm</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行RPM安装RPM包：</span></span><br><span class="line">rpm -Uvh rabbitmq-server-3.6.10-1.el7.noarch.rpm</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line">systemctl start rabbitmq-server</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line">systemctl start rabbitmq-server</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">要在引导时自动启动RabbitMQ，请运行以下命令。</span></span><br><span class="line">systemctl enable rabbitmq-server</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看状态</span></span><br><span class="line">systemctl status rabbitmq-server</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止</span></span><br><span class="line">systemctl stop rabbitmq-server</span><br></pre></td></tr></table></figure>
+<h3 id="Mac-下单机版"><a href="#Mac-下单机版" class="headerlink" title="Mac 下单机版"></a>Mac 下单机版</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install rabbitmq</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在~/.bash_profile 新加 环境变量</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果被锁住删了原来的配置 <span class="built_in">touch</span> .bash_profile <span class="built_in">touch</span> .bash_profile</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">RabbitMQ Config</span></span><br><span class="line">export PATH=$PATH:/usr/local/sbin</span><br><span class="line">source ~/.bash_profile</span><br><span class="line">启动停止</span><br><span class="line"></span><br><span class="line">rabbitmqctl stop</span><br><span class="line">rabbitmq-server</span><br><span class="line"></span><br><span class="line">brew services stop rabbitmq</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -244,7 +233,15 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/git/">#git</a>&nbsp;
+                        <a href="/tags/mac/">#mac</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/RabbitMQ/">#RabbitMQ</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/linux/">#linux</a>&nbsp;
                     </li>
                 
             </ul>
@@ -256,13 +253,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2020/04/27/RabbitMQ%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/"
+                           href="/2020/05/11/homebrew/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">RabbitMQ安装过程</span>
+                                <span class="post-nav-title-item">homebrew</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -272,10 +269,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/04/13/Vue%E7%AC%94%E8%AE%B0/"
+                           href="/2020/04/15/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Vue笔记</span>
+                                <span class="post-nav-title-item">git常用命令</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -455,7 +452,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-remote"><span class="nav-text">git remote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-branch"><span class="nav-text">git branch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-checkout"><span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-merge"><span class="nav-text">git merge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-pull"><span class="nav-text">git pull</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-push"><span class="nav-text">git push</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-reset"><span class="nav-text">git reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-revert"><span class="nav-text">git revert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98"><span class="nav-text">git清除缓存</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E4%B8%8B%E5%8D%95%E6%9C%BA%E7%89%88"><span class="nav-text">Linux 下单机版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac-%E4%B8%8B%E5%8D%95%E6%9C%BA%E7%89%88"><span class="nav-text">Mac 下单机版</span></a></li></ol>
     </div>
 </div>
         </aside>
