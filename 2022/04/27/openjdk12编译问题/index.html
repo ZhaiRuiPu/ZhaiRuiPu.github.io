@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="jerry2">
+    
+    <title>
+        
+            openjdk12编译问题 |
+        
+        jerry2
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"git.diruipu.top","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"望望山山水水，人去去，隐隐迢迢"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                jerry2
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">openjdk12编译问题</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">jerry2</span>
+                        
+                            <span class="author-label">Architect</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-04-27 11:07:54</span>
+        <span class="mobile">2022-04-27 11:07</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/mac/">mac</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/jdk/">jdk</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="1-下载openjdk12源码"><a href="#1-下载openjdk12源码" class="headerlink" title="1. 下载openjdk12源码"></a>1. 下载openjdk12源码</h3><p>直接访问<a class="link" target="_blank" rel="noopener" href="https://hg.openjdk.java.net/jdk/jdk12/">OpenJDK 12 下载地址<i class="fas fa-external-link-alt"></i></a>，然后点击左边<code>Browse</code>按钮，将显示源码根目录页面，如下图：</p>
+<p><img src="/images/openjdk-1.png" alt="截屏20210621 上午8.47.45.png"></p>
+<p>到该页面后可以选择用<code>zip</code>,<code>bz2</code>,<code>gz</code>这些按钮进行压缩文件下载。</p>
+<p>解压后便得到 <code>openJDK 12</code> 源码</p>
+<h3 id="2-构建编译环境"><a href="#2-构建编译环境" class="headerlink" title="2.构建编译环境"></a>2.构建编译环境</h3><h4 id="1-安装JDK11"><a href="#1-安装JDK11" class="headerlink" title="1 安装JDK11"></a>1 安装JDK11</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">因为OpenJDK内部包含（HotSpot、JDK类库、JAXWS……），其中一部分使用c、c++编写，而更多的部分则是使用java来编写，编译需要另外一个JDK支持，官方称为<span class="code">`Bootstrap JDK`</span>，所以想要编译一个N版本的JDK，需要另外准备一个大版本至少为N-1的JDK。</span><br><span class="line"></span><br><span class="line">安装JDK直接给个下载链接 [<span class="string">华为镜像</span>](<span class="link">https://mirrors.huaweicloud.com/java/jdk/</span>) 不进行过多描述。</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-安装Xcode-和-Command-Line-Tools-for-Xcode"><a href="#2-安装Xcode-和-Command-Line-Tools-for-Xcode" class="headerlink" title="2 安装Xcode 和 Command Line Tools for Xcode"></a>2 安装Xcode 和 Command Line Tools for Xcode</h4><p>这两个都是apple官方配置的，可以到 <a class="link" target="_blank" rel="noopener" href="https://developer.apple.com/">Apple Developer<i class="fas fa-external-link-alt"></i></a> 上免费下载 。</p>
+<h4 id="3-安装依赖库"><a href="#3-安装依赖库" class="headerlink" title="3 安装依赖库"></a>3 安装依赖库</h4><p>这里用Homebrew安装(如果没有Homebrew，可以参考<a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/de6f1d2d37bf">Homebrew安装与使用<i class="fas fa-external-link-alt"></i></a>，或者自行百度)</p>
+<p>安装好了执行下列命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install ccache</span><br><span class="line">brew install freetype</span><br><span class="line">brew install autoconf</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-编译安装"><a href="#3-编译安装" class="headerlink" title="3 编译安装"></a>3 编译安装</h3><p>直接上命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">第一步 <span class="built_in">cd</span>到openjdk12的根目录</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这里用 /Users/admin/Downloads/jdk12 到代替真实目录</span></span><br><span class="line">cd /Users/admin/Downloads/jdk12</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查询编译参数（可以逃过）</span></span><br><span class="line">bash  configure --help</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">第二步 检查依赖</span></span><br><span class="line">bash configure --enable-debug --with-jvm-variants=server</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果环境正常则输出以下</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">====================================================</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">A new configuration has been successfully created <span class="keyword">in</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">/Users/admin/Downloads/jdk12/build/macosx-x86_64-server-fastdebug</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">using configure arguments <span class="string">&#x27;--enable-debug --with-jvm-variants=server&#x27;</span>.</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># Configuration summary:</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* Debug level:    fastdebug</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* HS debug level: fastdebug</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* JVM variants:   server</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* JVM features:   server: <span class="string">&#x27;aot cds cmsgc compiler1 compiler2 dtrace epsilongc g1gc graal jfr jni-check jvmci jvmti management nmt parallelgc serialgc services shenandoahgc vm-structs&#x27;</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* Version string: 12-internal+0-adhoc.admin.jdk12 (12-internal)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># Tools summary:</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* Boot JDK:       java version <span class="string">&quot;12&quot;</span> 2019-03-19 Java(TM) SE Runtime Environment (build 12+33) Java HotSpot(TM) 64-Bit Server VM (build 12+33, mixed mode, sharing)  (at /Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* Toolchain:      clang (clang/LLVM from Xcode 12.5)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* C Compiler:     Version 12.0.5 (at /usr/bin/clang)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* C++ Compiler:   Version 12.0.5 (at /usr/bin/clang++)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="comment"># Build performance summary:</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* Cores to use:   8</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">* Memory <span class="built_in">limit</span>:   16384 MB</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">第三步make</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">bash configure参数不同会在build目录下生成不同版本</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">多个版本则需要带上参数CONF明确make哪一个，</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">make images CONF=macosx-x86_64-server-fastdebug</span></span><br><span class="line">make images</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果出现以下字样表示成功</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Finished building target <span class="string">&#x27;images&#x27;</span> <span class="keyword">in</span> configuration <span class="string">&#x27;macosx-x86_64-server-fastdebug&#x27;</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果出现error 记得用以下命令清理目录（对应问题可参考下文的问题总结）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">make dist-clean 或 make clean</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-问题总结"><a href="#4-问题总结" class="headerlink" title="4 问题总结"></a>4 问题总结</h3><p>这里用 &#x2F;Users&#x2F;admin&#x2F;Downloads&#x2F;jdk12 到代替真实目录,以下本人编译时碰到的问题</p>
+<h4 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h4><p>&#x2F;Users&#x2F;admin&#x2F;Downloads&#x2F;jdk12&#x2F;src&#x2F;hotspot&#x2F;share&#x2F;runtime&#x2F;arguments.cpp的1452行</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (old_java_vendor_url_bug != DEFAULT_VENDOR_URL_BUG) &#123;</span><br><span class="line"><span class="comment">// 替换为</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">strcmp</span>(old_java_vendor_url_bug, DEFAULT_VENDOR_URL_BUG) != <span class="number">0</span>) &#123;</span><br></pre></td></tr></table></figure>
+
+<h4 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h4><p>&#x2F;Users&#x2F;admin&#x2F;Downloads&#x2F;jdk12&#x2F;test&#x2F;hotspot&#x2F;gtest&#x2F;classfile&#x2F;test_symbolTable.cpp的62行，将</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s1 = s1; <span class="comment">// self assignment</span></span><br><span class="line"><span class="comment">// 注释掉</span></span><br><span class="line"><span class="comment">// s1 = s1; // self assignment</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h4><p>&#x2F;Users&#x2F;admin&#x2F;Downloads&#x2F;jdk12&#x2F;src&#x2F;hotspot&#x2F;share&#x2F;runtime&#x2F;sharedRuntime.cpp的2873行，将</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">buffer.<span class="built_in">insts</span>()-&gt;<span class="built_in">initialize_shared_locs</span>((relocInfo*)locs_buf, <span class="built_in">sizeof</span>(locs_buf) / <span class="built_in">sizeof</span>(relocInfo));</span><br><span class="line"><span class="comment">// 替换为</span></span><br><span class="line">buffer.<span class="built_in">insts</span>()-&gt;<span class="built_in">initialize_shared_locs</span>((relocInfo*)locs_buf, (<span class="built_in">sizeof</span>(locs_buf)) / <span class="built_in">sizeof</span>((relocInfo)));</span><br></pre></td></tr></table></figure>
+
+<h4 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h4><p>&#x2F;Users&#x2F;admin&#x2F;Downloads&#x2F;jdk12&#x2F;src&#x2F;java.desktop&#x2F;macosx&#x2F;native&#x2F;libawt_lwawt&#x2F;awt&#x2F;CSystemColors.m的134行，将</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (colorIndex &lt; (useAppleColor) ? sun_lwawt_macosx_LWCToolkit_NUM_APPLE_COLORS : java_awt_SystemColor_NUM_COLORS) &#123;</span><br><span class="line"><span class="comment">// 替换为</span></span><br><span class="line"><span class="keyword">if</span> (colorIndex &lt; ((useAppleColor) ? sun_lwawt_macosx_LWCToolkit_NUM_APPLE_COLORS : java_awt_SystemColor_NUM_COLORS)) &#123;</span><br></pre></td></tr></table></figure>
+
+<h4 id="问题五"><a href="#问题五" class="headerlink" title="问题五"></a>问题五</h4><p>&#x2F;Users&#x2F;admin&#x2F;Downloads&#x2F;jdk12&#x2F;src&#x2F;jdk.base&#x2F;share&#x2F;native&#x2F;libfdlibm&#x2F;e_asin.c的106，将eles缺少的花括号补上就可以了。</p>
+<h4 id="问题六"><a href="#问题六" class="headerlink" title="问题六"></a>问题六</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">=== Output from failing command(s) repeated here ===</span><br><span class="line">* For target support_native_java.desktop_libjsound_PLATFORM_API_MacOSX_MidiUtils.o:</span><br><span class="line">/Users/admin/Desktop/OpenJDK/jdk12/src/java.desktop/macosx/native/libjsound/PLATFORM_API_MacOSX_MidiUtils.c:263:31: error: cast to smaller integer type &#x27;MIDIClientRef&#x27; (aka &#x27;unsigned int&#x27;) from &#x27;void *&#x27; [-Werror,-Wvoid-pointer-to-int-cast]</span><br><span class="line">static MIDIClientRef client = (MIDIClientRef) NULL;</span><br><span class="line">                              ^~~~~~~~~~~~~~~~~~~~</span><br><span class="line">/Users/admin/Desktop/OpenJDK/jdk12/src/java.desktop/macosx/native/libjsound/PLATFORM_API_MacOSX_MidiUtils.c:264:29: error: cast to smaller integer type &#x27;MIDIPortRef&#x27; (aka &#x27;unsigned int&#x27;) from &#x27;void *&#x27; [-Werror,-Wvoid-pointer-to-int-cast]</span><br><span class="line">static MIDIPortRef inPort = (MIDIPortRef) NULL;</span><br><span class="line">                            ^~~~~~~~~~~~~~~~~~</span><br><span class="line">/Users/admin/Desktop/OpenJDK/jdk12/src/java.desktop/macosx/native/libjsound/PLATFORM_API_MacOSX_MidiUtils.c:265:30: error: cast to smaller integer type &#x27;MIDIPortRef&#x27; (aka &#x27;unsigned int&#x27;) from &#x27;void *&#x27; [-Werror,-Wvoid-pointer-to-int-cast]</span><br><span class="line">static MIDIPortRef outPort = (MIDIPortRef) NULL;</span><br><span class="line">                             ^~~~~~~~~~~~~~~~~~</span><br><span class="line">/Users/admin/Desktop/OpenJDK/jdk12/src/java.desktop/macosx/native/libjsound/PLATFORM_API_MacOSX_MidiUtils.c:471:32: error: cast to smaller integer type &#x27;MIDIEndpointRef&#x27; (aka &#x27;unsigned int&#x27;) from &#x27;void *&#x27; [-Werror,-Wvoid-pointer-to-int-cast]</span><br><span class="line">    MIDIEndpointRef endpoint = (MIDIEndpointRef) NULL;</span><br><span class="line">                               ^~~~~~~~~~~~~~~~~~~~~~</span><br><span class="line">   ... (rest of output omitted)</span><br><span class="line">* All command lines available in /Users/admin/Desktop/OpenJDK/jdk12/build/macosx-x86_64-server-release/make-support/failure-logs.</span><br><span class="line">=== End of repeated output ===</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案</strong>： </p>
+<pre><code>方案一：找到对应文件把括号里改成了unsigned long 运行
+
+方案二：
+</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 找到 这个文件</span></span><br><span class="line">/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreMIDI.framework/Versions/A/Headers/MIDIServeice.h</span><br><span class="line"><span class="comment"># 修改里面的内容。</span></span><br><span class="line"><span class="comment"># 找到 ： “typedef UInt32 MIDIObjectRef;”  字符串，然后修改成为  “typedef UInt64 MIDIObjectRef;”</span></span><br><span class="line"><span class="comment"># 保存。</span></span><br><span class="line"><span class="comment"># 然后继续</span></span><br><span class="line">make clean</span><br><span class="line">make images</span><br></pre></td></tr></table></figure>
+
+<h4 id="问题七"><a href="#问题七" class="headerlink" title="问题七"></a>问题七</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Building target &#x27;images&#x27; in configuration &#x27;macosx-x86_64-server-fastdebug&#x27;</span><br><span class="line">Warning: No SCM configuration present and no .src-rev</span><br><span class="line">Compiling 8 files for BUILD_TOOLS_LANGTOOLS</span><br><span class="line">警告: [path] 错误的路径元素 &quot;/Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home/lib/tools.jar&quot;: 没有这种文件或目录</span><br><span class="line">警告: [path] 错误的路径元素 &quot;/Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home/lib/dt.jar&quot;: 没有这种文件或目录</span><br><span class="line">错误: 发现警告, 但指定了 -Werror</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方案：</strong> 直接将旧版本jdk里的<code>tools.jar</code>和<code>dt.jar</code>复制过来就行</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/mac/">#mac</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/jdk/">#jdk</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/03/23/mysql8-linux-yum/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">mysql8-linux-yum</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c05ce7f7288367fc3232',
+                    clientSecret: '94bbd22b269a721e1b98c1efa1750de2de64fdab',
+                    repo: 'gitalk',
+                    owner: 'ZhaiRuiPu',
+                    admin: ['ZhaiRuiPu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">jerry2</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">晋ICP备20005379号-1</a></div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDopenjdk12%E6%BA%90%E7%A0%81"><span class="nav-text">1. 下载openjdk12源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9E%84%E5%BB%BA%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83"><span class="nav-text">2.构建编译环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85JDK11"><span class="nav-text">1 安装JDK11</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85Xcode-%E5%92%8C-Command-Line-Tools-for-Xcode"><span class="nav-text">2 安装Xcode 和 Command Line Tools for Xcode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%BA%93"><span class="nav-text">3 安装依赖库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="nav-text">3 编译安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93"><span class="nav-text">4 问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80"><span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C"><span class="nav-text">问题二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89"><span class="nav-text">问题三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%9B%9B"><span class="nav-text">问题四</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%BA%94"><span class="nav-text">问题五</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%85%AD"><span class="nav-text">问题六</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%83"><span class="nav-text">问题七</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
