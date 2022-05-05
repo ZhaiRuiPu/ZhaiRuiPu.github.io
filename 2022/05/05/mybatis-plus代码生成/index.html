@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="jerry2">
+    
+    <title>
+        
+            mybatis-plus代码生成 |
+        
+        jerry2
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"git.diruipu.top","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"望望山山水水，人去去，隐隐迢迢"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                jerry2
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">mybatis-plus代码生成</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">jerry2</span>
+                        
+                            <span class="author-label">Architect</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-05-05 14:11:50</span>
+        <span class="mobile">2022-05-05 14:11</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/java/">java</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/mybatis/">mybatis</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>12 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-generator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- freemarker模板引擎依赖--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.freemarker<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>freemarker<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.29<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.diruipu.demo.server.generator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.IdType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.core.toolkit.StringPool;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.AutoGenerator;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.InjectionConfig;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.*;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.po.TableInfo;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.rules.DateType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.lang3.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> diruipu</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2022-04-07 2:00 PM</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> Generator</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Generator</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//表名，多个英文逗号分割</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String tableNames=<span class="string">&quot;t_log_copy&quot;</span>;</span><br><span class="line">        <span class="comment">//数据库链接</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String dataSourceUrl=<span class="string">&quot;jdbc:mysql://192.168.0.108:3306/demo?characterEncoding=utf8&amp;connectTimeout=1000&amp;socketTimeout=3000&amp;autoReconnect=true&amp;useUnicode=true&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai&quot;</span>;</span><br><span class="line">        <span class="comment">//数据库驱动</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String dataSourceDriver=<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>;</span><br><span class="line">        <span class="comment">//账号 </span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String dataSourceUser=<span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="comment">//密码</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String dataSourcePwd=<span class="string">&quot;root&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 代码生成器</span></span><br><span class="line">        <span class="type">AutoGenerator</span> <span class="variable">mpg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AutoGenerator</span>();</span><br><span class="line">        <span class="type">String</span> <span class="variable">projectPath</span> <span class="operator">=</span> System.getProperty(<span class="string">&quot;user.dir&quot;</span>);</span><br><span class="line">        <span class="comment">// 全局配置</span></span><br><span class="line">        setGlobalConfig(mpg,projectPath);</span><br><span class="line">        <span class="comment">// 数据源配置</span></span><br><span class="line">        setDataSourceConfig(mpg);</span><br><span class="line">        <span class="comment">// 包配置</span></span><br><span class="line">        <span class="type">PackageConfig</span> <span class="variable">pc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PackageConfig</span>();</span><br><span class="line">        pc.setParent(<span class="string">&quot;cc.mrbird. .server.system&quot;</span>);</span><br><span class="line">        mpg.setPackageInfo(pc);</span><br><span class="line">        <span class="comment">// 自定义配置</span></span><br><span class="line">        setCfg(mpg,projectPath,pc);</span><br><span class="line">        <span class="comment">// 配置模板</span></span><br><span class="line">        setTemplate(mpg);</span><br><span class="line">        <span class="comment">// 策略配置</span></span><br><span class="line">          <span class="comment">// true 通过上方配置tableNames来读取表名</span></span><br><span class="line">          <span class="comment">// false 通过控制台扫描输入来获取表名</span></span><br><span class="line">        setStrategy(mpg,<span class="literal">false</span>);</span><br><span class="line">        mpg.setTemplateEngine(<span class="keyword">new</span> <span class="title class_">FreemarkerTemplateEngine</span>());</span><br><span class="line">        mpg.execute();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">scanner</span><span class="params">(String tip)</span> &#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">help</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        help.append(<span class="string">&quot;请输入&quot;</span> + tip + <span class="string">&quot;：&quot;</span>);</span><br><span class="line">        System.out.println(help.toString());</span><br><span class="line">        <span class="keyword">if</span> (scanner.hasNext()) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">ipt</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">            <span class="keyword">if</span> (StringUtils.isNotBlank(ipt)) &#123;</span><br><span class="line">                <span class="keyword">return</span> ipt;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">MybatisPlusException</span>(<span class="string">&quot;请输入正确的&quot;</span> + tip + <span class="string">&quot;！&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 全局配置</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">setGlobalConfig</span><span class="params">(AutoGenerator mpg,String projectPath)</span>&#123;</span><br><span class="line">        <span class="type">GlobalConfig</span> <span class="variable">gc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">GlobalConfig</span>();</span><br><span class="line">        <span class="comment">//生成system目录下</span></span><br><span class="line">        gc.setOutputDir(projectPath + <span class="string">&quot;/ -server/ -server-system/src/main/java&quot;</span>)</span><br><span class="line">                .setActiveRecord(<span class="literal">false</span>) <span class="comment">// 是否支持AR模式</span></span><br><span class="line">                .setAuthor(<span class="string">&quot;zrp&quot;</span>) <span class="comment">//生成作者注释</span></span><br><span class="line">                .setOpen(<span class="literal">false</span>) <span class="comment">//生成后是否打开资源管理器</span></span><br><span class="line">                .setBaseColumnList(<span class="literal">true</span>) <span class="comment">//生成基本的SQL片段</span></span><br><span class="line">                .setBaseResultMap(<span class="literal">true</span>) <span class="comment">//生成基本的resultMap</span></span><br><span class="line">                .setEnableCache(<span class="literal">false</span>) <span class="comment">// XML 二级缓存</span></span><br><span class="line">                .setIdType(IdType.UUID) <span class="comment">// 主键策略</span></span><br><span class="line">                .setDateType(DateType.ONLY_DATE)<span class="comment">//定义生成的实体类中日期类型</span></span><br><span class="line">                .setSwagger2(<span class="literal">true</span>);<span class="comment">//实体属性 Swagger2 注解</span></span><br><span class="line"></span><br><span class="line">        mpg.setGlobalConfig(gc);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">setDataSourceConfig</span><span class="params">(AutoGenerator mpg)</span>&#123;</span><br><span class="line">        <span class="comment">// 数据源配置</span></span><br><span class="line">        <span class="type">DataSourceConfig</span> <span class="variable">dsc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">DataSourceConfig</span>();</span><br><span class="line">        dsc.setUrl(dataSourceUrl);</span><br><span class="line">        <span class="comment">// dsc.setSchemaName(&quot;public&quot;);</span></span><br><span class="line">        dsc.setDriverName(dataSourceDriver);</span><br><span class="line">        dsc.setUsername(dataSourceUser);</span><br><span class="line">        dsc.setPassword(dataSourcePwd);</span><br><span class="line">        mpg.setDataSource(dsc);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">setCfg</span><span class="params">(AutoGenerator mpg,String projectPath,PackageConfig pc)</span>&#123;</span><br><span class="line">        <span class="comment">// 自定义配置</span></span><br><span class="line">        <span class="type">InjectionConfig</span> <span class="variable">cfg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InjectionConfig</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">initMap</span><span class="params">()</span> &#123;</span><br><span class="line">                <span class="comment">// to do nothing</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果模板引擎是 freemarker</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">templatePath</span> <span class="operator">=</span> <span class="string">&quot;/templates/mapper.xml.ftl&quot;</span>;</span><br><span class="line">        <span class="comment">// 自定义输出配置</span></span><br><span class="line">        List&lt;FileOutConfig&gt; focList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 自定义配置会被优先输出</span></span><br><span class="line">        focList.add(<span class="keyword">new</span> <span class="title class_">FileOutConfig</span>(templatePath) &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> String <span class="title function_">outputFile</span><span class="params">(TableInfo tableInfo)</span> &#123;</span><br><span class="line">                <span class="comment">// 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！</span></span><br><span class="line">                <span class="keyword">return</span> projectPath + <span class="string">&quot;/src/main/resources/mapper/&quot;</span> + (pc.getModuleName()==<span class="literal">null</span>?<span class="string">&quot;&quot;</span>:pc.getModuleName()+<span class="string">&quot;/&quot;</span>)</span><br><span class="line">                        + tableInfo.getEntityName() + <span class="string">&quot;Mapper&quot;</span> + StringPool.DOT_XML;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        cfg.setFileOutConfigList(focList);</span><br><span class="line">        mpg.setCfg(cfg);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">setTemplate</span><span class="params">(AutoGenerator mpg)</span>&#123;</span><br><span class="line">        <span class="type">TemplateConfig</span> <span class="variable">templateConfig</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TemplateConfig</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 配置自定义输出模板</span></span><br><span class="line">        templateConfig.setService(<span class="string">&quot;/generator/templates/service.java&quot;</span>);</span><br><span class="line">        templateConfig.setServiceImpl(<span class="string">&quot;/generator/templates/serviceImpl.java&quot;</span>);</span><br><span class="line">        templateConfig.setController(<span class="string">&quot;/generator/templates/controller.java&quot;</span>);</span><br><span class="line">        templateConfig.setXml(<span class="literal">null</span>);</span><br><span class="line">        mpg.setTemplate(templateConfig);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">setStrategy</span><span class="params">(AutoGenerator mpg,Boolean isScannerTableName)</span>&#123;</span><br><span class="line">        <span class="type">StrategyConfig</span> <span class="variable">strategy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StrategyConfig</span>();</span><br><span class="line"></span><br><span class="line">        strategy.setNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        strategy.setColumnNaming(NamingStrategy.underline_to_camel);</span><br><span class="line">        strategy.setSuperMapperClass(<span class="string">&quot;com.baomidou.mybatisplus.core.mapper.BaseMapper&quot;</span>);</span><br><span class="line">        strategy.setSuperServiceClass(<span class="string">&quot;com.baomidou.mybatisplus.extension.service.IService&quot;</span>);</span><br><span class="line">          strategy.setSuperServiceImplClass(<span class="string">&quot;com.baomidou.mybatisplus.extension.service.impl.ServiceImpl&quot;</span>);</span><br><span class="line">        strategy.setEntityLombokModel(<span class="literal">true</span>);</span><br><span class="line">        strategy.setRestControllerStyle(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (Boolean.TRUE.equals(isScannerTableName))&#123;</span><br><span class="line">            strategy.setInclude(scanner(<span class="string">&quot;表名，多个英文逗号分割&quot;</span>).split(<span class="string">&quot;,&quot;</span>));</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            strategy.setInclude(tableNames.split(<span class="string">&quot;,&quot;</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        strategy.setControllerMappingHyphenStyle(<span class="literal">true</span>);</span><br><span class="line">        strategy.setTablePrefix(<span class="string">&quot;t_&quot;</span>);</span><br><span class="line">        mpg.setStrategy(strategy);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="模版配置"><a href="#模版配置" class="headerlink" title="模版配置"></a>模版配置</h3><h4 id="service模版"><a href="#service模版" class="headerlink" title="service模版"></a>service模版</h4><p>文件名：service.java.ftl</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">package $&#123;package.Service&#125;;</span><br><span class="line"></span><br><span class="line">import $&#123;package.Entity&#125;.$&#123;entity&#125;;</span><br><span class="line">import $&#123;superServiceClassPackage&#125;;</span><br><span class="line"></span><br><span class="line">import top.diruipu.demo.common.core.entity.QueryRequest;</span><br><span class="line">import com.baomidou.mybatisplus.core.metadata.IPage;</span><br><span class="line">import com.baomidou.mybatisplus.extension.service.IService;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* &lt;p&gt;</span><br><span class="line">    * $&#123;table.comment!&#125; 服务类</span><br><span class="line">    * &lt;/p&gt;</span><br><span class="line">*</span><br><span class="line">* @author $&#123;author&#125;</span><br><span class="line">* @since $&#123;date&#125;</span><br><span class="line">*/</span><br><span class="line">public interface I$&#123;entity&#125;Service extends IService&lt;$&#123;entity&#125;&gt; &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 查询（分页）</span><br><span class="line">     *</span><br><span class="line">     * @param request QueryRequest</span><br><span class="line">     * @param $&#123;entity?uncap_first&#125; $&#123;entity?uncap_first&#125;</span><br><span class="line">     * @return IPage&lt;$&#123;entity&#125;&gt;</span><br><span class="line">     */</span><br><span class="line">    IPage&lt;$&#123;entity&#125;&gt; find$&#123;entity&#125;s(QueryRequest request, $&#123;entity&#125; $&#123;entity?uncap_first&#125;);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 查询（所有）</span><br><span class="line">     *</span><br><span class="line">     * @param $&#123;entity?uncap_first&#125; $&#123;entity?uncap_first&#125;</span><br><span class="line">     * @return List&lt;$&#123;entity&#125;&gt;</span><br><span class="line">     */</span><br><span class="line">    List&lt;$&#123;entity&#125;&gt; find$&#123;entity&#125;s($&#123;entity&#125; $&#123;entity?uncap_first&#125;);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 新增</span><br><span class="line">     *</span><br><span class="line">     * @param $&#123;entity?uncap_first&#125; $&#123;entity?uncap_first&#125;</span><br><span class="line">     */</span><br><span class="line">    void create$&#123;entity&#125;($&#123;entity&#125; $&#123;entity?uncap_first&#125;);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 修改</span><br><span class="line">     *</span><br><span class="line">     * @param $&#123;entity?uncap_first&#125; $&#123;entity?uncap_first&#125;</span><br><span class="line">     */</span><br><span class="line">    void update$&#123;entity&#125;($&#123;entity&#125; $&#123;entity?uncap_first&#125;);</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 删除</span><br><span class="line">     *</span><br><span class="line">     * @param $&#123;entity?uncap_first&#125; $&#123;entity?uncap_first&#125;</span><br><span class="line">     */</span><br><span class="line">    void delete$&#123;entity&#125;($&#123;entity&#125; $&#123;entity?uncap_first&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="serviceImpl模版"><a href="#serviceImpl模版" class="headerlink" title="serviceImpl模版"></a>serviceImpl模版</h4><p>文件名：serviceImpl.java.ftl</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">package $&#123;package.ServiceImpl&#125;;</span><br><span class="line"></span><br><span class="line">import $&#123;package.Entity&#125;.$&#123;entity&#125;;</span><br><span class="line">import $&#123;package.Mapper&#125;.$&#123;table.mapperName&#125;;</span><br><span class="line">import $&#123;package.Service&#125;.$&#123;table.serviceName&#125;;</span><br><span class="line">import $&#123;superServiceImplClassPackage&#125;;</span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line">import org.springframework.transaction.annotation.Transactional;</span><br><span class="line">import org.springframework.transaction.annotation.Propagation;</span><br><span class="line">import lombok.RequiredArgsConstructor;</span><br><span class="line">import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;</span><br><span class="line">import com.baomidou.mybatisplus.core.metadata.IPage;</span><br><span class="line">import com.baomidou.mybatisplus.extension.plugins.pagination.Page;</span><br><span class="line">import top.diruipu.demo.common.core.entity.QueryRequest;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * $&#123;table.comment!&#125; 服务实现类</span><br><span class="line"> * &lt;/p&gt;</span><br><span class="line"> *</span><br><span class="line"> * @author $&#123;author&#125;</span><br><span class="line"> * @since $&#123;date&#125;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">@RequiredArgsConstructor</span><br><span class="line">@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)</span><br><span class="line">public class $&#123;table.serviceImplName&#125; extends $&#123;superServiceImplClass&#125;&lt;$&#123;table.mapperName&#125;, $&#123;entity&#125;&gt; implements $&#123;table.serviceName&#125; &#123;</span><br><span class="line"></span><br><span class="line">    private final $&#123;table.mapperName&#125; $&#123;table.mapperName?uncap_first&#125;;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public IPage&lt;$&#123;entity&#125;&gt; find$&#123;entity&#125;s(QueryRequest request, $&#123;entity&#125; $&#123;entity?uncap_first&#125;) &#123;</span><br><span class="line">        LambdaQueryWrapper&lt;$&#123;entity&#125;&gt; queryWrapper = new LambdaQueryWrapper&lt;&gt;();</span><br><span class="line">        // TODO 设置查询条件</span><br><span class="line">        Page&lt;$&#123;entity&#125;&gt; page = new Page&lt;&gt;(request.getPageNum(), request.getPageSize());</span><br><span class="line">        return this.page(page, queryWrapper);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public List&lt;$&#123;entity&#125;&gt; find$&#123;entity&#125;s($&#123;entity&#125; $&#123;entity?uncap_first&#125;) &#123;</span><br><span class="line">        LambdaQueryWrapper&lt;$&#123;entity&#125;&gt; queryWrapper = new LambdaQueryWrapper&lt;&gt;();</span><br><span class="line">        // TODO 设置查询条件</span><br><span class="line">        return this.baseMapper.selectList(queryWrapper);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    @Transactional(rollbackFor = Exception.class)</span><br><span class="line">    public void create$&#123;entity&#125;($&#123;entity&#125; $&#123;entity?uncap_first&#125;) &#123;</span><br><span class="line">        this.save($&#123;entity?uncap_first&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    @Transactional(rollbackFor = Exception.class)</span><br><span class="line">    public void update$&#123;entity&#125;($&#123;entity&#125; $&#123;entity?uncap_first&#125;) &#123;</span><br><span class="line">        this.saveOrUpdate($&#123;entity?uncap_first&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    @Transactional(rollbackFor = Exception.class)</span><br><span class="line">    public void delete$&#123;entity&#125;($&#123;entity&#125; $&#123;entity?uncap_first&#125;) &#123;</span><br><span class="line">        LambdaQueryWrapper&lt;$&#123;entity&#125;&gt; wapper = new LambdaQueryWrapper&lt;&gt;();</span><br><span class="line">        // TODO 设置删除条件</span><br><span class="line">        this.remove(wapper);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Controller模版"><a href="#Controller模版" class="headerlink" title="Controller模版"></a>Controller模版</h4><p>文件名：controller.java.ftl</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">package $&#123;package.Controller&#125;;</span><br><span class="line"></span><br><span class="line">import $&#123;package.Entity&#125;.$&#123;entity&#125;;</span><br><span class="line">import $&#123;package.Service&#125;.$&#123;table.serviceName&#125;;</span><br><span class="line">import top.diruipu.demo.common.core.entity.Response;</span><br><span class="line">import top.diruipu.demo.common.core.entity.QueryRequest;</span><br><span class="line">import top.diruipu.demo.common.core.exception.SysException;</span><br><span class="line">import top.diruipu.demo.common.core.utils.SysUtil;</span><br><span class="line">import lombok.extern.slf4j.Slf4j;</span><br><span class="line">import lombok.RequiredArgsConstructor;</span><br><span class="line">import org.springframework.security.access.prepost.PreAuthorize;</span><br><span class="line">import org.springframework.validation.annotation.Validated;</span><br><span class="line">import org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line">import javax.validation.Valid;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* &lt;p&gt;</span><br><span class="line">    * $&#123;table.comment!&#125; 前端控制器</span><br><span class="line">    * &lt;/p&gt;</span><br><span class="line">*</span><br><span class="line">* @author $&#123;author&#125;</span><br><span class="line">* @since $&#123;date&#125;</span><br><span class="line">*/</span><br><span class="line">@Slf4j</span><br><span class="line">@Validated</span><br><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;$&#123;entity?uncap_first&#125;&quot;)</span><br><span class="line">@RequiredArgsConstructor</span><br><span class="line">public class $&#123;entity&#125;Controller &#123;</span><br><span class="line"></span><br><span class="line">    private final I$&#123;entity&#125;Service $&#123;entity?uncap_first&#125;Service;</span><br><span class="line"></span><br><span class="line">    @GetMapping</span><br><span class="line">    public Response getAll$&#123;entity&#125;s($&#123;entity&#125; $&#123;entity?uncap_first&#125;) &#123;</span><br><span class="line">        return new Response().data($&#123;entity?uncap_first&#125;Service.find$&#123;entity&#125;s($&#123;entity?uncap_first&#125;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @GetMapping(&quot;list&quot;)</span><br><span class="line">    public  Response $&#123;entity?uncap_first&#125;List(QueryRequest request, $&#123;entity&#125; $&#123;entity?uncap_first&#125;) &#123;</span><br><span class="line">        Map&lt;String, Object&gt; dataTable = SysUtil.getDataTable(this.$&#123;entity?uncap_first&#125;Service.find$&#123;entity&#125;s(request, $&#123;entity?uncap_first&#125;));</span><br><span class="line">        return new Response().data(dataTable);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @PostMapping</span><br><span class="line">    public void add$&#123;entity&#125;(@Valid $&#123;entity&#125; $&#123;entity?uncap_first&#125;) throws  Exception &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            this.$&#123;entity?uncap_first&#125;Service.create$&#123;entity&#125;($&#123;entity?uncap_first&#125;);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            String message = &quot;新增$&#123;entity&#125;失败&quot;;</span><br><span class="line">            log.error(message, e);</span><br><span class="line">            throw new SysException(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @DeleteMapping</span><br><span class="line">    public void delete$&#123;entity&#125;($&#123;entity&#125; $&#123;entity?uncap_first&#125;) throws  Exception &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            this.$&#123;entity?uncap_first&#125;Service.delete$&#123;entity&#125;($&#123;entity?uncap_first&#125;);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            String message = &quot;删除$&#123;entity&#125;失败&quot;;</span><br><span class="line">            log.error(message, e);</span><br><span class="line">            throw new SysException(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @PutMapping</span><br><span class="line">    public void update$&#123;entity&#125;($&#123;entity&#125; $&#123;entity?uncap_first&#125;) throws  Exception &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            this.$&#123;entity?uncap_first&#125;Service.update$&#123;entity&#125;($&#123;entity?uncap_first&#125;);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            String message = &quot;修改$&#123;entity&#125;失败&quot;;</span><br><span class="line">            log.error(message, e);</span><br><span class="line">            throw new SysException(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="相关代码参考"><a href="#相关代码参考" class="headerlink" title="相关代码参考"></a>相关代码参考</h4><h5 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Response</span> <span class="keyword">extends</span> <span class="title class_">HashMap</span>&lt;String, Object&gt; &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Response <span class="title function_">message</span><span class="params">(String message)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.put(<span class="string">&quot;message&quot;</span>, message);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Response <span class="title function_">data</span><span class="params">(Object data)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.put(<span class="string">&quot;data&quot;</span>, data);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Response <span class="title function_">put</span><span class="params">(String key, Object value)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.put(key, value);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getMessage</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> String.valueOf(get(<span class="string">&quot;message&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">getData</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> get(<span class="string">&quot;data&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="QueryRequest"><a href="#QueryRequest" class="headerlink" title="QueryRequest"></a>QueryRequest</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> lombok.ToString;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ToString</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">QueryRequest</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 当前页面数据量</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">pageSize</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 当前页码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">pageNum</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 排序字段</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String field;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 排序规则，asc升序，desc降序</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String order;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="SysException"><a href="#SysException" class="headerlink" title="SysException"></a>SysException</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SysException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">SysException</span><span class="params">(String message)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="SysUtil"><a href="#SysUtil" class="headerlink" title="SysUtil"></a>SysUtil</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">SysUtil</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Map&lt;String, Object&gt; <span class="title function_">getDataTable</span><span class="params">(IPage&lt;?&gt; pageInfo)</span> &#123;</span><br><span class="line">      Map&lt;String, Object&gt; data = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(<span class="number">4</span>);</span><br><span class="line">      data.put(<span class="string">&quot;rows&quot;</span>, pageInfo.getRecords());</span><br><span class="line">      data.put(<span class="string">&quot;total&quot;</span>, pageInfo.getTotal());</span><br><span class="line">      <span class="keyword">return</span> data;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/java/">#java</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/mybatis/">#mybatis</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/04/07/openjdk12%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">openjdk12编译问题</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c05ce7f7288367fc3232',
+                    clientSecret: '94bbd22b269a721e1b98c1efa1750de2de64fdab',
+                    repo: 'gitalk',
+                    owner: 'ZhaiRuiPu',
+                    admin: ['ZhaiRuiPu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">jerry2</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">晋ICP备20005379号-1</a></div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96"><span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81"><span class="nav-text">核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E7%89%88%E9%85%8D%E7%BD%AE"><span class="nav-text">模版配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#service%E6%A8%A1%E7%89%88"><span class="nav-text">service模版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#serviceImpl%E6%A8%A1%E7%89%88"><span class="nav-text">serviceImpl模版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Controller%E6%A8%A1%E7%89%88"><span class="nav-text">Controller模版</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E5%8F%82%E8%80%83"><span class="nav-text">相关代码参考</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Response"><span class="nav-text">Response</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#QueryRequest"><span class="nav-text">QueryRequest</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SysException"><span class="nav-text">SysException</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SysUtil"><span class="nav-text">SysUtil</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
