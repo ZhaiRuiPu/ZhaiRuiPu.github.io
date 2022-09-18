@@ -9,7 +9,7 @@
     
     <title>
         
-            jQuery |
+            正则表达式常用关键字 |
         
         jerry2
     </title>
@@ -154,7 +154,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">jQuery</span>
+            <span class="title-hover-animation">正则表达式常用关键字</span>
         </div>
 
         
@@ -173,8 +173,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2019-03-14 15:15:26</span>
-        <span class="mobile">2019-03-14 15:15</span>
+        <span class="pc">2019-09-18 18:48:29</span>
+        <span class="mobile">2019-09-18 18:48</span>
     </span>
     
     
@@ -183,11 +183,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/javascript/">javascript</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        | <a href="/tags/jQuery/">jQuery</a>&nbsp;
+                        <a href="/tags/regex/">regex</a>&nbsp;
                     </li>
                 
             </ul>
@@ -197,7 +193,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>443 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>343 字</span>
         </span>
     
     
@@ -218,71 +214,10 @@
         
 
         <div class="article-content markdown-body">
-            <blockquote>
-<p>​		jQuery 是一个快速、小型且功能丰富的 JavaScript 库。它使 HTML 文档遍历和操作、事件处理、动画和 Ajax 之类的事情变得更加简单，它具有易于使用的 API，可在多种浏览器中工作。jQuery 结合了多功能性和可扩展性，改变了数百万人编写 JavaScript 的方式。</p>
-</blockquote>
-<h2 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">”t1”</span>&gt;</span>HelloWorld!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+            <p>简单记录下正则表达式的常用规则</p>
+<p>详细记录可以查阅<a class="link" target="_blank" rel="noopener" href="https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md">https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">d? d出现0/1次</span><br><span class="line">a＊ a可以出现0/多次</span><br><span class="line">a+ a出现一次以上</span><br><span class="line">a｛6｝ a出现6次</span><br><span class="line">a｛2，｝ a出现2次以上</span><br><span class="line">a｛2，6｝ a出现2-6次</span><br><span class="line">匹配多个字符：</span><br><span class="line">(ab)+ ab出现一次以上</span><br><span class="line">或运算：</span><br><span class="line">a (cat|dog) 匹配 a cat or a dog</span><br><span class="line">a cat|dog 匹配 a cat or dog</span><br><span class="line">字符类：</span><br><span class="line">匹配由abc构成的数据【abc】+ abc出现一次以上 abc aabbcc</span><br><span class="line">【a-zA-Z0-9】 ABCabc123</span><br><span class="line">^ 排除 【^0-9】 匹配0-9之外的数据(包括换行符)</span><br><span class="line">元字符</span><br><span class="line">\d 数字字符 \d+ 匹配一个以上的数字</span><br><span class="line">\D 非数字字符</span><br><span class="line">\w 单词字符 单词 数字 下划线即英文字符</span><br><span class="line">\W 非单词字符</span><br><span class="line">\s 空白符 包含空格和换行符</span><br><span class="line">\S 非空白字符</span><br><span class="line">\b 单词的边界 单词的开头或结尾 单词与符号之前的边界</span><br><span class="line">\B 非单词的边界 符号与符号 单词与单词的边界</span><br><span class="line">. 任意字符不包含换行符</span><br><span class="line">\. 表示. 通过\进行了转意</span><br><span class="line">^ 匹配行首 $ 匹配行尾</span><br><span class="line">＊+｛｝贪婪匹配</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">strong</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">b</span>&gt;</span></span>https://www.wondershare. com<span class="language-xml"><span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span></span><br><span class="line">&lt;.+&gt; 会匹配整串 因为是贪婪匹配</span><br><span class="line">&lt;.+?&gt; 只匹配两个标签代码，➕? 设置为懒惰匹配</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 =$(“#t1”).<span class="title function_">html</span>();</span><br><span class="line"><span class="title function_">alert</span>(s1);</span><br></pre></td></tr></table></figure>
-
-<h2 id="DOM对象和JQuery对象的区别"><a href="#DOM对象和JQuery对象的区别" class="headerlink" title="DOM对象和JQuery对象的区别"></a>DOM对象和JQuery对象的区别</h2><ul>
-<li>DOM对象是JavaScript的原生对象。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//obj就是一个DOM对象</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(“t1”);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>jQuery对象是jQuery库自己封装的对象。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj= $(“#t1”);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>jQuery对象可以调用自己库中提供的方法，JavaScript对象不可以。同样jQuery对象也不能调用JavaScript原生的对象和方法</p>
-</li>
-<li><p>JavaScript原生对象和JQuery对象之间可以互相转换</p>
-<ul>
-<li>JavaScript原生对象转换成jQuery对象: $(JavaScript对象)</li>
-<li>jQuery对象转换成JavaScript原生对象: jQuery对象[0]</li>
-</ul>
-</li>
-</ul>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p><img src="/images/wpsg3sTZQ.jpg" alt="img"></p>
-<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
-<li>基本选择器</li>
-</ul>
-<blockquote>
-<p>ID选择器(#id)、标签选择器(标签名)、类选择器(.class)、并集选择器(选择器1,选择器2,选择器3)</p>
-</blockquote>
-<ul>
-<li>属性选择器</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取包含name属性的标签</span></span><br><span class="line">$(“[name]”).<span class="title function_">css</span>(“color”,”red”);</span><br><span class="line"><span class="comment">//获取包含name=abc属性的标签</span></span><br><span class="line">$(“[name=’abc’]”).<span class="title function_">css</span>(“color”,”red”);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>表单对象属性选择器</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取表单中</span></span><br><span class="line">$(“:checked”);</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用DOM操作方法"><a href="#常用DOM操作方法" class="headerlink" title="常用DOM操作方法"></a>常用DOM操作方法</h2><ul>
-<li>prop()</li>
-<li>css()</li>
-<li>html()</li>
-<li>addClass()</li>
-<li>val()</li>
-<li>append(); 追加一个子标签(在最后)</li>
-<li>prepend();  添加一个子标签(在最前面)</li>
-<li>after(); 追加一个兄弟标签(在之后)</li>
-<li>before();   添加一个兄弟标签(在之前)</li>
-<li>remove()  删除指定标签对象</li>
-<li>children();  所有孩子标签</li>
-<li>next();    下一个兄弟</li>
-<li>prev();   上一个兄弟</li>
-<li>parent();  父节点</li>
-<li>siblings()   获取所有同辈元素</li>
-<li>show();     显示</li>
-<li>hide();      隐藏</li>
-<li>fadeIn()     淡入</li>
-<li>fadeOut();    淡出</li>
-</ul>
 
         </div>
 
@@ -292,11 +227,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/javascript/">#javascript</a>&nbsp;
-                    </li>
-                
-                    <li class="tag-item">
-                        <a href="/tags/jQuery/">#jQuery</a>&nbsp;
+                        <a href="/tags/regex/">#regex</a>&nbsp;
                     </li>
                 
             </ul>
@@ -308,13 +239,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2019/09/18/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B8%B8%E7%94%A8%E5%85%B3%E9%94%AE%E5%AD%97/"
+                           href="/2020/01/11/linux%E5%91%BD%E4%BB%A4/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">正则表达式常用关键字</span>
+                                <span class="post-nav-title-item">linux命令</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -324,10 +255,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2019/03/13/css/"
+                           href="/2019/03/14/jQuery/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">css</span>
+                                <span class="post-nav-title-item">jQuery</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -505,7 +436,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HelloWorld"><span class="nav-text">HelloWorld</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM%E5%AF%B9%E8%B1%A1%E5%92%8CJQuery%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">DOM对象和JQuery对象的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8DOM%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-text">常用DOM操作方法</span></a></li></ol>
+        
     </div>
 </div>
         </aside>
