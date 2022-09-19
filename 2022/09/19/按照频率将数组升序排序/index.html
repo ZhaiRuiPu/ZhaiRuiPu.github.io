@@ -9,7 +9,7 @@
     
     <title>
         
-            两个相同字符之间的最长子字符串 |
+            按照频率将数组升序排序 |
         
         jerry2
     </title>
@@ -154,7 +154,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">两个相同字符之间的最长子字符串</span>
+            <span class="title-hover-animation">按照频率将数组升序排序</span>
         </div>
 
         
@@ -173,8 +173,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-17 19:09:17</span>
-        <span class="mobile">2022-09-17 19:09</span>
+        <span class="pc">2022-09-19 12:33:03</span>
+        <span class="mobile">2022-09-19 12:33</span>
     </span>
     
     
@@ -193,7 +193,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>252 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>242 字</span>
         </span>
     
     
@@ -214,17 +214,14 @@
         
 
         <div class="article-content markdown-body">
-            <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给你一个字符串 s，请你返回 两个相同字符之间的最长子字符串的长度 ，计算长度时不含这两个字符。如果不存在这样的子字符串，返回 -1 。</p>
-<p>子字符串 是字符串中的一个连续字符序列。</p>
+            <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给你一个整数数组 nums ，请你将数组按照每个值的频率 升序 排序。如果有多个值的频率相同，请你按照数值本身将它们 降序 排序。 </p>
+<p>请你返回排序后的数组。</p>
 <blockquote>
 <p><strong>示例 1</strong>：</p>
-<p>输入：s &#x3D; “aa”<br>输出：0<br>解释：最优的子字符串是两个 ‘a’ 之间的空子字符串。</p>
-<p><strong>示例 2</strong>：</p>
-<p>输入：s &#x3D; “abca”<br>输出：2<br>解释：最优的子字符串是 “bc” 。</p>
+<p>输入：nums &#x3D; [1,1,2,2,2,3]<br>输出：[3,1,1,2,2,2]<br>解释：’3’ 频率为 1，’1’ 频率为 2，’2’ 频率为 3 。<br><strong>示例 2</strong>：</p>
+<p>输入：nums &#x3D; [2,3,1,3,2]<br>输出：[1,3,3,2,2]<br>解释：’2’ 和 ‘3’ 频率都为 2 ，所以它们之间按照数值本身降序排序。</p>
 </blockquote>
-<h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxLengthBetweenEqualCharacters</span><span class="params">(String s)</span> &#123;</span><br><span class="line">          <span class="comment">//缓存每个子母第一次出现的下标</span></span><br><span class="line">        <span class="type">int</span>[] firstIndex = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">          <span class="comment">//写入默认值</span></span><br><span class="line">        Arrays.fill(firstIndex, -<span class="number">1</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxLength</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">              <span class="comment">//第一次出现直接填入</span></span><br><span class="line">            <span class="keyword">if</span> (firstIndex[s.charAt(i) - <span class="string">&#x27;a&#x27;</span>] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                firstIndex[s.charAt(i) - <span class="string">&#x27;a&#x27;</span>] = i;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="comment">//第二次出现取maxLength和当前字母距离中的最大值</span></span><br><span class="line">                maxLength = Math.max(maxLength, i - firstIndex[s.charAt(i) - <span class="string">&#x27;a&#x27;</span>] - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxLength;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] frequencySort(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; resMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        List&lt;Integer&gt; numsList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//统计次数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> curr : nums) &#123;</span><br><span class="line">            numsList.add(curr);</span><br><span class="line">            resMap.put(curr, resMap.getOrDefault(curr, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//按出现次数排序</span></span><br><span class="line">        numsList.sort((a, b) -&gt; &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">aCount</span> <span class="operator">=</span> resMap.get(a);</span><br><span class="line">            <span class="type">int</span> <span class="variable">bCount</span> <span class="operator">=</span> resMap.get(b);</span><br><span class="line">            <span class="keyword">if</span> (aCount == bCount) &#123;</span><br><span class="line">                <span class="keyword">return</span> b - a;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> aCount - bCount;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> numsList.stream().mapToInt(Integer::intValue).toArray();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
         </div>
@@ -244,29 +241,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/09/19/%E6%8C%89%E7%85%A7%E9%A2%91%E7%8E%87%E5%B0%86%E6%95%B0%E7%BB%84%E5%8D%87%E5%BA%8F%E6%8E%92%E5%BA%8F/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">按照频率将数组升序排序</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/15/%E7%BE%8A%E4%BA%86%E4%B8%AA%E7%BE%8A%E6%8A%93%E5%8C%85%E7%A0%B4%E8%A7%A3/"
+                           href="/2022/09/17/%E4%B8%A4%E4%B8%AA%E7%9B%B8%E5%90%8C%E5%AD%97%E7%AC%A6%E4%B9%8B%E9%97%B4%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">羊了个羊抓包破解</span>
+                                <span class="post-nav-title-item">两个相同字符之间的最长子字符串</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
