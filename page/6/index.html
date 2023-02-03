@@ -9,8 +9,6 @@
     
     <title>
         
-            关于 |
-        
         jerry2
     </title>
     
@@ -63,7 +61,7 @@
                 <ul class="menu-list">
                     
                         <li class="menu-item">
-                            <a class=""
+                            <a class="active"
                                href="/"
                             >
                                 首页
@@ -87,7 +85,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/about"
                             >
                                 关于
@@ -116,7 +114,7 @@
         <ul class="drawer-menu-list">
             
                 <li class="drawer-menu-item flex-center">
-                    <a class=""
+                    <a class="active"
                        href="/">首页</a>
                 </li>
             
@@ -131,7 +129,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/about">关于</a>
                 </li>
             
@@ -150,74 +148,50 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="page-template-container">
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
         
-        
-        <div class="page-template-content markdown-body">
-            
-                <h2 id="About-me"><a href="#About-me" class="headerlink" title="About me"></a>About me</h2><p>本人很懒，什么都…………</p>
+            <li class="home-article-item">
 
-            
-        </div>
-        <div class="page-template-comments">
-            
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2019/01/28/hello-world/">
+                        Hello World
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, yo...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Jan 28 2019 22:20:33 GMT+0800">2019-01-28</span></span>
+        
+        
     </div>
+
+    <a href="/2019/01/28/hello-world/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+        <a class="prev btn"
+           href="/page/5/"
+        >上一页</a>
     
 
-        
-            
-    <div id="gitalk-container"></div>
-    <script 
-            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
-    <script >
-
-        function loadGitalk() {
-            let __gitalk__pathname = decodeURI(location.pathname);
-            const __gitalk__pathnameLength = __gitalk__pathname.length;
-            const __gitalk__pathnameMaxLength = 50;
-            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
-                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
-            }
-
-            try {
-                Gitalk && new Gitalk({
-                    clientID: 'c05ce7f7288367fc3232',
-                    clientSecret: '94bbd22b269a721e1b98c1efa1750de2de64fdab',
-                    repo: 'gitalk',
-                    owner: 'ZhaiRuiPu',
-                    admin: ['ZhaiRuiPu'],
-                    id: __gitalk__pathname,
-                    language: 'zh-CN'
-                }).render('gitalk-container');
-
-            } catch (e) {
-                window.Gitalk = null;
-            }
-        }
-
-        if ('false') {
-            const loadGitalkTimeout = setTimeout(() => {
-                loadGitalk();
-                clearTimeout(loadGitalkTimeout);
-            }, 1000);
-        } else {
-            window.addEventListener('DOMContentLoaded', loadGitalk);
-        }
-    </script>
-
-
-
-        
     
 </div>
 
-            
-        </div>
     </div>
 </div>
 
@@ -340,6 +314,7 @@
     
 
 </main>
+
 
 
 
