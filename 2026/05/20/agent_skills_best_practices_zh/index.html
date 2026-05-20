@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="jerry2">
+    
+    <title>
+        
+            Agent Skills 最佳实践中文整理 |
+        
+        jerry2
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"diruipu.top","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"望望山山水水，人去去，隐隐迢迢"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                jerry2
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Agent Skills 最佳实践中文整理</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">jerry2</span>
+                        
+                            <span class="author-label">Architect</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2026-05-20 21:52:00</span>
+        <span class="mobile">2026-05-20 21:52</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/AI/">AI</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Agent/">Agent</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Skill/">Skill</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.6k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>12 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <blockquote>
+<p>来源文档：Agent Skills - Best practices for skill creators<br>整理目标：把原文中关于如何创建高质量 Skill 的要点整理成中文，方便后续编写、复用和迭代 Skill。</p>
+</blockquote>
+<hr>
+<h2 id="一、核心目标"><a href="#一、核心目标" class="headerlink" title="一、核心目标"></a>一、核心目标</h2><p>这篇文档讲的是：<strong>如何写出范围合适、信息密度高、能真正提升 Agent 表现的 Skill</strong>。</p>
+<p>Skill 不应该只是泛泛地写“遵循最佳实践”，而应该把 Agent 原本不知道、容易做错、需要固定遵守的经验沉淀下来。</p>
+<hr>
+<h2 id="1-从真实经验出发，不要凭空生成"><a href="#1-从真实经验出发，不要凭空生成" class="headerlink" title="1. 从真实经验出发，不要凭空生成"></a>1. 从真实经验出发，不要凭空生成</h2><h3 id="1-1-不要让-LLM-空写-Skill"><a href="#1-1-不要让-LLM-空写-Skill" class="headerlink" title="1.1 不要让 LLM 空写 Skill"></a>1.1 不要让 LLM 空写 Skill</h3><p>常见错误是：直接让模型“帮我写一个 Skill”，但不给它具体业务背景。这样生成的内容通常会很泛，比如：</p>
+<blockquote>
+<p>妥善处理错误<br>遵循认证最佳实践<br>注意边界情况</p>
+</blockquote>
+<p>这些话看起来没错，但对 Agent 实际执行帮助很小。</p>
+<p>好的 Skill 应该来自：</p>
+<ul>
+<li>真实项目</li>
+<li>真实任务</li>
+<li>真实错误</li>
+<li>真实约束</li>
+<li>真实纠正过程</li>
+</ul>
+<h3 id="1-2-从一次真实任务中提炼"><a href="#1-2-从一次真实任务中提炼" class="headerlink" title="1.2 从一次真实任务中提炼"></a>1.2 从一次真实任务中提炼</h3><p>推荐做法是：</p>
+<ol>
+<li>先让 Agent 完成一个真实任务</li>
+<li>你在过程中不断补充背景、纠正它、告诉它偏好</li>
+<li>任务完成后，再把可复用的流程抽成 Skill</li>
+</ol>
+<p>要重点提炼这些内容：</p>
+<table>
+<thead>
+<tr>
+<th>要提炼的内容</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>成功步骤</td>
+<td>哪些动作顺序最终有效</td>
+</tr>
+<tr>
+<td>你做过的纠正</td>
+<td>Agent 哪些地方容易走偏</td>
+</tr>
+<tr>
+<td>输入输出格式</td>
+<td>原始数据长什么样，最终结果应该长什么样</td>
+</tr>
+<tr>
+<td>项目上下文</td>
+<td>项目里的特殊约定、限制、工具、命名方式</td>
+</tr>
+</tbody></table>
+<p>例如：如果 Agent 在做产品原型时漏掉了“加工师傅、质检员、设备流转”，这些纠正就很适合沉淀进一个产品原型 Skill。</p>
+<h3 id="1-3-从已有项目资料中合成"><a href="#1-3-从已有项目资料中合成" class="headerlink" title="1.3 从已有项目资料中合成"></a>1.3 从已有项目资料中合成</h3><p>如果团队已经有文档，可以把这些资料整理成 Skill。</p>
+<p>高价值资料包括：</p>
+<table>
+<thead>
+<tr>
+<th>资料类型</th>
+<th>价值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内部文档、Runbook、风格指南</td>
+<td>体现团队规范</td>
+</tr>
+<tr>
+<td>API 规格、Schema、配置文件</td>
+<td>体现真实接口和数据结构</td>
+</tr>
+<tr>
+<td>Code Review 评论、Issue</td>
+<td>体现反复出现的问题</td>
+</tr>
+<tr>
+<td>Git 历史、补丁、修复记录</td>
+<td>体现真实变更模式</td>
+</tr>
+<tr>
+<td>事故案例和解决方案</td>
+<td>体现真实失败模式</td>
+</tr>
+</tbody></table>
+<p>核心原则：</p>
+<blockquote>
+<p>项目专属资料比通用最佳实践文章更有价值。</p>
+</blockquote>
+<hr>
+<h2 id="2-用真实执行结果不断迭代"><a href="#2-用真实执行结果不断迭代" class="headerlink" title="2. 用真实执行结果不断迭代"></a>2. 用真实执行结果不断迭代</h2><p>Skill 的第一版通常不会很好，需要拿真实任务测试，然后根据 Agent 的执行过程修正。</p>
+<p>要观察的不只是最终结果，还要看 Agent 的执行轨迹。</p>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>可能原因</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Agent 绕了很多弯</td>
+<td>指令太模糊</td>
+</tr>
+<tr>
+<td>Agent 执行了不该执行的步骤</td>
+<td>指令适用条件没写清楚</td>
+</tr>
+<tr>
+<td>Agent 在多个工具之间犹豫</td>
+<td>给了太多选项，没有默认方案</td>
+</tr>
+<tr>
+<td>Agent 漏掉关键检查</td>
+<td>没有明确 checklist 或 validation</td>
+</tr>
+</tbody></table>
+<p>推荐做法：</p>
+<ol>
+<li>执行一次</li>
+<li>复盘一次</li>
+<li>修正一次</li>
+<li>再用真实任务验证</li>
+</ol>
+<p>复杂领域通常需要多轮迭代。</p>
+<hr>
+<h2 id="3-节省上下文，不要写废话"><a href="#3-节省上下文，不要写废话" class="headerlink" title="3. 节省上下文，不要写废话"></a>3. 节省上下文，不要写废话</h2><p>Skill 激活后，整个 <code>SKILL.md</code> 会进入 Agent 上下文窗口。</p>
+<p>也就是说，Skill 里的每个 token 都会占用注意力和上下文空间。</p>
+<h3 id="3-1-只写-Agent-不知道的东西"><a href="#3-1-只写-Agent-不知道的东西" class="headerlink" title="3.1 只写 Agent 不知道的东西"></a>3.1 只写 Agent 不知道的东西</h3><p>应该写：</p>
+<table>
+<thead>
+<tr>
+<th>应该写</th>
+<th>不该写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项目特殊约定</td>
+<td>什么是 PDF</td>
+</tr>
+<tr>
+<td>特定 API 用法</td>
+<td>什么是 HTTP</td>
+</tr>
+<tr>
+<td>容易犯错的边界情况</td>
+<td>什么是数据库迁移</td>
+</tr>
+<tr>
+<td>必须使用的工具&#x2F;库</td>
+<td>泛泛的技术介绍</td>
+</tr>
+<tr>
+<td>特定输入输出格式</td>
+<td>大段背景科普</td>
+</tr>
+</tbody></table>
+<p>不好的写法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PDF 是一种常见文件格式，包含文本、图片等内容……</span><br></pre></td></tr></table></figure>
+
+<p>更好的写法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用 pdfplumber 提取文本。扫描件则使用 pdf2image + pytesseract。</span><br></pre></td></tr></table></figure>
+
+<p>判断标准：</p>
+<blockquote>
+<p>如果没有这条说明，Agent 会不会做错？<br>如果不会，就删掉。</p>
+</blockquote>
+<hr>
+<h2 id="4-Skill-的范围要像函数一样清晰"><a href="#4-Skill-的范围要像函数一样清晰" class="headerlink" title="4. Skill 的范围要像函数一样清晰"></a>4. Skill 的范围要像函数一样清晰</h2><p>文档把 Skill 的范围设计类比成写函数：</p>
+<blockquote>
+<p>一个 Skill 应该封装一个连贯的工作单元。</p>
+</blockquote>
+<h3 id="4-1-太窄的问题"><a href="#4-1-太窄的问题" class="headerlink" title="4.1 太窄的问题"></a>4.1 太窄的问题</h3><p>如果 Skill 太窄，一个任务可能要加载多个 Skill，容易造成：</p>
+<ul>
+<li>上下文浪费</li>
+<li>指令冲突</li>
+<li>Agent 不知道该优先听哪个</li>
+</ul>
+<h3 id="4-2-太宽的问题"><a href="#4-2-太宽的问题" class="headerlink" title="4.2 太宽的问题"></a>4.2 太宽的问题</h3><p>如果 Skill 太宽，就很难准确触发，而且内容会变得混乱。</p>
+<table>
+<thead>
+<tr>
+<th>Skill 范围</th>
+<th>是否合理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>查询数据库并格式化结果</td>
+<td>合理，属于一个连贯任务</td>
+</tr>
+<tr>
+<td>查询数据库 + 数据库管理 + 权限治理 + 运维</td>
+<td>太宽</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="5-细节要适中，不要写百科全书"><a href="#5-细节要适中，不要写百科全书" class="headerlink" title="5. 细节要适中，不要写百科全书"></a>5. 细节要适中，不要写百科全书</h2><p>过于详尽的 Skill 可能反而降低效果。</p>
+<p>因为 Agent 需要从大量内容中找当前任务相关部分，容易被无关指令带偏。</p>
+<p>更好的写法是：</p>
+<ul>
+<li>简洁</li>
+<li>分步骤</li>
+<li>有一个能跑通的示例</li>
+<li>只覆盖高频和关键边界情况</li>
+</ul>
+<p>如果你发现自己在写几十个边界情况，应该思考：</p>
+<blockquote>
+<p>这些是不是应该交给 Agent 自己判断，而不是全部塞进 Skill？</p>
+</blockquote>
+<hr>
+<h2 id="6-大型-Skill-要使用“渐进式披露”"><a href="#6-大型-Skill-要使用“渐进式披露”" class="headerlink" title="6. 大型 Skill 要使用“渐进式披露”"></a>6. 大型 Skill 要使用“渐进式披露”</h2><p>文档建议：</p>
+<ul>
+<li><code>SKILL.md</code> 控制在 500 行以内</li>
+<li><code>SKILL.md</code> 控制在 5000 tokens 以内</li>
+<li>核心指令放在 <code>SKILL.md</code></li>
+<li>详细资料放到 <code>references/</code> 等目录里</li>
+</ul>
+<p>关键不是简单写：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">更多内容见 references/</span><br></pre></td></tr></table></figure>
+
+<p>而是要明确告诉 Agent 什么时候读哪个文件：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果 API 返回非 200 状态码，读取 references/api-errors.md。</span><br></pre></td></tr></table></figure>
+
+<p>这样 Agent 只在需要时加载额外资料，不会一开始就被大量内容淹没。</p>
+<hr>
+<h2 id="7-控制力度要匹配任务脆弱程度"><a href="#7-控制力度要匹配任务脆弱程度" class="headerlink" title="7. 控制力度要匹配任务脆弱程度"></a>7. 控制力度要匹配任务脆弱程度</h2><p>不是所有指令都要写得一样死。</p>
+<h3 id="7-1-灵活任务：给原则和目标"><a href="#7-1-灵活任务：给原则和目标" class="headerlink" title="7.1 灵活任务：给原则和目标"></a>7.1 灵活任务：给原则和目标</h3><p>比如 Code Review，很多路径都可以完成，不必规定死顺序。可以写：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">检查 SQL 注入风险，确认使用参数化查询。</span><br><span class="line">检查每个接口是否有认证逻辑。</span><br><span class="line">检查并发路径中的竞态条件。</span><br><span class="line">确认错误信息不会泄露内部细节。</span><br></pre></td></tr></table></figure>
+
+<p>这类任务允许 Agent 自主判断。</p>
+<h3 id="7-2-脆弱任务：必须强约束"><a href="#7-2-脆弱任务：必须强约束" class="headerlink" title="7.2 脆弱任务：必须强约束"></a>7.2 脆弱任务：必须强约束</h3><p>比如数据库迁移、生产环境操作、破坏性操作，应该明确要求：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python scripts/migrate.py --verify --backup</span><br></pre></td></tr></table></figure>
+
+<p>并写清楚：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不要修改命令，不要添加额外参数。</span><br></pre></td></tr></table></figure>
+
+<p>核心原则：</p>
+<blockquote>
+<p>同一个 Skill 里可以同时有灵活部分和强约束部分，要分别校准。</p>
+</blockquote>
+<hr>
+<h2 id="8-给默认方案，不要给一堆菜单"><a href="#8-给默认方案，不要给一堆菜单" class="headerlink" title="8. 给默认方案，不要给一堆菜单"></a>8. 给默认方案，不要给一堆菜单</h2><p>当多个工具都能完成任务时，不要把它们平铺成菜单。</p>
+<p>不好的写法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你可以使用 pypdf、pdfplumber、PyMuPDF、pdf2image……</span><br></pre></td></tr></table></figure>
+
+<p>更好的写法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">默认使用 pdfplumber 提取文本。</span><br><span class="line">如果是扫描 PDF，需要 OCR，则使用 pdf2image + pytesseract。</span><br></pre></td></tr></table></figure>
+
+<p>也就是：</p>
+<blockquote>
+<p>先给默认方案，再给逃生出口。</p>
+</blockquote>
+<hr>
+<h2 id="9-写流程，不要只写结论"><a href="#9-写流程，不要只写结论" class="headerlink" title="9. 写流程，不要只写结论"></a>9. 写流程，不要只写结论</h2><p>Skill 应该教 Agent “如何处理一类问题”，而不是只给某个具体任务的答案。</p>
+<p>不好的写法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">把 orders 表和 customers 表用 customer<span class="emphasis">_id 关联，筛选 region = &#x27;EMEA&#x27;，然后统计 amount。</span></span><br></pre></td></tr></table></figure>
+
+<p>这个只适用于一个任务。</p>
+<p>更好的写法：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 读取 references/schema.yaml 找到相关表</span><br><span class="line"><span class="bullet">2.</span> 使用 <span class="emphasis">_id 外键约定关联表</span></span><br><span class="line"><span class="emphasis">3. 按用户请求添加 WHERE 条件</span></span><br><span class="line"><span class="emphasis">4. 对数值字段做聚合，并输出 markdown 表格</span></span><br></pre></td></tr></table></figure>
+
+<p>后者可以复用于多种分析任务。</p>
+<hr>
+<h2 id="10-有效-Skill-的常用结构模式"><a href="#10-有效-Skill-的常用结构模式" class="headerlink" title="10. 有效 Skill 的常用结构模式"></a>10. 有效 Skill 的常用结构模式</h2><h3 id="10-1-Gotchas：专门记录容易踩坑的地方"><a href="#10-1-Gotchas：专门记录容易踩坑的地方" class="headerlink" title="10.1 Gotchas：专门记录容易踩坑的地方"></a>10.1 Gotchas：专门记录容易踩坑的地方</h3><p>很多 Skill 里最有价值的部分是 <strong>Gotchas</strong>，也就是 Agent 如果不知道就很可能犯错的环境特定问题。</p>
+<p>例如：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## Gotchas</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> users 表使用软删除，查询必须加 WHERE deleted<span class="emphasis">_at IS NULL。</span></span><br><span class="line"><span class="emphasis">- 数据库里叫 user_</span>id，认证服务里叫 uid，计费 API 里叫 accountId，它们指的是同一个值。</span><br><span class="line"><span class="bullet">-</span> /health 只表示 Web 服务还活着，不代表数据库正常。完整健康检查要用 /ready。</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>这些不是“注意错误处理”这种泛泛建议，而是非常具体的坑。</p>
+<p>每次你纠正 Agent 的错误，都可以考虑把这条补进 Gotchas。</p>
+<hr>
+<h3 id="10-2-输出模板"><a href="#10-2-输出模板" class="headerlink" title="10.2 输出模板"></a>10.2 输出模板</h3><p>如果你希望 Agent 按固定格式输出，直接给模板，比用文字描述可靠。</p>
+<p>例如：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># [分析标题]</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Executive summary</span></span><br><span class="line">[一段话总结关键发现]</span><br><span class="line"></span><br><span class="line"><span class="section">## Key findings</span></span><br><span class="line"><span class="bullet">-</span> 发现 1，附数据支持</span><br><span class="line"><span class="bullet">-</span> 发现 2，附数据支持</span><br><span class="line"></span><br><span class="line"><span class="section">## Recommendations</span></span><br><span class="line"><span class="bullet">1.</span> 具体建议 1</span><br><span class="line"><span class="bullet">2.</span> 具体建议 2</span><br></pre></td></tr></table></figure>
+
+<p>短模板可以直接放在 <code>SKILL.md</code>，长模板或低频模板可以放到 <code>assets/</code>。</p>
+<hr>
+<h3 id="10-3-多步骤工作流用-Checklist"><a href="#10-3-多步骤工作流用-Checklist" class="headerlink" title="10.3 多步骤工作流用 Checklist"></a>10.3 多步骤工作流用 Checklist</h3><p>对于多步骤任务，Checklist 可以防止 Agent 跳步。</p>
+<p>例子：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## 表单处理流程</span></span><br><span class="line"></span><br><span class="line">Progress:</span><br><span class="line"><span class="bullet">-</span> [ ] Step 1: 分析表单，运行 scripts/analyze<span class="emphasis">_form.py</span></span><br><span class="line"><span class="emphasis">- [ ] Step 2: 创建字段映射，编辑 fields.json</span></span><br><span class="line"><span class="emphasis">- [ ] Step 3: 验证映射，运行 scripts/validate_</span>fields.py</span><br><span class="line"><span class="bullet">-</span> [ ] Step 4: 填写表单，运行 scripts/fill<span class="emphasis">_form.py</span></span><br><span class="line"><span class="emphasis">- [ ] Step 5: 验证输出，运行 scripts/verify_</span>output.py</span><br></pre></td></tr></table></figure>
+
+<p>这对有依赖关系、必须验证后才能进入下一步的任务尤其重要。</p>
+<hr>
+<h3 id="10-4-Validation-loop：做完后自检，失败就修"><a href="#10-4-Validation-loop：做完后自检，失败就修" class="headerlink" title="10.4 Validation loop：做完后自检，失败就修"></a>10.4 Validation loop：做完后自检，失败就修</h3><p>好的 Skill 可以要求 Agent：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 完成编辑</span><br><span class="line"><span class="bullet">2.</span> 运行 python scripts/validate.py output/</span><br><span class="line"><span class="bullet">3.</span> 如果验证失败：</span><br><span class="line"><span class="bullet">   -</span> 阅读错误信息</span><br><span class="line"><span class="bullet">   -</span> 修复问题</span><br><span class="line"><span class="bullet">   -</span> 再次运行验证</span><br><span class="line"><span class="bullet">4.</span> 只有验证通过后才继续</span><br></pre></td></tr></table></figure>
+
+<p>核心是形成闭环：</p>
+<blockquote>
+<p>执行 → 验证 → 修复 → 再验证 → 通过后交付</p>
+</blockquote>
+<p>这比“完成后检查一下”更可靠。</p>
+<hr>
+<h3 id="10-5-Plan-validate-execute：先计划，验证后再执行"><a href="#10-5-Plan-validate-execute：先计划，验证后再执行" class="headerlink" title="10.5 Plan-validate-execute：先计划，验证后再执行"></a>10.5 Plan-validate-execute：先计划，验证后再执行</h3><p>对于批量操作或破坏性操作，文档建议不要直接执行，而是：</p>
+<ol>
+<li>先生成结构化计划</li>
+<li>用脚本或真实数据验证计划</li>
+<li>验证通过后再执行</li>
+</ol>
+<p>比如 PDF 表单填写：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 提取表单字段 → form<span class="emphasis">_fields.json</span></span><br><span class="line"><span class="emphasis">2. 创建字段值映射 → field_</span>values.json</span><br><span class="line"><span class="bullet">3.</span> 验证字段是否存在、类型是否兼容、必填项是否缺失</span><br><span class="line"><span class="bullet">4.</span> 验证失败则修改 field<span class="emphasis">_values.json</span></span><br><span class="line"><span class="emphasis">5. 验证通过后再填充 PDF</span></span><br></pre></td></tr></table></figure>
+
+<p>关键是第 3 步：</p>
+<blockquote>
+<p>验证计划和真实来源是否一致。</p>
+</blockquote>
+<p>这样 Agent 才能根据错误信息自我修正。</p>
+<hr>
+<h2 id="11-可以把重复逻辑封装成脚本"><a href="#11-可以把重复逻辑封装成脚本" class="headerlink" title="11. 可以把重复逻辑封装成脚本"></a>11. 可以把重复逻辑封装成脚本</h2><p>如果你发现 Agent 每次执行 Skill 时都在重复造轮子，比如：</p>
+<ul>
+<li>解析固定格式</li>
+<li>生成图表</li>
+<li>验证输出</li>
+<li>转换文件</li>
+<li>检查字段</li>
+</ul>
+<p>那就应该写成经过测试的脚本，放到 <code>scripts/</code> 目录，让 Agent 调用，而不是每次临时写一遍。</p>
+<hr>
+<h2 id="12-Skill-编写检查清单"><a href="#12-Skill-编写检查清单" class="headerlink" title="12. Skill 编写检查清单"></a>12. Skill 编写检查清单</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">## Skill 编写检查清单</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 来源</span></span><br><span class="line"><span class="bullet">-</span> [ ] 是否来自真实任务、真实项目资料或真实错误？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否包含项目专属约定，而不是通用废话？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否记录了 Agent 曾经被纠正过的地方？</span><br><span class="line"></span><br><span class="line"><span class="section">### 范围</span></span><br><span class="line"><span class="bullet">-</span> [ ] Skill 是否覆盖一个连贯的工作单元？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否太窄，导致一个任务要加载多个 Skill？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否太宽，导致触发不精准？</span><br><span class="line"></span><br><span class="line"><span class="section">### 内容密度</span></span><br><span class="line"><span class="bullet">-</span> [ ] 是否删掉了 Agent 已经知道的基础知识？</span><br><span class="line"><span class="bullet">-</span> [ ] 每条说明是否能防止 Agent 犯错？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否控制在适中的长度？</span><br><span class="line"></span><br><span class="line"><span class="section">### 指令方式</span></span><br><span class="line"><span class="bullet">-</span> [ ] 灵活任务是否给了原则和判断依据？</span><br><span class="line"><span class="bullet">-</span> [ ] 脆弱任务是否给了明确命令和禁止项？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否给了默认方案，而不是一堆并列选项？</span><br><span class="line"></span><br><span class="line"><span class="section">### 结构</span></span><br><span class="line"><span class="bullet">-</span> [ ] 是否有 Gotchas？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否有必要的输出模板？</span><br><span class="line"><span class="bullet">-</span> [ ] 多步骤任务是否有 Checklist？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否设计了验证闭环？</span><br><span class="line"><span class="bullet">-</span> [ ] 批量/破坏性操作是否采用 plan-validate-execute？</span><br><span class="line"></span><br><span class="line"><span class="section">### 迭代</span></span><br><span class="line"><span class="bullet">-</span> [ ] 是否用真实任务跑过？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否看过 Agent 执行轨迹？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否把失败、误判、绕路的地方补回 Skill？</span><br><span class="line"><span class="bullet">-</span> [ ] 是否把重复逻辑封装成 scripts/？</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="13-简化理解"><a href="#13-简化理解" class="headerlink" title="13. 简化理解"></a>13. 简化理解</h2><p>这篇文档真正想表达的是：</p>
+<blockquote>
+<p>Skill 不是说明书，也不是百科。<br>Skill 是把“Agent 容易不知道、容易做错、必须遵守、可以复用”的经验压缩成高密度操作指南。</p>
+</blockquote>
+<p>一个好 Skill 应该像这样：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 做什么</span></span><br><span class="line">明确任务边界。</span><br><span class="line"></span><br><span class="line"><span class="section"># 什么时候使用</span></span><br><span class="line">说明触发场景。</span><br><span class="line"></span><br><span class="line"><span class="section"># 默认流程</span></span><br><span class="line">给 Agent 一条主路径。</span><br><span class="line"></span><br><span class="line"><span class="section"># Gotchas</span></span><br><span class="line">告诉 Agent 哪些地方不能靠常识猜。</span><br><span class="line"></span><br><span class="line"><span class="section"># 输出格式</span></span><br><span class="line">给模板，不要只口头描述。</span><br><span class="line"></span><br><span class="line"><span class="section"># 验证方式</span></span><br><span class="line">告诉 Agent 怎么证明自己做对了。</span><br><span class="line"></span><br><span class="line"><span class="section"># 需要时加载的参考资料</span></span><br><span class="line">大内容不要全塞进主文件。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="14-可复用的-Skill-模板"><a href="#14-可复用的-Skill-模板" class="headerlink" title="14. 可复用的 Skill 模板"></a>14. 可复用的 Skill 模板</h2><p>下面是一个可以直接改写的 Skill 模板。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">name: skill-name</span><br><span class="line"><span class="section">description: 什么时候使用这个 Skill。要写清楚触发场景，不要太宽泛。</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># Skill Name</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Purpose</span></span><br><span class="line"></span><br><span class="line">这个 Skill 用来完成什么任务。</span><br><span class="line"></span><br><span class="line"><span class="section">## When to use</span></span><br><span class="line"></span><br><span class="line">当用户请求包含以下情况时使用：</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 场景 1</span><br><span class="line"><span class="bullet">-</span> 场景 2</span><br><span class="line"><span class="bullet">-</span> 场景 3</span><br><span class="line"></span><br><span class="line">不要在以下情况使用：</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 排除场景 1</span><br><span class="line"><span class="bullet">-</span> 排除场景 2</span><br><span class="line"></span><br><span class="line"><span class="section">## Default workflow</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 先做什么</span><br><span class="line"><span class="bullet">2.</span> 再做什么</span><br><span class="line"><span class="bullet">3.</span> 如何验证</span><br><span class="line"><span class="bullet">4.</span> 如何输出</span><br><span class="line"></span><br><span class="line"><span class="section">## Gotchas</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 项目特有坑 1</span><br><span class="line"><span class="bullet">-</span> 项目特有坑 2</span><br><span class="line"><span class="bullet">-</span> Agent 容易误解的命名、流程、边界情况</span><br><span class="line"></span><br><span class="line"><span class="section">## Defaults</span></span><br><span class="line"></span><br><span class="line">默认使用：</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 默认工具：</span><br><span class="line"><span class="bullet">-</span> 默认格式：</span><br><span class="line"><span class="bullet">-</span> 默认输出方式：</span><br><span class="line"></span><br><span class="line">只有在以下情况才切换方案：</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 例外情况 1</span><br><span class="line"><span class="bullet">-</span> 例外情况 2</span><br><span class="line"></span><br><span class="line"><span class="section">## Output format</span></span><br><span class="line"></span><br><span class="line">按以下格式输出：</span><br><span class="line"></span><br><span class="line"><span class="code">```markdown</span></span><br><span class="line"><span class="code"># 标题</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">## Summary</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">## Details</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">## Next steps</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Validation"><a href="#Validation" class="headerlink" title="Validation"></a>Validation</h2><p>交付前必须检查：</p>
+<ul>
+<li><input disabled type="checkbox"> 检查项 1</li>
+<li><input disabled type="checkbox"> 检查项 2</li>
+<li><input disabled type="checkbox"> 检查项 3</li>
+</ul>
+<p>如果验证失败：</p>
+<ol>
+<li>阅读错误信息</li>
+<li>修复问题</li>
+<li>重新验证</li>
+<li>通过后再交付</li>
+</ol>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>需要时再读取：</p>
+<ul>
+<li><code>references/example.md</code>：当遇到某类问题时读取</li>
+<li><code>scripts/validate.py</code>：用于验证输出<br>&#96;&#96;&#96;</li>
+</ul>
+<hr>
+<h2 id="15-适合沉淀进-Skill-的信息"><a href="#15-适合沉淀进-Skill-的信息" class="headerlink" title="15. 适合沉淀进 Skill 的信息"></a>15. 适合沉淀进 Skill 的信息</h2><p>可以优先沉淀这些内容：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>你反复纠正过的问题</td>
+<td>“不要只做客户端，还要考虑农民端和平台端”</td>
+</tr>
+<tr>
+<td>业务中特有角色</td>
+<td>“加工师傅、质检员、叉车、包装员都要进入流程”</td>
+</tr>
+<tr>
+<td>流转规则</td>
+<td>“返修到包装之间必须有状态跟踪”</td>
+</tr>
+<tr>
+<td>输出偏好</td>
+<td>“要结构化、易修改、功能不能糊弄”</td>
+</tr>
+<tr>
+<td>验证要求</td>
+<td>“做完要自己打开页面检查是否合格”</td>
+</tr>
+<tr>
+<td>默认技术选择</td>
+<td>“HTML demo 要能浏览器直接打开”</td>
+</tr>
+<tr>
+<td>不能做的事</td>
+<td>“遇到不懂的问我，不要瞎猜”</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="16-一句话总结"><a href="#16-一句话总结" class="headerlink" title="16. 一句话总结"></a>16. 一句话总结</h2><p>写 Skill 的本质是：</p>
+<blockquote>
+<p>把你已经付出过的沟通成本、纠错成本、试错经验，变成 Agent 下次可以直接遵守的工作规范。</p>
+</blockquote>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/AI/">#AI</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Agent/">#Agent</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Skill/">#Skill</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/19/%E6%8C%89%E7%85%A7%E9%A2%91%E7%8E%87%E5%B0%86%E6%95%B0%E7%BB%84%E5%8D%87%E5%BA%8F%E6%8E%92%E5%BA%8F/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">按照频率将数组升序排序</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c05ce7f7288367fc3232',
+                    clientSecret: '94bbd22b269a721e1b98c1efa1750de2de64fdab',
+                    repo: 'gitalk',
+                    owner: 'ZhaiRuiPu',
+                    admin: ['ZhaiRuiPu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>
+              -
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">jerry2</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A0%B8%E5%BF%83%E7%9B%AE%E6%A0%87"><span class="nav-text">一、核心目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%8E%E7%9C%9F%E5%AE%9E%E7%BB%8F%E9%AA%8C%E5%87%BA%E5%8F%91%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%87%AD%E7%A9%BA%E7%94%9F%E6%88%90"><span class="nav-text">1. 从真实经验出发，不要凭空生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E4%B8%8D%E8%A6%81%E8%AE%A9-LLM-%E7%A9%BA%E5%86%99-Skill"><span class="nav-text">1.1 不要让 LLM 空写 Skill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%BB%8E%E4%B8%80%E6%AC%A1%E7%9C%9F%E5%AE%9E%E4%BB%BB%E5%8A%A1%E4%B8%AD%E6%8F%90%E7%82%BC"><span class="nav-text">1.2 从一次真实任务中提炼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E4%BB%8E%E5%B7%B2%E6%9C%89%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%96%99%E4%B8%AD%E5%90%88%E6%88%90"><span class="nav-text">1.3 从已有项目资料中合成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%94%A8%E7%9C%9F%E5%AE%9E%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%8D%E6%96%AD%E8%BF%AD%E4%BB%A3"><span class="nav-text">2. 用真实执行结果不断迭代</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%8A%82%E7%9C%81%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%86%99%E5%BA%9F%E8%AF%9D"><span class="nav-text">3. 节省上下文，不要写废话</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E5%8F%AA%E5%86%99-Agent-%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="nav-text">3.1 只写 Agent 不知道的东西</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Skill-%E7%9A%84%E8%8C%83%E5%9B%B4%E8%A6%81%E5%83%8F%E5%87%BD%E6%95%B0%E4%B8%80%E6%A0%B7%E6%B8%85%E6%99%B0"><span class="nav-text">4. Skill 的范围要像函数一样清晰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%A4%AA%E7%AA%84%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">4.1 太窄的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E5%A4%AA%E5%AE%BD%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">4.2 太宽的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%BB%86%E8%8A%82%E8%A6%81%E9%80%82%E4%B8%AD%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%86%99%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6"><span class="nav-text">5. 细节要适中，不要写百科全书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%A4%A7%E5%9E%8B-Skill-%E8%A6%81%E4%BD%BF%E7%94%A8%E2%80%9C%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%8A%AB%E9%9C%B2%E2%80%9D"><span class="nav-text">6. 大型 Skill 要使用“渐进式披露”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%8E%A7%E5%88%B6%E5%8A%9B%E5%BA%A6%E8%A6%81%E5%8C%B9%E9%85%8D%E4%BB%BB%E5%8A%A1%E8%84%86%E5%BC%B1%E7%A8%8B%E5%BA%A6"><span class="nav-text">7. 控制力度要匹配任务脆弱程度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E7%81%B5%E6%B4%BB%E4%BB%BB%E5%8A%A1%EF%BC%9A%E7%BB%99%E5%8E%9F%E5%88%99%E5%92%8C%E7%9B%AE%E6%A0%87"><span class="nav-text">7.1 灵活任务：给原则和目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E8%84%86%E5%BC%B1%E4%BB%BB%E5%8A%A1%EF%BC%9A%E5%BF%85%E9%A1%BB%E5%BC%BA%E7%BA%A6%E6%9D%9F"><span class="nav-text">7.2 脆弱任务：必须强约束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E7%BB%99%E9%BB%98%E8%AE%A4%E6%96%B9%E6%A1%88%EF%BC%8C%E4%B8%8D%E8%A6%81%E7%BB%99%E4%B8%80%E5%A0%86%E8%8F%9C%E5%8D%95"><span class="nav-text">8. 给默认方案，不要给一堆菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E5%86%99%E6%B5%81%E7%A8%8B%EF%BC%8C%E4%B8%8D%E8%A6%81%E5%8F%AA%E5%86%99%E7%BB%93%E8%AE%BA"><span class="nav-text">9. 写流程，不要只写结论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E6%9C%89%E6%95%88-Skill-%E7%9A%84%E5%B8%B8%E7%94%A8%E7%BB%93%E6%9E%84%E6%A8%A1%E5%BC%8F"><span class="nav-text">10. 有效 Skill 的常用结构模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-Gotchas%EF%BC%9A%E4%B8%93%E9%97%A8%E8%AE%B0%E5%BD%95%E5%AE%B9%E6%98%93%E8%B8%A9%E5%9D%91%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="nav-text">10.1 Gotchas：专门记录容易踩坑的地方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-%E8%BE%93%E5%87%BA%E6%A8%A1%E6%9D%BF"><span class="nav-text">10.2 输出模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-3-%E5%A4%9A%E6%AD%A5%E9%AA%A4%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%94%A8-Checklist"><span class="nav-text">10.3 多步骤工作流用 Checklist</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-4-Validation-loop%EF%BC%9A%E5%81%9A%E5%AE%8C%E5%90%8E%E8%87%AA%E6%A3%80%EF%BC%8C%E5%A4%B1%E8%B4%A5%E5%B0%B1%E4%BF%AE"><span class="nav-text">10.4 Validation loop：做完后自检，失败就修</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-5-Plan-validate-execute%EF%BC%9A%E5%85%88%E8%AE%A1%E5%88%92%EF%BC%8C%E9%AA%8C%E8%AF%81%E5%90%8E%E5%86%8D%E6%89%A7%E8%A1%8C"><span class="nav-text">10.5 Plan-validate-execute：先计划，验证后再执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%8F%AF%E4%BB%A5%E6%8A%8A%E9%87%8D%E5%A4%8D%E9%80%BB%E8%BE%91%E5%B0%81%E8%A3%85%E6%88%90%E8%84%9A%E6%9C%AC"><span class="nav-text">11. 可以把重复逻辑封装成脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-Skill-%E7%BC%96%E5%86%99%E6%A3%80%E6%9F%A5%E6%B8%85%E5%8D%95"><span class="nav-text">12. Skill 编写检查清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E7%AE%80%E5%8C%96%E7%90%86%E8%A7%A3"><span class="nav-text">13. 简化理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-%E5%8F%AF%E5%A4%8D%E7%94%A8%E7%9A%84-Skill-%E6%A8%A1%E6%9D%BF"><span class="nav-text">14. 可复用的 Skill 模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validation"><span class="nav-text">Validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E9%80%82%E5%90%88%E6%B2%89%E6%B7%80%E8%BF%9B-Skill-%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-text">15. 适合沉淀进 Skill 的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%80%BB%E7%BB%93"><span class="nav-text">16. 一句话总结</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
