@@ -201,12 +201,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.3k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>6 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
         </span>
     
     
@@ -222,158 +222,187 @@
         
 
         <div class="article-content markdown-body">
-            <p>最近我在本地博客项目里做了一件很有意思的事：不是直接让 AI 帮我写代码，而是先让它帮我沉淀一个可以复用的工作流，也就是 Codex Skill。</p>
-<p>这次的目标很具体：创建一个“写博客并一键部署”的技能。它要知道当前项目是 Hexo 博客，文章应该放在哪里，写作前要怎样确认大纲，生成后要怎样验证，什么时候可以部署，什么时候必须停下来等我确认。</p>
-<p>这篇文章整理的就是这次对话里的完整学习过程。</p>
+            <p>这篇文章是对一次真实 Codex 协作过程的复盘。</p>
+<p>最开始，我只是想创建一个“写博客并一键部署”的 Skill。真正做下来以后，才发现这个需求并不只是写一段提示词，而是要把写作、配图、构建、预览、源码保存、静态页面部署这些动作串成一条可靠的发布流水线。</p>
+<p>这也是我对 Skill 最重要的理解：</p>
+<blockquote>
+<p>Skill 不是让 AI 记住几句口号，而是把一次真实任务里的项目经验、操作顺序和风险边界沉淀下来。</p>
+</blockquote>
 <p><img src="/images/codex-skill-workflow.svg" alt="从一次对话生成 Codex Skill 的流程"></p>
 <hr>
-<h2 id="一、Skill-不是提示词堆砌"><a href="#一、Skill-不是提示词堆砌" class="headerlink" title="一、Skill 不是提示词堆砌"></a>一、Skill 不是提示词堆砌</h2><p>一开始很容易把 Skill 理解成一段更长的提示词，比如：</p>
+<h2 id="一、需求从一句话开始"><a href="#一、需求从一句话开始" class="headerlink" title="一、需求从一句话开始"></a>一、需求从一句话开始</h2><p>最初的需求很简单：</p>
 <blockquote>
-<p>你是一个博客助手，请帮我写高质量文章，并部署到线上。</p>
+<p>我现在需要创建一个写博客并一键部署的技能。</p>
 </blockquote>
-<p>这类描述看起来正确，但真正执行时不够可靠。因为它没有告诉 AI：</p>
+<p>如果直接让 AI 写一个 Skill，很容易得到一份很泛的说明，比如“帮用户写高质量博客”“遵循最佳实践”“部署前检查”。这些话没有错，但对真实项目帮助有限。</p>
+<p>因为这个博客项目有自己的上下文：</p>
 <ul>
-<li>当前项目是什么框架</li>
-<li>文章应该写到哪个目录</li>
-<li>frontmatter 应该是什么格式</li>
-<li>图片资源应该怎么放</li>
-<li>部署命令是什么</li>
-<li>部署前是否需要确认</li>
+<li>它是 Hexo 博客</li>
+<li>文章放在 <code>source/_posts/</code></li>
+<li>图片资源有项目内约定</li>
+<li>部署页面用 GitHub Pages</li>
+<li>源码仓库和页面仓库不是同一个</li>
+<li>部署前必须让用户预览确认</li>
 </ul>
-<p>好的 Skill 更像一份轻量的项目操作手册。它不需要解释通用常识，而是要补上 AI 默认不知道、又容易做错的项目细节。</p>
+<p>所以第一步不是写 Skill，而是先观察项目。</p>
 <hr>
-<h2 id="二、先观察真实项目，再写-Skill"><a href="#二、先观察真实项目，再写-Skill" class="headerlink" title="二、先观察真实项目，再写 Skill"></a>二、先观察真实项目，再写 Skill</h2><p>这次没有直接凭空生成 Skill，而是先检查当前博客项目。</p>
-<p>项目结构里有这些关键信息：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">push.sh</span><br><span class="line">run.sh</span><br><span class="line">scaffolds/</span><br><span class="line">source/_posts/</span><br><span class="line">skills/</span><br></pre></td></tr></table></figure>
+<h2 id="二、先从项目事实里提炼规则"><a href="#二、先从项目事实里提炼规则" class="headerlink" title="二、先从项目事实里提炼规则"></a>二、先从项目事实里提炼规则</h2><p>在当前仓库里，几个文件给出了关键线索：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package.json</span><br><span class="line">_config.yml</span><br><span class="line">push.sh</span><br><span class="line">run.sh</span><br><span class="line">source/_posts/</span><br><span class="line">source/images/</span><br><span class="line">skills/</span><br></pre></td></tr></table></figure>
 
-<p><code>package.json</code> 说明这是一个 Hexo 项目，并且提供了几个基础脚本：</p>
+<p><code>package.json</code> 说明了基础命令：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;build&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo generate&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;clean&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo clean&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;deploy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo deploy&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo server&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p><code>push.sh</code> 里则能看到当前项目已有的一键部署习惯：</p>
+<p><code>push.sh</code> 说明了已有部署习惯：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 
-<p><code>_config.yml</code> 里还有两个很重要的约定：</p>
-<ul>
-<li>文章目录是 <code>source/_posts/</code></li>
-<li>开启了 <code>post_asset_folder: true</code></li>
-</ul>
-<p>这说明新文章应该写进 <code>source/_posts/</code>，如果文章需要图片，也应该优先使用同名资源目录，而不是随手塞进任意位置。</p>
+<p><code>_config.yml</code> 说明这是 Hexo 6 项目，文章目录是 <code>source/_posts/</code>，并且配置了 GitHub Pages 部署仓库。</p>
+<p>这些信息决定了 Skill 不能写成通用博客助手，而应该写成当前项目专属的发布助手。</p>
 <hr>
-<h2 id="三、把需求先变成计划"><a href="#三、把需求先变成计划" class="headerlink" title="三、把需求先变成计划"></a>三、把需求先变成计划</h2><p>在真正写 Skill 之前，先把需求拆成了几个关键决策：</p>
+<h2 id="三、先计划，再实现"><a href="#三、先计划，再实现" class="headerlink" title="三、先计划，再实现"></a>三、先计划，再实现</h2><p>在写 Skill 之前，先确认了几个关键决策：</p>
 <ul>
-<li>Skill 放在哪里</li>
-<li>是否要全局生效</li>
-<li>部署是自动执行，还是确认后执行</li>
-<li>写作流程是直接成文，还是先大纲后成文</li>
+<li>Skill 放在当前仓库的 <code>skills/</code> 目录</li>
+<li>默认服务这个 Hexo 博客，而不是全局泛用</li>
+<li>写作采用“先大纲后成文”</li>
+<li>部署不能自动跳过确认</li>
+<li>一键部署也必须保留安全门槛</li>
 </ul>
-<p>最终选择是：</p>
-<ul>
-<li>放在当前仓库的 <code>skills/</code> 目录</li>
-<li>专门服务这个 Hexo 博客</li>
-<li>写作时先确认标题、大纲和标签</li>
-<li>部署前必须先构建验证，再等待用户明确确认</li>
-</ul>
-<p>这个过程很重要。因为 Skill 一旦写好，后续 AI 会按它行动。如果这些规则没有提前说清楚，最容易出问题的就是“误发布”和“写到错误位置”。</p>
-<hr>
-<h2 id="四、一个博客发布-Skill-应该包含什么"><a href="#四、一个博客发布-Skill-应该包含什么" class="headerlink" title="四、一个博客发布 Skill 应该包含什么"></a>四、一个博客发布 Skill 应该包含什么</h2><p>这次创建的 Skill 路径是：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skills/hexo-blog-publisher/SKILL.md</span><br></pre></td></tr></table></figure>
+<p>于是创建了：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">skills/hexo-blog-publisher/SKILL.md</span><br><span class="line">skills/hexo-blog-publisher/agents/openai.yaml</span><br></pre></td></tr></table></figure>
 
-<p>它的 frontmatter 大概长这样：</p>
+<p><code>SKILL.md</code> 的 frontmatter 负责让 Codex 知道什么时候触发它：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">hexo-blog-publisher</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Use</span> <span class="string">when</span> <span class="string">writing,</span> <span class="string">drafting,</span> <span class="string">polishing,</span> <span class="string">previewing,</span> <span class="string">building,</span> <span class="string">or</span> <span class="string">deploying</span> <span class="string">posts</span> <span class="string">for</span> <span class="string">this</span> <span class="string">repository&#x27;s</span> <span class="string">Hexo</span> <span class="string">blog...</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 
-<p>这里最重要的是 <code>description</code>。因为 Codex 是否自动触发这个 Skill，主要就靠这段描述判断。</p>
-<p>正文部分则写入了几类规则。</p>
-<h3 id="1-仓库事实"><a href="#1-仓库事实" class="headerlink" title="1. 仓库事实"></a>1. 仓库事实</h3><p>Skill 里明确记录：</p>
+<p>这里的 <code>description</code> 很关键。它不是给人看的宣传语，而是给 Codex 判断“这个请求是否应该加载该 Skill”的触发条件。</p>
+<hr>
+<h2 id="四、第一版-Skill-做对了什么"><a href="#四、第一版-Skill-做对了什么" class="headerlink" title="四、第一版 Skill 做对了什么"></a>四、第一版 Skill 做对了什么</h2><p>第一版 Skill 已经包含了几个正确方向：</p>
 <ul>
-<li>当前项目是 Hexo 6</li>
-<li>文章放在 <code>source/_posts/</code></li>
-<li>使用 <code>title</code>、<code>date</code>、<code>tags</code> 形式的 frontmatter</li>
-<li>已开启 <code>post_asset_folder</code></li>
-<li>部署命令等价于 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></li>
-<li>本地预览习惯使用 <code>8080</code> 端口</li>
+<li>写博客前先确认标题、大纲和标签</li>
+<li>新文章默认放到 <code>source/_posts/</code></li>
+<li>frontmatter 使用 <code>title</code>、<code>date</code>、<code>tags</code></li>
+<li>修改文章后运行 <code>npm run build</code></li>
+<li>部署前需要用户明确确认</li>
+<li>部署命令使用 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></li>
 </ul>
-<p>这些都是从项目里观察出来的，不是猜出来的。</p>
-<h3 id="2-写作流程"><a href="#2-写作流程" class="headerlink" title="2. 写作流程"></a>2. 写作流程</h3><p>如果用户只给一个主题，Skill 要求先生成：</p>
-<ul>
-<li>标题</li>
-<li>大纲</li>
-<li>标签</li>
-</ul>
-<p>确认方向后，再创建 Markdown 文件。</p>
-<p>如果用户给的是笔记或草稿，Skill 要求保留用户原意，整理结构，补全 frontmatter、标题、标签和结尾。</p>
-<h3 id="3-资源约定"><a href="#3-资源约定" class="headerlink" title="3. 资源约定"></a>3. 资源约定</h3><p>因为 Hexo 开启了 <code>post_asset_folder</code>，所以文章图片应该优先放在：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source/_posts/&lt;文章标题&gt;.assets/</span><br></pre></td></tr></table></figure>
+<p>这已经比普通提示词可靠很多。</p>
+<p>但真正执行一次完整流程后，问题也暴露出来了。</p>
+<hr>
+<h2 id="五、真实执行时暴露的问题"><a href="#五、真实执行时暴露的问题" class="headerlink" title="五、真实执行时暴露的问题"></a>五、真实执行时暴露的问题</h2><h3 id="1-图文结合应该更早进入流程"><a href="#1-图文结合应该更早进入流程" class="headerlink" title="1. 图文结合应该更早进入流程"></a>1. 图文结合应该更早进入流程</h3><p>第一次写文章时，我先生成了纯文字版本。后来提醒“最好图文结合”，才补了一张流程图。</p>
+<p>这说明 Skill 里应该提前考虑内容形态。对于教程、复盘、流程类文章，配图不是装饰，而是帮助读者理解结构的关键部分。</p>
+<h3 id="2-图片目录不能只凭-Hexo-配置判断"><a href="#2-图片目录不能只凭-Hexo-配置判断" class="headerlink" title="2. 图片目录不能只凭 Hexo 配置判断"></a>2. 图片目录不能只凭 Hexo 配置判断</h3><p>项目里虽然开启了 <code>post_asset_folder: true</code>，但实际构建时，文章同名 <code>.assets</code> 目录里的 SVG 被插件改成了异常路径：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/.top//codex-skill-workflow.svg</span><br></pre></td></tr></table></figure>
 
-<p>这样后续迁移和维护会清楚很多。</p>
-<h3 id="4-验证与部署"><a href="#4-验证与部署" class="headerlink" title="4. 验证与部署"></a>4. 验证与部署</h3><p>部署是最需要谨慎的地方。</p>
-<p>Skill 里明确写了：</p>
-<ol>
-<li>修改文章或站点输出后，先运行 <code>npm run build</code></li>
-<li>构建成功后，才能考虑部署</li>
-<li>部署前必须让用户明确确认</li>
-<li>确认后才执行 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></li>
-</ol>
-<p>也就是说，“一键部署”不是无脑自动部署，而是把构建、检查、确认、发布这条链路规范化。</p>
-<hr>
-<h2 id="五、为什么要加确认门槛"><a href="#五、为什么要加确认门槛" class="headerlink" title="五、为什么要加确认门槛"></a>五、为什么要加确认门槛</h2><p>博客部署看起来不是高危操作，但它仍然会影响线上内容。</p>
-<p>如果没有确认门槛，AI 可能在这些情况下误发布：</p>
+<p>构建本身没有失败，但生成后的页面图片路径是错的。</p>
+<p>最后改成把图放在：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source/images/codex-skill-workflow.svg</span><br></pre></td></tr></table></figure>
+
+<p>并在文章里引用：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">从一次对话生成 Codex Skill 的流程</span>](<span class="link">/images/codex-skill-workflow.svg</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这才通过了 HTML 和资源检查。</p>
+<p>这件事提醒我：Skill 里的规则不能只看配置文件，还要吸收真实执行中的反馈。</p>
+<h3 id="3-部署前应该先预览"><a href="#3-部署前应该先预览" class="headerlink" title="3. 部署前应该先预览"></a>3. 部署前应该先预览</h3><p>第一次执行“一键部署”时，虽然构建通过，也成功发布到了 GitHub Pages，但顺序并不理想。</p>
+<p>更正确的顺序应该是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">写文章 -&gt; 加图 -&gt; 构建 -&gt; 检查 HTML 和图片 -&gt; 本地预览 -&gt; 用户确认 -&gt; 提交源码 -&gt; 部署页面</span><br></pre></td></tr></table></figure>
+
+<p>也就是说，用户应该先看到本地预览，再决定是否提交和部署。</p>
+<h3 id="4-部署页面不等于保存源码"><a href="#4-部署页面不等于保存源码" class="headerlink" title="4. 部署页面不等于保存源码"></a>4. 部署页面不等于保存源码</h3><p>Hexo 部署到 GitHub Pages 的仓库里，保存的是生成后的静态页面。真正可维护的内容是当前源码仓库里的：</p>
 <ul>
-<li>文章只是草稿，还没校对</li>
-<li>标签或标题还没确认</li>
-<li>构建有警告但没有被注意</li>
-<li>用户只是想预览，并不想上线</li>
-<li>当前仓库还有未处理的其他改动</li>
+<li>Markdown 原文</li>
+<li>图片源文件</li>
+<li>Skill 文件</li>
+<li>Hexo 配置</li>
+<li>主题和脚手架</li>
 </ul>
-<p>所以这次 Skill 的核心原则是：</p>
+<p>所以发布完成不能只看 GitHub Pages 是否更新。源码仓库也必须提交并推送，否则以后就只剩线上页面，没有可维护源头。</p>
+<hr>
+<h2 id="六、Skill-被迭代成发布-Runbook"><a href="#六、Skill-被迭代成发布-Runbook" class="headerlink" title="六、Skill 被迭代成发布 Runbook"></a>六、Skill 被迭代成发布 Runbook</h2><p>根据这些问题，<code>hexo-blog-publisher</code> 被继续优化，不再只是“写作和部署说明”，而是变成了一份发布 Runbook。</p>
+<p>它现在的核心流程是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">写作/改稿</span><br><span class="line">-&gt; 配图</span><br><span class="line">-&gt; npm run build</span><br><span class="line">-&gt; 检查生成 HTML 和图片资源</span><br><span class="line">-&gt; 本地预览</span><br><span class="line">-&gt; 用户确认</span><br><span class="line">-&gt; 提交并推送源码仓库</span><br><span class="line">-&gt; 部署 GitHub Pages</span><br><span class="line">-&gt; 检查源码仓库 git status</span><br></pre></td></tr></table></figure>
+
+<p>这个顺序里最重要的是两个门槛：</p>
+<ul>
+<li>预览确认前，不提交源码</li>
+<li>源码保存前，不把发布视为完成</li>
+</ul>
+<hr>
+<h2 id="七、区分源码仓库和页面仓库"><a href="#七、区分源码仓库和页面仓库" class="headerlink" title="七、区分源码仓库和页面仓库"></a>七、区分源码仓库和页面仓库</h2><p>这次实践里，一个很关键的认知是：博客发布至少涉及两个仓库。</p>
+<p>源码仓库是当前博客项目，远端在公开文章里应该脱敏成类似这样的占位：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://example.com/&lt;user&gt;/&lt;blog-source-repo&gt;.git</span><br></pre></td></tr></table></figure>
+
+<p>它保存的是可维护内容。</p>
+<p>GitHub Pages 仓库是 Hexo 生成后的静态站点仓库，公开记录时也不应该暴露真实账号和仓库名：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@example.com:&lt;user&gt;/&lt;pages-repo&gt;.git</span><br></pre></td></tr></table></figure>
+
+<p>它保存的是部署产物。</p>
+<p>两者角色不同：</p>
+<table>
+<thead>
+<tr>
+<th>仓库</th>
+<th>保存内容</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>源码仓库</td>
+<td>Markdown、图片、Skill、配置</td>
+<td>后续维护和继续写作</td>
+</tr>
+<tr>
+<td>GitHub Pages 仓库</td>
+<td>HTML、CSS、JS、静态资源</td>
+<td>对外访问的网站</td>
+</tr>
+</tbody></table>
+<p>只有两个仓库都处理完，发布才算闭环。</p>
+<hr>
+<h2 id="八、最终的完成定义"><a href="#八、最终的完成定义" class="headerlink" title="八、最终的完成定义"></a>八、最终的完成定义</h2><p>优化后的 Skill 里加入了 Done Definition。</p>
+<p>一次博客发布只有同时满足这些条件，才算完成：</p>
+<ul>
+<li>文章已经本地预览</li>
+<li>用户明确确认预览没问题</li>
+<li>源码变更已经提交并推送</li>
+<li>GitHub Pages 静态页面部署成功</li>
+<li>当前源码仓库 <code>git status --branch --short</code> 是干净的</li>
+<li>最终回复里报告源码 commit 和部署结果</li>
+</ul>
+<p>这个完成定义很有用。它让“一键部署”不再只是一个命令，而是一条有收尾检查的流程。</p>
+<hr>
+<h2 id="九、我学到的-Skill-生成方法"><a href="#九、我学到的-Skill-生成方法" class="headerlink" title="九、我学到的 Skill 生成方法"></a>九、我学到的 Skill 生成方法</h2><p>这次过程可以总结成一个通用方法：</p>
+<ol>
+<li>不要直接空写 Skill，先观察项目</li>
+<li>从真实配置、脚本、目录结构里提炼事实</li>
+<li>先把用户目标拆成流程</li>
+<li>明确哪些动作可以自动做，哪些动作必须确认</li>
+<li>做一次真实任务，让问题暴露出来</li>
+<li>把踩坑结果反向写回 Skill</li>
+<li>给 Skill 加完成定义，而不只是操作步骤</li>
+</ol>
+<p>一个好的 Skill 应该不断吸收实战反馈。</p>
+<p>如果第一次生成的 Skill 只是“能用”，第二次迭代后的 Skill 才开始变得“可靠”。</p>
+<hr>
+<h2 id="十、当前这套博客发布-Skill-的价值"><a href="#十、当前这套博客发布-Skill-的价值" class="headerlink" title="十、当前这套博客发布 Skill 的价值"></a>十、当前这套博客发布 Skill 的价值</h2><p>现在这个 Skill 能解决的不只是“帮我写文章”。</p>
+<p>它真正沉淀的是一套博客发布习惯：</p>
+<ul>
+<li>写之前先确认方向</li>
+<li>教程类文章优先考虑图文结合</li>
+<li>图片放到当前项目已验证的 <code>source/images/</code></li>
+<li>构建后检查 HTML 和资源</li>
+<li>发布前先本地预览</li>
+<li>预览后等用户确认</li>
+<li>保存源码仓库</li>
+<li>再部署 GitHub Pages</li>
+<li>最后检查源码状态</li>
+</ul>
+<p>这套流程比单纯的“hexo d”慢一点，但更稳。</p>
+<p>尤其是当 AI 可以直接读写文件、执行命令、推送远端时，慢一点的确认门槛反而是必要的。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次从一句“创建一个写博客并一键部署的技能”开始，最后得到的不只是一个 <code>hexo-blog-publisher</code> Skill，而是一套经过真实发布验证的工作流。</p>
+<p>我最大的收获是：</p>
 <blockquote>
-<p>写作可以主动，部署必须克制。</p>
+<p>Skill 的价值不在于把提示词写长，而在于把项目事实、执行顺序、失败经验和完成标准写清楚。</p>
 </blockquote>
-<p>这不是降低效率，而是把风险最高的一步从自动化里拎出来，让用户最后拍板。</p>
-<hr>
-<h2 id="六、验证-Skill-是否写对"><a href="#六、验证-Skill-是否写对" class="headerlink" title="六、验证 Skill 是否写对"></a>六、验证 Skill 是否写对</h2><p>创建完成后，还做了几项检查：</p>
-<ul>
-<li><code>SKILL.md</code> 是否有合法的 <code>name</code> 和 <code>description</code></li>
-<li>是否覆盖“写博客”“整理笔记”“预览博客”“部署博客”等触发场景</li>
-<li>是否明确写了构建验证</li>
-<li>是否明确写了用户确认后才能部署</li>
-</ul>
-<p>这些检查不复杂，但可以避免 Skill 变成一篇“看起来很完整，实际不好用”的文档。</p>
-<hr>
-<h2 id="七、我对生成-Skill-的理解"><a href="#七、我对生成-Skill-的理解" class="headerlink" title="七、我对生成 Skill 的理解"></a>七、我对生成 Skill 的理解</h2><p>这次实践之后，我对 Skill 的理解更清晰了：</p>
-<p>Skill 不是让 AI 更“聪明”，而是让 AI 更“熟悉这里”。</p>
-<p>它应该沉淀的是项目里的真实约定：</p>
-<ul>
-<li>目录结构</li>
-<li>命令习惯</li>
-<li>安全边界</li>
-<li>输出格式</li>
-<li>容易犯错的地方</li>
-<li>用户偏好的工作方式</li>
-</ul>
-<p>尤其是本地开发和部署类任务，Skill 里一定要写清楚哪些事情可以自动做，哪些事情必须确认。</p>
-<hr>
-<h2 id="八、一个可复用的-Skill-生成流程"><a href="#八、一个可复用的-Skill-生成流程" class="headerlink" title="八、一个可复用的 Skill 生成流程"></a>八、一个可复用的 Skill 生成流程</h2><p>以后再创建类似 Skill，可以按这个流程走：</p>
-<ol>
-<li>先观察项目结构，不要凭空写</li>
-<li>找到真实入口，比如 <code>package.json</code>、配置文件、脚本、已有文档</li>
-<li>把用户目标拆成工作流</li>
-<li>明确输入、输出和文件位置</li>
-<li>写清楚验证命令</li>
-<li>给危险动作加确认门槛</li>
-<li>最后用几个真实触发句测试 Skill 是否会被正确调用</li>
-</ol>
-<p>如果一个 Skill 能做到这些，它就不只是“提示词”，而是一份可以被反复使用的项目经验。</p>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次从一句“我需要创建一个写博客并一键部署的技能”开始，最终沉淀出了一个专门服务当前 Hexo 博客的 <code>hexo-blog-publisher</code> Skill。</p>
-<p>整个过程里最有价值的不是生成了一个文件，而是把模糊需求变成了明确流程：</p>
-<ul>
-<li>写作先确认方向</li>
-<li>文章放到正确目录</li>
-<li>资源遵循 Hexo 约定</li>
-<li>发布前先构建</li>
-<li>部署前必须确认</li>
-</ul>
-<p>这就是我觉得 Skill 最有用的地方：把一次对话里的经验，变成下一次可以直接复用的能力。</p>
+<p>当这些内容沉淀下来，下一次再写博客、预览、提交源码和部署页面，AI 就不会只是“帮忙执行命令”，而是能按这个项目真正需要的方式完成整套闭环。</p>
 
         </div>
 
@@ -585,7 +614,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81Skill-%E4%B8%8D%E6%98%AF%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%A0%86%E7%A0%8C"><span class="nav-text">一、Skill 不是提示词堆砌</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%85%88%E8%A7%82%E5%AF%9F%E7%9C%9F%E5%AE%9E%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%86%8D%E5%86%99-Skill"><span class="nav-text">二、先观察真实项目，再写 Skill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%8A%8A%E9%9C%80%E6%B1%82%E5%85%88%E5%8F%98%E6%88%90%E8%AE%A1%E5%88%92"><span class="nav-text">三、把需求先变成计划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83-Skill-%E5%BA%94%E8%AF%A5%E5%8C%85%E5%90%AB%E4%BB%80%E4%B9%88"><span class="nav-text">四、一个博客发布 Skill 应该包含什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BB%93%E5%BA%93%E4%BA%8B%E5%AE%9E"><span class="nav-text">1. 仓库事实</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%99%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-text">2. 写作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%B5%84%E6%BA%90%E7%BA%A6%E5%AE%9A"><span class="nav-text">3. 资源约定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%AA%8C%E8%AF%81%E4%B8%8E%E9%83%A8%E7%BD%B2"><span class="nav-text">4. 验证与部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%8A%A0%E7%A1%AE%E8%AE%A4%E9%97%A8%E6%A7%9B"><span class="nav-text">五、为什么要加确认门槛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E9%AA%8C%E8%AF%81-Skill-%E6%98%AF%E5%90%A6%E5%86%99%E5%AF%B9"><span class="nav-text">六、验证 Skill 是否写对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E6%88%91%E5%AF%B9%E7%94%9F%E6%88%90-Skill-%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">七、我对生成 Skill 的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E4%B8%80%E4%B8%AA%E5%8F%AF%E5%A4%8D%E7%94%A8%E7%9A%84-Skill-%E7%94%9F%E6%88%90%E6%B5%81%E7%A8%8B"><span class="nav-text">八、一个可复用的 Skill 生成流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%9C%80%E6%B1%82%E4%BB%8E%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%BC%80%E5%A7%8B"><span class="nav-text">一、需求从一句话开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%85%88%E4%BB%8E%E9%A1%B9%E7%9B%AE%E4%BA%8B%E5%AE%9E%E9%87%8C%E6%8F%90%E7%82%BC%E8%A7%84%E5%88%99"><span class="nav-text">二、先从项目事实里提炼规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%85%88%E8%AE%A1%E5%88%92%EF%BC%8C%E5%86%8D%E5%AE%9E%E7%8E%B0"><span class="nav-text">三、先计划，再实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%AC%AC%E4%B8%80%E7%89%88-Skill-%E5%81%9A%E5%AF%B9%E4%BA%86%E4%BB%80%E4%B9%88"><span class="nav-text">四、第一版 Skill 做对了什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E7%9C%9F%E5%AE%9E%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9A%B4%E9%9C%B2%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">五、真实执行时暴露的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9B%BE%E6%96%87%E7%BB%93%E5%90%88%E5%BA%94%E8%AF%A5%E6%9B%B4%E6%97%A9%E8%BF%9B%E5%85%A5%E6%B5%81%E7%A8%8B"><span class="nav-text">1. 图文结合应该更早进入流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%9B%BE%E7%89%87%E7%9B%AE%E5%BD%95%E4%B8%8D%E8%83%BD%E5%8F%AA%E5%87%AD-Hexo-%E9%85%8D%E7%BD%AE%E5%88%A4%E6%96%AD"><span class="nav-text">2. 图片目录不能只凭 Hexo 配置判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%83%A8%E7%BD%B2%E5%89%8D%E5%BA%94%E8%AF%A5%E5%85%88%E9%A2%84%E8%A7%88"><span class="nav-text">3. 部署前应该先预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%83%A8%E7%BD%B2%E9%A1%B5%E9%9D%A2%E4%B8%8D%E7%AD%89%E4%BA%8E%E4%BF%9D%E5%AD%98%E6%BA%90%E7%A0%81"><span class="nav-text">4. 部署页面不等于保存源码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81Skill-%E8%A2%AB%E8%BF%AD%E4%BB%A3%E6%88%90%E5%8F%91%E5%B8%83-Runbook"><span class="nav-text">六、Skill 被迭代成发布 Runbook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%8C%BA%E5%88%86%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93%E5%92%8C%E9%A1%B5%E9%9D%A2%E4%BB%93%E5%BA%93"><span class="nav-text">七、区分源码仓库和页面仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E6%9C%80%E7%BB%88%E7%9A%84%E5%AE%8C%E6%88%90%E5%AE%9A%E4%B9%89"><span class="nav-text">八、最终的完成定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E6%88%91%E5%AD%A6%E5%88%B0%E7%9A%84-Skill-%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95"><span class="nav-text">九、我学到的 Skill 生成方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E3%80%81%E5%BD%93%E5%89%8D%E8%BF%99%E5%A5%97%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83-Skill-%E7%9A%84%E4%BB%B7%E5%80%BC"><span class="nav-text">十、当前这套博客发布 Skill 的价值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
     </div>
 </div>
         </aside>

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
-  <title id="title">从一次对话到可复用 Codex Skill 的流程</title>
-  <desc id="desc">流程图展示从提出需求、观察项目、确认决策、编写 Skill、验证触发到安全部署的步骤。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">从一次对话到可复用 Codex Skill 的发布闭环</title>
+  <desc id="desc">流程图展示从提出需求、观察项目、生成 Skill、实战反馈，到预览确认、保存源码、部署页面和检查状态的闭环。</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#f7f3e8"/>
@@ -14,85 +14,106 @@
       <path d="M2 2 L10 6 L2 10 Z" fill="#37635c"/>
     </marker>
     <style>
-      .title { font: 700 42px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2b29; }
+      .title { font: 700 40px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1f2b29; }
       .subtitle { font: 400 20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #52615e; }
-      .step-title { font: 700 22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20302d; }
-      .step-body { font: 400 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #53625f; }
-      .badge { font: 700 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; }
-      .line { stroke: #37635c; stroke-width: 4; stroke-linecap: round; marker-end: url(#arrow); }
+      .step-title { font: 700 21px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #20302d; }
+      .step-body { font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #53625f; }
+      .badge { font: 700 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; }
+      .line { stroke: #37635c; stroke-width: 4; stroke-linecap: round; marker-end: url(#arrow); fill: none; }
       .card { fill: #ffffff; stroke: rgba(31, 43, 41, 0.12); stroke-width: 1.5; filter: url(#shadow); }
       .chip { fill: #37635c; }
+      .accent { fill: #dfb85c; }
     </style>
   </defs>
 
-  <rect width="1200" height="720" fill="url(#bg)"/>
-  <circle cx="1030" cy="110" r="78" fill="#dfb85c" opacity="0.22"/>
-  <circle cx="150" cy="610" r="96" fill="#5c8d86" opacity="0.14"/>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="1030" cy="112" r="78" fill="#dfb85c" opacity="0.22"/>
+  <circle cx="150" cy="648" r="96" fill="#5c8d86" opacity="0.14"/>
 
-  <text x="72" y="86" class="title">从一次对话生成 Codex Skill</text>
-  <text x="74" y="122" class="subtitle">把模糊需求沉淀成可复用、可验证、可安全部署的项目工作流</text>
+  <text x="72" y="84" class="title">从一次对话生成 Codex Skill</text>
+  <text x="74" y="120" class="subtitle">把模糊需求迭代成可写作、可预览、可保存源码、可部署页面的发布 Runbook</text>
 
-  <g transform="translate(74 190)">
-    <rect class="card" x="0" y="0" width="300" height="150" rx="14"/>
-    <circle class="chip" cx="38" cy="38" r="18"/>
-    <text class="badge" x="33" y="44">1</text>
-    <text class="step-title" x="70" y="46">提出目标</text>
-    <text class="step-body" x="30" y="86">写博客并一键部署</text>
-    <text class="step-body" x="30" y="114">先明确结果，而不是直接动手</text>
+  <g transform="translate(72 176)">
+    <rect class="card" x="0" y="0" width="250" height="126" rx="14"/>
+    <circle class="chip" cx="35" cy="34" r="17"/>
+    <text class="badge" x="30" y="40">1</text>
+    <text class="step-title" x="64" y="42">提出目标</text>
+    <text class="step-body" x="26" y="78">写博客并一键部署</text>
+    <text class="step-body" x="26" y="102">先定义想要的结果</text>
   </g>
 
-  <g transform="translate(450 190)">
-    <rect class="card" x="0" y="0" width="300" height="150" rx="14"/>
-    <circle class="chip" cx="38" cy="38" r="18"/>
-    <text class="badge" x="33" y="44">2</text>
-    <text class="step-title" x="70" y="46">观察项目</text>
-    <text class="step-body" x="30" y="86">确认 Hexo、文章目录、脚本</text>
-    <text class="step-body" x="30" y="114">从真实配置提炼规则</text>
+  <g transform="translate(362 176)">
+    <rect class="card" x="0" y="0" width="250" height="126" rx="14"/>
+    <circle class="chip" cx="35" cy="34" r="17"/>
+    <text class="badge" x="30" y="40">2</text>
+    <text class="step-title" x="64" y="42">观察项目</text>
+    <text class="step-body" x="26" y="78">确认 Hexo、目录、脚本</text>
+    <text class="step-body" x="26" y="102">从真实配置提炼规则</text>
   </g>
 
-  <g transform="translate(826 190)">
-    <rect class="card" x="0" y="0" width="300" height="150" rx="14"/>
-    <circle class="chip" cx="38" cy="38" r="18"/>
-    <text class="badge" x="33" y="44">3</text>
-    <text class="step-title" x="70" y="46">确认决策</text>
-    <text class="step-body" x="30" y="86">仓库内生效、先大纲后成文</text>
-    <text class="step-body" x="30" y="114">部署前保留确认门槛</text>
+  <g transform="translate(652 176)">
+    <rect class="card" x="0" y="0" width="250" height="126" rx="14"/>
+    <circle class="chip" cx="35" cy="34" r="17"/>
+    <text class="badge" x="30" y="40">3</text>
+    <text class="step-title" x="64" y="42">生成 Skill</text>
+    <text class="step-body" x="26" y="78">写作、构建、部署规则</text>
+    <text class="step-body" x="26" y="102">先有可执行骨架</text>
   </g>
 
-  <path class="line" d="M386 265 H432"/>
-  <path class="line" d="M762 265 H808"/>
-
-  <g transform="translate(74 430)">
-    <rect class="card" x="0" y="0" width="300" height="150" rx="14"/>
-    <circle class="chip" cx="38" cy="38" r="18"/>
-    <text class="badge" x="33" y="44">4</text>
-    <text class="step-title" x="70" y="46">编写 Skill</text>
-    <text class="step-body" x="30" y="86">记录触发场景、写作流程</text>
-    <text class="step-body" x="30" y="114">约定 frontmatter 与资源目录</text>
+  <g transform="translate(942 176)">
+    <rect class="card" x="0" y="0" width="186" height="126" rx="14"/>
+    <circle class="accent" cx="35" cy="34" r="17"/>
+    <text class="badge" x="30" y="40">4</text>
+    <text class="step-title" x="64" y="42">实战反馈</text>
+    <text class="step-body" x="24" y="78">图片路径</text>
+    <text class="step-body" x="24" y="102">预览顺序</text>
   </g>
 
-  <g transform="translate(450 430)">
-    <rect class="card" x="0" y="0" width="300" height="150" rx="14"/>
-    <circle class="chip" cx="38" cy="38" r="18"/>
-    <text class="badge" x="33" y="44">5</text>
-    <text class="step-title" x="70" y="46">验证触发</text>
-    <text class="step-body" x="30" y="86">检查 name、description</text>
-    <text class="step-body" x="30" y="114">覆盖写作、预览、部署句式</text>
+  <path class="line" d="M334 239 H348"/>
+  <path class="line" d="M624 239 H638"/>
+  <path class="line" d="M914 239 H928"/>
+
+  <g transform="translate(72 394)">
+    <rect class="card" x="0" y="0" width="250" height="126" rx="14"/>
+    <circle class="chip" cx="35" cy="34" r="17"/>
+    <text class="badge" x="30" y="40">5</text>
+    <text class="step-title" x="64" y="42">构建检查</text>
+    <text class="step-body" x="26" y="78">npm run build</text>
+    <text class="step-body" x="26" y="102">检查 HTML 与图片资源</text>
   </g>
 
-  <g transform="translate(826 430)">
-    <rect class="card" x="0" y="0" width="300" height="150" rx="14"/>
-    <circle class="chip" cx="38" cy="38" r="18"/>
-    <text class="badge" x="33" y="44">6</text>
-    <text class="step-title" x="70" y="46">安全发布</text>
-    <text class="step-body" x="30" y="86">先构建，再确认</text>
-    <text class="step-body" x="30" y="114">最后执行部署命令</text>
+  <g transform="translate(362 394)">
+    <rect class="card" x="0" y="0" width="250" height="126" rx="14"/>
+    <circle class="chip" cx="35" cy="34" r="17"/>
+    <text class="badge" x="30" y="40">6</text>
+    <text class="step-title" x="64" y="42">本地预览</text>
+    <text class="step-body" x="26" y="78">localhost:8080</text>
+    <text class="step-body" x="26" y="102">用户确认后再继续</text>
   </g>
 
-  <path class="line" d="M976 356 C976 390 224 386 224 412"/>
-  <path class="line" d="M386 505 H432"/>
-  <path class="line" d="M762 505 H808"/>
+  <g transform="translate(652 394)">
+    <rect class="card" x="0" y="0" width="250" height="126" rx="14"/>
+    <circle class="chip" cx="35" cy="34" r="17"/>
+    <text class="badge" x="30" y="40">7</text>
+    <text class="step-title" x="64" y="42">保存源码</text>
+    <text class="step-body" x="26" y="78">提交并推送 Gitee</text>
+    <text class="step-body" x="26" y="102">Markdown 与图片都入库</text>
+  </g>
 
-  <rect x="312" y="632" width="576" height="42" rx="21" fill="#20302d" opacity="0.92"/>
-  <text x="356" y="659" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#ffffff">核心原则：写作可以主动，部署必须克制</text>
+  <g transform="translate(942 394)">
+    <rect class="card" x="0" y="0" width="186" height="126" rx="14"/>
+    <circle class="chip" cx="35" cy="34" r="17"/>
+    <text class="badge" x="30" y="40">8</text>
+    <text class="step-title" x="64" y="42">部署页面</text>
+    <text class="step-body" x="24" y="78">Hexo deploy</text>
+    <text class="step-body" x="24" y="102">发布 GitHub Pages</text>
+  </g>
+
+  <path class="line" d="M1035 318 C1035 354 198 352 198 380"/>
+  <path class="line" d="M334 457 H348"/>
+  <path class="line" d="M624 457 H638"/>
+  <path class="line" d="M914 457 H928"/>
+
+  <rect x="244" y="618" width="712" height="54" rx="27" fill="#20302d" opacity="0.92"/>
+  <text x="290" y="652" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="19" font-weight="700" fill="#ffffff">完成定义：预览确认 + 源码保存 + 页面部署 + Git 状态干净</text>
 </svg>
