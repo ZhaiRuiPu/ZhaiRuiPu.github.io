@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="jerry2">
+    
+    <title>
+        
+            Codex全局Skills设计从项目内规则到跨目录高优先级触发 |
+        
+        jerry2
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"diruipu.top","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"望望山山水水，人去去，隐隐迢迢"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                jerry2
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Codex全局Skills设计从项目内规则到跨目录高优先级触发</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">jerry2</span>
+                        
+                            <span class="author-label">CTO</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2026-05-25 22:15:59</span>
+        <span class="mobile">2026-05-25 22:15</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Codex/">Codex</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Skill/">Skill</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/AI/">AI</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.6k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>这次记录的是一次很典型的 Codex Skills 设计调整：一开始规则只放在某个项目里，换到其他目录后就不稳定；后来又发现如果什么都塞进全局 <code>SKILL.md</code>，文件会越来越大。最终比较舒服的方案是：全局只放轻量触发器，具体细则按需放到 <code>references/</code>，真正复杂的流程继续留在项目内 skill 里。</p>
+<p>这篇不是讲某个 API，而是整理一次“怎么设计长期可维护的 Codex 技能”的过程。</p>
+<h2 id="背景：项目内-skill-换目录后不稳定"><a href="#背景：项目内-skill-换目录后不稳定" class="headerlink" title="背景：项目内 skill 换目录后不稳定"></a>背景：项目内 skill 换目录后不稳定</h2><p>最开始，博客项目里有一个谨慎编码规则：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/diruipu/jerry2/blogs/diruipu/skills/cautious-coding-guardrails/SKILL.md</span><br></pre></td></tr></table></figure>
+
+<p>它的作用是约束编码行为：</p>
+<ul>
+<li>不要瞎猜，先澄清</li>
+<li>简单优先，不要过度设计</li>
+<li>精准改动，不要顺手重构</li>
+<li>明确成功标准，验证后再结束</li>
+</ul>
+<p>这些规则在 <code>blogs</code> 项目里很好用，但问题是：如果当前工作目录换成别的项目，比如微信小程序项目 <code>wechat-web</code>，项目内 skill 就不一定会被新对话自动读取。</p>
+<p>这就导致一个尴尬的问题：明明是一条全局工作习惯，却被放在了某个项目里。</p>
+<h2 id="问题一：不能每次靠人工提醒"><a href="#问题一：不能每次靠人工提醒" class="headerlink" title="问题一：不能每次靠人工提醒"></a>问题一：不能每次靠人工提醒</h2><p>如果每次新对话都要手动说一遍：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用 blogs 里的 cautious-coding-guardrails 技能</span><br></pre></td></tr></table></figure>
+
+<p>那这个技能其实没有真正变成工作习惯，只是变成了一段可复制的提示词。</p>
+<p>同样的问题也出现在博客沉淀流程上。解决完 GitHub token、403、SSH、Hexo 部署这类问题后，如果每次都要人工提醒“把这个写成文章”，那知识沉淀就很容易断掉。</p>
+<p>所以这里拆出了两个全局 skill：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/Users/diruipu/.codex/skills/cautious-coding-guardrails/SKILL.md</span><br><span class="line">/Users/diruipu/.codex/skills/post-resolution-blog-capture/SKILL.md</span><br></pre></td></tr></table></figure>
+
+<p>前者约束编码行为，后者在解决完有复用价值的问题后主动提醒写博客。</p>
+<h2 id="问题二：全局-skill-不能越写越大"><a href="#问题二：全局-skill-不能越写越大" class="headerlink" title="问题二：全局 skill 不能越写越大"></a>问题二：全局 skill 不能越写越大</h2><p>把规则放到全局以后，很容易出现另一个反方向的问题：什么都想塞进 <code>SKILL.md</code>。</p>
+<p>例如：</p>
+<ul>
+<li>GitHub token 怎么生成</li>
+<li>SSH 认证怎么排查</li>
+<li>Hexo 怎么构建</li>
+<li>文章怎么写 front matter</li>
+<li>哪些问题值得沉淀</li>
+<li>哪些问题不值得沉淀</li>
+</ul>
+<p>这些如果全放在一个全局入口里，短期看很完整，长期看会变成一个巨大的“总提示词”。</p>
+<p>这样会带来几个问题：</p>
+<ul>
+<li>入口文件太长，每次触发都会占用更多上下文</li>
+<li>不同职责混在一起，后续维护容易冲突</li>
+<li>具体经验和长期规则混在一起，越改越乱</li>
+<li>想复用某一部分能力时，很难判断该读哪段</li>
+</ul>
+<p>所以全局 skill 的设计原则应该是：入口要轻，细节按需读。</p>
+<h2 id="最终结构：轻入口-references-项目内重流程"><a href="#最终结构：轻入口-references-项目内重流程" class="headerlink" title="最终结构：轻入口 + references + 项目内重流程"></a>最终结构：轻入口 + references + 项目内重流程</h2><p>最终采用了三层结构。</p>
+<p>第一层是全局轻入口：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/diruipu/.codex/skills/cautious-coding-guardrails/SKILL.md</span><br></pre></td></tr></table></figure>
+
+<p>这个文件只保留高优先级触发说明和四条摘要：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. Think before coding</span><br><span class="line">2. Simplicity first</span><br><span class="line">3. Surgical changes</span><br><span class="line">4. Goal-driven execution</span><br></pre></td></tr></table></figure>
+
+<p>它的作用不是塞满所有细节，而是让新对话在任意项目目录下，都能知道：只要涉及编码、文件修改、Git、构建、部署、调试或项目维护，就应该先应用这套规矩。</p>
+<p>第二层是按需细则：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/diruipu/.codex/skills/cautious-coding-guardrails/references/guardrails.md</span><br></pre></td></tr></table></figure>
+
+<p>当任务有歧义、要扩大改动、要重构、要删代码，或者验证策略不清楚时，再读取这个细则文件。</p>
+<p>这样既保留了完整规则，又避免每次都把细节灌进上下文。</p>
+<p>第三层是项目内重流程：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/diruipu/jerry2/blogs/diruipu/skills/hexo-blog-publisher/SKILL.md</span><br></pre></td></tr></table></figure>
+
+<p>真正写博客、生成 Hexo front matter、构建、预览、等待确认、提交、部署，这些都属于博客项目的重流程，不应该放到全局 skill 里。</p>
+<p>全局的 <code>post-resolution-blog-capture</code> 只负责提醒：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这个问题值得沉淀成博客，要不要写进 blogs？</span><br></pre></td></tr></table></figure>
+
+<p>用户确认后，才切到 blogs 项目读取 <code>hexo-blog-publisher</code>。</p>
+<h2 id="关键经验：什么该进-skill，什么该写成文章"><a href="#关键经验：什么该进-skill，什么该写成文章" class="headerlink" title="关键经验：什么该进 skill，什么该写成文章"></a>关键经验：什么该进 skill，什么该写成文章</h2><p>这次调整后，我觉得可以用一个简单标准判断：</p>
+<p>长期行为规则进 skill，具体踩坑经验写文章。</p>
+<p>适合进全局 skill 的内容：</p>
+<ul>
+<li>每次编码都应该遵守的习惯</li>
+<li>任意项目都适用的行为边界</li>
+<li>高优先级、低变化的原则</li>
+<li>用来决定是否读取更详细规则的入口</li>
+</ul>
+<p>适合进项目 skill 的内容：</p>
+<ul>
+<li>某个项目的目录结构</li>
+<li>某个项目的构建和发布流程</li>
+<li>某个项目的资源放置习惯</li>
+<li>需要和项目配置保持一致的步骤</li>
+</ul>
+<p>适合写成博客的内容：</p>
+<ul>
+<li>某次 GitHub token 报错怎么排查</li>
+<li>403 是权限问题还是仓库问题</li>
+<li>Hexo 部署为什么源仓库和 Pages 仓库要分开</li>
+<li>Codex skill 为什么要做成轻入口和 references</li>
+</ul>
+<p>不适合写进 skill 的内容：</p>
+<ul>
+<li>单次问题的完整流水账</li>
+<li>临时命令</li>
+<li>已经过期的排查细节</li>
+<li>只对某次上下文有效的结论</li>
+</ul>
+<h2 id="一个可复用的目录设计"><a href="#一个可复用的目录设计" class="headerlink" title="一个可复用的目录设计"></a>一个可复用的目录设计</h2><p>最终，一个比较舒服的全局 skill 结构大概是这样：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~/.codex/skills/cautious-coding-guardrails/</span><br><span class="line">├── SKILL.md</span><br><span class="line">├── agents/</span><br><span class="line">│   └── openai.yaml</span><br><span class="line">└── references/</span><br><span class="line">    └── guardrails.md</span><br></pre></td></tr></table></figure>
+
+<p><code>SKILL.md</code> 负责回答三个问题：</p>
+<ul>
+<li>什么时候触发？</li>
+<li>核心原则是什么？</li>
+<li>什么时候读 references？</li>
+</ul>
+<p><code>references/guardrails.md</code> 负责放完整细则。</p>
+<p>这个结构的好处是：入口始终短，细则仍然完整，未来要扩展也有地方放，不会把主文件撑爆。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>这次真正解决的不是“怎么写一个 skill”，而是“怎么避免 skill 变成另一个越来越大的提示词”。</p>
+<p>我的结论是：</p>
+<ul>
+<li>全局 skill 适合放高优先级、跨项目、长期稳定的行为规则</li>
+<li>项目内 skill 适合放项目流程和本地约定</li>
+<li>references 适合放按需读取的细节</li>
+<li>具体踩坑经验应该沉淀成文章，而不是继续塞进 skill</li>
+</ul>
+<p>这样设计后，新对话在其他目录下也能获得关键行为约束，同时不会让每个全局 <code>SKILL.md</code> 越来越大。</p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Codex/">#Codex</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Skill/">#Skill</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/AI/">#AI</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2026/05/25/%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AEGit%E5%8C%96%E5%B9%B6%E6%8E%A8%E9%80%81%E5%88%B0GitHub%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">本地项目Git化并推送到GitHub私有仓库</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c05ce7f7288367fc3232',
+                    clientSecret: '94bbd22b269a721e1b98c1efa1750de2de64fdab',
+                    repo: 'gitalk',
+                    owner: 'ZhaiRuiPu',
+                    admin: ['ZhaiRuiPu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>
+              -
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">jerry2</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%EF%BC%9A%E9%A1%B9%E7%9B%AE%E5%86%85-skill-%E6%8D%A2%E7%9B%AE%E5%BD%95%E5%90%8E%E4%B8%8D%E7%A8%B3%E5%AE%9A"><span class="nav-text">背景：项目内 skill 换目录后不稳定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A%E4%B8%8D%E8%83%BD%E6%AF%8F%E6%AC%A1%E9%9D%A0%E4%BA%BA%E5%B7%A5%E6%8F%90%E9%86%92"><span class="nav-text">问题一：不能每次靠人工提醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9A%E5%85%A8%E5%B1%80-skill-%E4%B8%8D%E8%83%BD%E8%B6%8A%E5%86%99%E8%B6%8A%E5%A4%A7"><span class="nav-text">问题二：全局 skill 不能越写越大</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%84%EF%BC%9A%E8%BD%BB%E5%85%A5%E5%8F%A3-references-%E9%A1%B9%E7%9B%AE%E5%86%85%E9%87%8D%E6%B5%81%E7%A8%8B"><span class="nav-text">最终结构：轻入口 + references + 项目内重流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E7%BB%8F%E9%AA%8C%EF%BC%9A%E4%BB%80%E4%B9%88%E8%AF%A5%E8%BF%9B-skill%EF%BC%8C%E4%BB%80%E4%B9%88%E8%AF%A5%E5%86%99%E6%88%90%E6%96%87%E7%AB%A0"><span class="nav-text">关键经验：什么该进 skill，什么该写成文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%8F%AF%E5%A4%8D%E7%94%A8%E7%9A%84%E7%9B%AE%E5%BD%95%E8%AE%BE%E8%AE%A1"><span class="nav-text">一个可复用的目录设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-text">结论</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
