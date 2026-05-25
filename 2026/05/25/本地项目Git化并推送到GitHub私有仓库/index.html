@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="jerry2">
+    
+    <title>
+        
+            本地项目Git化并推送到GitHub私有仓库 |
+        
+        jerry2
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"diruipu.top","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"望望山山水水，人去去，隐隐迢迢"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                jerry2
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">本地项目Git化并推送到GitHub私有仓库</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">jerry2</span>
+                        
+                            <span class="author-label">CTO</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2026-05-25 21:40:31</span>
+        <span class="mobile">2026-05-25 21:40</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/git/">git</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/github/">github</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>这篇记录一次把本地项目接入 Git，并推送到 GitHub 私有仓库的完整流程。重点不是背命令，而是把真实操作中容易卡住的地方讲清楚：远程仓库怎么建、token 什么时候粘贴、403 怎么判断、upstream 提示该怎么处理。</p>
+<h2 id="1-本地项目初始化-Git"><a href="#1-本地项目初始化-Git" class="headerlink" title="1. 本地项目初始化 Git"></a>1. 本地项目初始化 Git</h2><p>进入项目根目录：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/project</span><br></pre></td></tr></table></figure>
+
+<p>先确认当前目录，避免在错误路径初始化仓库：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<p>创建 <code>.gitignore</code>，把依赖、构建产物、私有配置排除掉。比如微信小程序项目可以先放这些：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">node_modules/</span><br><span class="line">miniprogram_npm/</span><br><span class="line">project.private.config.json</span><br><span class="line">.DS_Store</span><br><span class="line">*.log</span><br><span class="line">dist/</span><br><span class="line">coverage/</span><br></pre></td></tr></table></figure>
+
+<p>初始化仓库并提交：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git branch -M main</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Initial commit&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>检查状态：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status --short</span><br><span class="line">git <span class="built_in">log</span> --oneline -1</span><br></pre></td></tr></table></figure>
+
+<p>如果 <code>git status --short</code> 没有输出，说明工作区是干净的。</p>
+<h2 id="2-创建-GitHub-私有仓库"><a href="#2-创建-GitHub-私有仓库" class="headerlink" title="2. 创建 GitHub 私有仓库"></a>2. 创建 GitHub 私有仓库</h2><p>在 GitHub 页面新建仓库：</p>
+<ul>
+<li>Repository name：项目名，例如 <code>wechat-web</code></li>
+<li>Visibility：选择 <code>Private</code></li>
+<li>不要勾选 README、<code>.gitignore</code>、license</li>
+</ul>
+<p>因为本地已经有首个提交，远程仓库保持空仓库最省事。</p>
+<p>创建完成后，在本地配置远程地址：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/你的用户名/仓库名.git</span><br><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
+<p>如果已经配错了远程地址，可以改掉：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin https://github.com/你的用户名/仓库名.git</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-用-token-推送代码"><a href="#3-用-token-推送代码" class="headerlink" title="3. 用 token 推送代码"></a>3. 用 token 推送代码</h2><p>GitHub 现在不支持用账号密码推送代码，HTTPS 推送需要 Personal Access Token。</p>
+<p>推荐生成 classic token：</p>
+<ol>
+<li>打开 GitHub Settings -&gt; Developer settings -&gt; Personal access tokens。</li>
+<li>选择 Generate new token，建议使用 classic token。</li>
+<li>勾选 <code>repo</code> 权限。</li>
+<li>生成后立即复制 token。</li>
+</ol>
+<p>注意：token 只显示一次，不要发给别人，也不要写进聊天、文档或代码里。</p>
+<p>在终端里这样保存凭据：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/project</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;protocol=https\nhost=github.com\nusername=你的用户名\n\n&quot;</span> | git credential reject</span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;protocol=https\nhost=github.com\n\n&quot;</span> | git credential reject</span><br><span class="line"></span><br><span class="line"><span class="built_in">read</span> -s GITHUB_TOKEN</span><br><span class="line"><span class="comment"># 执行到这里时，终端会停住。此时粘贴 token，然后按回车。</span></span><br><span class="line"><span class="comment"># 因为用了 -s，屏幕不会显示任何字符，这是正常的。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;protocol=https\nhost=github.com\nusername=你的用户名\npassword=<span class="variable">$GITHUB_TOKEN</span>\n\n&quot;</span> | git credential approve</span><br><span class="line"></span><br><span class="line">git push --set-upstream origin main</span><br></pre></td></tr></table></figure>
+
+<p>这里最容易误会的是 <code>read -s GITHUB_TOKEN</code>。它不是报错，也不是卡死，而是在等你输入 token。正确顺序是：执行 <code>read</code> 后，再粘贴 token，再按回车。</p>
+<h2 id="4-常见报错处理"><a href="#4-常见报错处理" class="headerlink" title="4. 常见报错处理"></a>4. 常见报错处理</h2><h3 id="could-not-read-Username"><a href="#could-not-read-Username" class="headerlink" title="could not read Username"></a>could not read Username</h3><p>报错类似：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: could not read Username for &#x27;https://github.com&#x27;: Device not configured</span><br></pre></td></tr></table></figure>
+
+<p>这说明 Git 没拿到可用的 GitHub 凭据。重新清理旧凭据，再写入 token：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">&quot;protocol=https\nhost=github.com\nusername=你的用户名\n\n&quot;</span> | git credential reject</span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;protocol=https\nhost=github.com\n\n&quot;</span> | git credential reject</span><br></pre></td></tr></table></figure>
+
+<p>然后重新执行 <code>read -s GITHUB_TOKEN</code> 和 <code>git credential approve</code>。</p>
+<h3 id="Write-access-to-repository-not-granted"><a href="#Write-access-to-repository-not-granted" class="headerlink" title="Write access to repository not granted"></a>Write access to repository not granted</h3><p>报错类似：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">remote: Write access to repository not granted.</span><br><span class="line">fatal: unable to access &#x27;https://github.com/xxx/xxx.git/&#x27;: The requested URL returned error: 403</span><br></pre></td></tr></table></figure>
+
+<p>这通常表示 token 有效，但没有这个仓库的写权限。</p>
+<p>如果是 classic token，确认勾选了 <code>repo</code> 权限。</p>
+<p>如果是 fine-grained token，确认：</p>
+<ul>
+<li>Repository access 选中了目标仓库</li>
+<li>Contents 权限是 Read and write</li>
+<li>Metadata 权限至少是 Read-only</li>
+</ul>
+<h3 id="Invalid-username-or-token"><a href="#Invalid-username-or-token" class="headerlink" title="Invalid username or token"></a>Invalid username or token</h3><p>报错类似：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">remote: Invalid username or token. Password authentication is not supported for Git operations.</span><br><span class="line">fatal: Authentication failed</span><br></pre></td></tr></table></figure>
+
+<p>这通常表示 token 无效、复制不完整、已经过期，或终端里保存的是旧 token。建议撤销旧 token，重新生成一个 classic token，并重新写入凭据。</p>
+<h3 id="提示设置-upstream"><a href="#提示设置-upstream" class="headerlink" title="提示设置 upstream"></a>提示设置 upstream</h3><p>如果看到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">To push the current branch and set the remote as upstream, use</span><br><span class="line"></span><br><span class="line">    git push --set-upstream origin main</span><br></pre></td></tr></table></figure>
+
+<p>直接按提示执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream origin main</span><br></pre></td></tr></table></figure>
+
+<p>成功后，本地 <code>main</code> 会追踪远程 <code>origin/main</code>，以后可以直接使用：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-token-泄露后怎么办"><a href="#5-token-泄露后怎么办" class="headerlink" title="5. token 泄露后怎么办"></a>5. token 泄露后怎么办</h2><p>如果 token 被贴到了聊天、截图、文档或公开网页里，就要把它当成已经泄露处理。</p>
+<p>正确做法：</p>
+<ol>
+<li>立刻打开 GitHub token 管理页面。</li>
+<li>Revoke 或 Delete 泄露的 token。</li>
+<li>重新生成一个新 token。</li>
+<li>重新写入本机 Git 凭据。</li>
+</ol>
+<p>不要继续使用已经泄露的 token。哪怕仓库是私有的，token 泄露也可能导致仓库内容被读取或篡改。</p>
+<h2 id="6-完整命令模板"><a href="#6-完整命令模板" class="headerlink" title="6. 完整命令模板"></a>6. 完整命令模板</h2><p>下面是一次从本地初始化到推送的最小模板：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /path/to/your/project</span><br><span class="line"></span><br><span class="line">git init</span><br><span class="line">git branch -M main</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;Initial commit&quot;</span></span><br><span class="line"></span><br><span class="line">git remote add origin https://github.com/你的用户名/仓库名.git</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;protocol=https\nhost=github.com\nusername=你的用户名\n\n&quot;</span> | git credential reject</span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;protocol=https\nhost=github.com\n\n&quot;</span> | git credential reject</span><br><span class="line"></span><br><span class="line"><span class="built_in">read</span> -s GITHUB_TOKEN</span><br><span class="line"><span class="comment"># 在这里粘贴 token，然后按回车</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&quot;protocol=https\nhost=github.com\nusername=你的用户名\npassword=<span class="variable">$GITHUB_TOKEN</span>\n\n&quot;</span> | git credential approve</span><br><span class="line"></span><br><span class="line">git push --set-upstream origin main</span><br></pre></td></tr></table></figure>
+
+<p>这套流程跑通后，一个本地项目就完成了 Git 初始化、远程仓库绑定和首次推送。后续日常开发只需要：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;你的提交说明&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/git/">#git</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/github/">#github</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2026/05/20/%E4%BB%8E%E4%B8%80%E6%AC%A1%E5%AF%B9%E8%AF%9D%E5%AD%A6%E4%BC%9A%E7%94%9F%E6%88%90Codex-Skill/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">从一次对话学会生成 Codex Skill</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c05ce7f7288367fc3232',
+                    clientSecret: '94bbd22b269a721e1b98c1efa1750de2de64fdab',
+                    repo: 'gitalk',
+                    owner: 'ZhaiRuiPu',
+                    admin: ['ZhaiRuiPu'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>
+              -
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">jerry2</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96-Git"><span class="nav-text">1. 本地项目初始化 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA-GitHub-%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93"><span class="nav-text">2. 创建 GitHub 私有仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%94%A8-token-%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81"><span class="nav-text">3. 用 token 推送代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E5%A4%84%E7%90%86"><span class="nav-text">4. 常见报错处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#could-not-read-Username"><span class="nav-text">could not read Username</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Write-access-to-repository-not-granted"><span class="nav-text">Write access to repository not granted</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Invalid-username-or-token"><span class="nav-text">Invalid username or token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E8%AE%BE%E7%BD%AE-upstream"><span class="nav-text">提示设置 upstream</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-token-%E6%B3%84%E9%9C%B2%E5%90%8E%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-text">5. token 泄露后怎么办</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%AE%8C%E6%95%B4%E5%91%BD%E4%BB%A4%E6%A8%A1%E6%9D%BF"><span class="nav-text">6. 完整命令模板</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
